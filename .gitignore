@@ -1,0 +1,9 @@
+.DS_Store
+log/*
+mkmf.log
+*.swp
+*.log
+bin/*
+vendor/gems/*
+!vendor/gems/cache/
+_site/*
