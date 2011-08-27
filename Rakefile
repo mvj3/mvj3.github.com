@@ -8,7 +8,7 @@ task :post do
 
   file = File.join File.dirname(__FILE__), '_posts', slug + '.markdown'
 
-  File.open(file, "w") do |f|
+  File.open file, "w"  do |f|
     f << <<-EOS.gsub(/^    /, '')
     ---
     layout: post
@@ -17,11 +17,10 @@ task :post do
     published: false
     date: #{Time.now.strftime("%Y-%m-%d %T")} +00:00
     categories: []
-    signature: mvj3
     ---
 
     EOS
   end
 
-  system ("#{ENV['EDITOR']} #{file}")
+  system "#{ENV['EDITOR']} #{file}"
 end
