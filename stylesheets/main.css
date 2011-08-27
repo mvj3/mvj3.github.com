@@ -1,5 +1,5 @@
 /* default */
-body { background: #CECEC6; }
+body { background: #CECEC6; font-family: Lucida Grande; }
 a, a:visited, a:hover { text-decoration: none; }
 a, a:visited { color: #4E0E04; font-family: Lucida Grande; }
 a:hover { color: red; }
@@ -14,7 +14,7 @@ a:hover { color: red; }
 
 #header {
   padding-left: 130px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   width: 700px;
 }
 #logo {
@@ -36,7 +36,28 @@ a:hover { color: red; }
   padding: 15px;
 }
 
+.blog_post {
+}
+.blog_post .title a {
+  float: right;
+  font-size: 20px;
+  font-style: bold;
+}
+
 
 #main {
   margin-top: 100px;
+  text-align: left;
+}
+
+#main p, #main div {
+  font-size: 14px;
+}
+
+
+#archiver a {
+  font-size: 20px;
+}
+#footer {
+  padding-top: 23px;
 }

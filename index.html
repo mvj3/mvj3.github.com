@@ -6,16 +6,15 @@ title: 世界的审美！
 {% for page in paginator.posts %}
   {% assign body = page.content %}
   <div class="blog_post">
-    <h2><a href="{{ page.url }}">{{page.short_title}} ↩</a></h2>
+    <div class="title"><span>{{ page.date | date:"%e %B %Y"}}</span><a href="{{ page.url }}">{{page.short_title}} ↩</a></div>
     <div>
       {{ body }}
-      {% if page.signature %}<p class="signature">{{ page.signature }} · {{ page.date | date:"%e %B %Y"}}</p>{% endif %}
     </div>
   </div>
 {% endfor %}
 
 <div id="footer">
-  <div id="archiver">
+  <div id="archiver" class="centor">
     <a href="/archive.html">Archive</a>
   </div>
 </div>

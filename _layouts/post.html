@@ -1,0 +1,11 @@
+---
+layout: default
+---
+{% assign body = content %}
+<div class="blog_post">
+  <h2>{{page.short_title}}</h2>
+  {{ body }}
+  <p>{{ page.date | date:"%e %B %Y"}}</p>
+</div>
+
+{% include disqus.html %}
