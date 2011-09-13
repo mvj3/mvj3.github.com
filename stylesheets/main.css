@@ -45,6 +45,10 @@ a:hover { color: red; }
   font-style: bold;
 }
 
+.about {
+  text-align: center;
+}
+
 #main {
   margin-top: 100px;
   text-align: left;
