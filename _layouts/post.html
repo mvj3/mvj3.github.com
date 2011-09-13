@@ -3,9 +3,7 @@ layout: default
 ---
 {% assign body = content %}
 <div class="blog_post">
-  <h2>{{page.short_title}}</h2>
+  <div class="title"><span>[{{ page.date | date:"%Y-%m-%e"}}]</span>   <a href="{{ page.url }}">{{page.short_title}}</a></div>
   {{ body }}
-  <p>{{ page.date | date:"%e %B %Y"}}</p>
 </div>
-
 {% include disqus.html %}

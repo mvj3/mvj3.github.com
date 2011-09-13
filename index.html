@@ -3,18 +3,8 @@ layout: default
 title: 世界的审美！
 ---
 
+<div class="index">
 {% for page in paginator.posts %}
-  {% assign body = page.content %}
-  <div class="blog_post">
-    <div class="title"><span>{{ page.date | date:"%e %B %Y"}}</span><a href="{{ page.url }}">{{page.short_title}} ↩</a></div>
-    <div>
-      {{ body }}
-    </div>
-  </div>
+  <div class="title"><span>[{{ page.date | date:"%Y-%m-%e"}}]</span>   <a href="{{ page.url }}">{{page.short_title}}</a></div>
 {% endfor %}
-
-<div id="footer">
-  <div id="archiver" class="centor">
-    <a href="/archive.html">Archive</a>
-  </div>
 </div>

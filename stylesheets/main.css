@@ -36,14 +36,14 @@ a:hover { color: red; }
   padding: 15px;
 }
 
-.blog_post {
-}
-.blog_post .title a {
-  float: right;
-  font-size: 20px;
-  font-style: bold;
+.index .title {
+  padding-left: 99px;
+  margin-left: 99px;
 }
 
+.title {
+  font-style: bold;
+}
 
 #main {
   margin-top: 100px;
@@ -54,10 +54,6 @@ a:hover { color: red; }
   font-size: 14px;
 }
 
-
-#archiver a {
-  font-size: 20px;
-}
 #footer {
-  padding-top: 23px;
+  padding-top: 66px;
 }
