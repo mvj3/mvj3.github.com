@@ -1,9 +1,8 @@
 ---
 layout: post
-title: 多个Rails项目共用app/models和Gemfile配置 | 世界的审美！
-short_title: 多个Rails项目共用app/models和Gemfile配置 
+title: 多个Rails项目共用app/models和Gemfile配置
 published: true
-date: 2011-09-13 21:03:03 +00:00
+date: 2011-09-13 21:03:03 +08:00
 categories: [Ruby, Rails]
 ---
 

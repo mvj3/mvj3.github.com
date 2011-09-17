@@ -1,10 +1,9 @@
 ---
 layout: post
-title: 删除重复记录 | 世界的审美！
-short_title: 删除重复记录
+title: 删除重复记录
 published: true
-date: 2011-08-27 16:36:16 +00:00
-categories: [Ruby, Tip]
+date: 2011-08-27 16:36:16 +08:00
+categories: [Ruby]
 ---
 
 项目因为一个隐藏的BUG要删除掉重复的评论，如果所有评论挨个比对的话，程序的开销为O(N²)，因此可以采用Hash来把开销降低到O(N)。为避免原始数据作为Hash键导致内存占用过多的问题，可以把Hash键改为原始数据内容生成的Hash码。为了避免误删，删除之前还可对疑为重复数据的记录进行比对。

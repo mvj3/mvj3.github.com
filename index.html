@@ -5,6 +5,6 @@ title: 世界的审美！
 
 <div class="index">
 {% for page in paginator.posts %}
-  <div class="title"><span>[{{ page.date | date:"%Y-%m-%e"}}]</span>   <a href="{{ page.url }}">{{page.short_title}}</a></div>
+  <div class="title"><span>[{{ page.date | date:"%Y-%m-%e"}}]</span>   <a href="{{ page.url }}">{{page.title}}</a></div>
 {% endfor %}
 </div>

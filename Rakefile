@@ -12,10 +12,9 @@ task :post do
     f << <<-EOS.gsub(/^    /, '')
     ---
     layout: post
-    title: #{title} | 世界的审美！
-    short_title: #{title}
+    title: #{title}
     published: false
-    date: #{Time.now.strftime("%Y-%m-%d %T")} +00:00
+    date: #{Time.now.strftime("%Y-%m-%d %T")} +08:00
     categories: []
     ---
 
