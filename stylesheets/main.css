@@ -36,10 +36,10 @@ a:hover { color: red; }
   padding: 15px;
 }
 
-.title {
+.blog_post .title {
   margin-left: 0;
 }
-.title a {
+.blog_post .title a {
   font-style: bold;
 }
 
