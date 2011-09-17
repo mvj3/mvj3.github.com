@@ -14,7 +14,8 @@ logpos是以Rails默认的日志格式来解析的，但是也可以自己定义
 {% highlight ruby linenos %}
 lg = Logpos.new
 lg.time_parser = proc {|line| line.match(/^Started/) && TIME_PARSER_CLASS.parse(line.split(/for [0-9\.]* at /)[-1]) }
+pos = lg.seek_pos_before log_path, time
 {% endhighlight %}
-Logpos接受的time_parser要求是一个Proc，返回是一个Time对象，以便之后的比较。
+Logpos接受的time_parser要求是一个Proc，返回是一个Time实例或nil，以便之后的比较。
 
-我这边测试一个4G多的正常的Rails Log文件，对不同的时间点做测试，日志记录时间范围内的一般在10毫秒以下，范围外的在80毫秒以下。
+我这边测试一个4G多的正常的Rails日志文件，对不同的时间点做测试，日志记录时间范围内的一般在10毫秒以下，范围外的在80毫秒以下。
