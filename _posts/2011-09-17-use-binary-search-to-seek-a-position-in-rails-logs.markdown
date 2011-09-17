@@ -13,7 +13,9 @@ pos = Logpos.seek_pos_before log_path, (RptVerbPathParams.desc(:time).first.try(
 logpos是以Rails默认的日志格式来解析的，但是也可以自己定义一个时间解析器：
 {% highlight ruby linenos %}
 lg = Logpos.new
-lg.time_parser = proc {|line| line.match(/^Started/) && TIME_PARSER_CLASS.parse(line.split(/for [0-9\.]* at /)[-1]) }
+lg.time_parser = proc do |line|
+  line.match(/^Started/) && TIME_PARSER_CLASS.parse(line.split(/for [0-9\.]* at /)[-1])
+end
 pos = lg.seek_pos_before log_path, time
 {% endhighlight %}
 Logpos接受的time_parser要求是一个Proc，返回是一个Time实例或nil，以便之后的比较。
