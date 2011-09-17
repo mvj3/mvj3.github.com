@@ -36,11 +36,9 @@ a:hover { color: red; }
   padding: 15px;
 }
 
-.index .title {
-  padding-left: 99px;
-  margin-left: 99px;
+.title {
+  margin-left: 0;
 }
-
 .title a {
   font-style: bold;
 }
