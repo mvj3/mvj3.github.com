@@ -6,7 +6,7 @@ date: 2011-09-17 15:21:54 +08:00
 categories: [Ruby, Rails]
 ---
 
-对网站作统计分析时，经常需要对各种文本日志定时进行解析抽取数据，因此有必要确定上次结束解析的位置。logpos使用[二分法](http://en.wikipedia.org/wiki/Binary_search_algorithm)进行查找，具体用法如：
+对网站作统计分析时，经常需要对各种文本日志定时进行解析抽取数据，因此有必要确定上次结束解析的位置。[logpos](http://github.com/mvj3/logpos)使用[二分法](http://en.wikipedia.org/wiki/Binary_search_algorithm)进行查找，具体用法如：
 {% highlight ruby linenos %}
 pos = Logpos.seek_pos_before log_path, (RptVerbPathParams.desc(:time).first.try(:time) || Time.at(0))
 {% endhighlight %}
