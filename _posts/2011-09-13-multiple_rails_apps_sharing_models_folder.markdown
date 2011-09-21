@@ -15,7 +15,7 @@ module Share
   LibPath     = File.dirname(File.expand_path(__FILE__)).sub('lib', 'app/lib')
 end
 
-Dir[File.join(EoeShareWS::LibPath, '*rb')].map {|lib| require lib rescue nil }
+Dir[File.join(Share::LibPath, '*rb')].map {|lib| require lib rescue nil }
 {% endhighlight %}
 
 这样你在其他项目的Gemfile里就可以像这样引用：
@@ -30,7 +30,7 @@ end
 
 然后在config/application.rb的配置里加上一句：
 {% highlight ruby linenos %}
-config.autoload_paths << Share::ModlesPath
+config.autoload_paths << Share::ModelsPath
 {% endhighlight %}
 
 
