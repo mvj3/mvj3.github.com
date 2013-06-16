@@ -7,3 +7,4 @@ bin/*
 vendor/gems/*
 !vendor/gems/cache/
 _site/*
+Gemfile.lock

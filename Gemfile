@@ -1,3 +1,5 @@
-source :rubygems
+source 'https://rubygems.org'
 
-gem "jekyll-less"
+gem 'classifier'
+gem 'pygments.rb'
+gem 'maruku'
