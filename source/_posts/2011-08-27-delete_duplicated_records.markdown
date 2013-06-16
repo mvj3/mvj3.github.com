@@ -2,6 +2,7 @@
 layout: post
 title: 删除重复记录
 published: true
+comments: true
 date: 2011-08-27 16:36:16 +08:00
 categories: [Ruby]
 ---

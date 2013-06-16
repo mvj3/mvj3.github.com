@@ -2,6 +2,7 @@
 layout: post
 title: 多个Rails项目共用app/models和Gemfile配置
 published: true
+comments: true
 date: 2011-09-13 21:03:03 +08:00
 categories: [Ruby, Rails]
 ---
