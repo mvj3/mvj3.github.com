@@ -13,3 +13,8 @@ git@github.com:mvj3/mvj3.github.com.git 是原始git源码库，上传到github.
 因为github pages服务默认禁用了jekyll第三方扩展运行，所以折衷办法是:
 1. 添加.nojekyll文件。
 2. 运行rake deploy命令, 把生成的静态站点源文件(HTML+CSS+JS)放到 git@github.com:mvj3/mvj3.github.com.git 这个源码库里。
+
+
+如何写日志和管理
+------------------------------------------
+运行 `bundle exec rake -T` 察看可用任务
