@@ -22,7 +22,7 @@ categories: [Mongodb, Android, DataMining, Analysis, DSL]
 * 解析引擎 用Ruby脚本语言实现，方便根据业务需求灵活快速修改，内存稳定在400-500MB。 它根据上次解析时间点通过 [二分查找](http://rubygems.org/gems/logpos) 实现毫秒级定位，并即时批量解析入库，避免了统计报表因数据量大处理时间慢而只能隔天出的弊端，以及重复解析的资源浪费。
 
 相关技巧
-------------------------------------------
+
 * 采用批量入库大大节约了带宽开销，入库速度，以及数据库索引优化，入库速度平均达到2万+条日志每分钟。
 * 根据项目对数据精度的不同需求，各自实现了空间时间利用率很高但不百分百精确的bloomfilter或几乎完全精确的SHA加密等不同层级的排重策略。
 * 日志格式通过递增对User-Agent等枚举字段常用标签进行压缩，字段大部分为占用空间极少的整数类型，并通过 [activerecord_idnamecache.gem](http://rubygems.org/gems/activerecord_idnamecache) 内存缓存快速访问。
