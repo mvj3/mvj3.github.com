@@ -7,7 +7,6 @@ title: 世界的审美！
 subtitle: 物质的奴隶，时尚的仆人，内在的国王，艺术的上帝。
 author: mvj3
 simple_search: http://google.com/search
-description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -28,7 +27,7 @@ email:
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 safe: false
 lsi: true
-pygments: true
+pygments: true # default python pygments have been replaced by pygments.rb
 root: /
 permalink: /:year/:month/:day/:title/
 source: source
@@ -42,7 +41,6 @@ rdiscount:
     - autolink
     - footnotes
     - smart
-pygments: true # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
