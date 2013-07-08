@@ -19,12 +19,14 @@ categories: [Mongodb, Android, DataMining, Analysis, DSL]
 处理系统 由多个解析引擎和分布式的Mongodb数据库构成。
 
 * 日志数据源 为带时间戳的文本日志，常见的如nginx, sphinx，或定制的应用日志等，分布在各个机器的项目通过NFS把日志目录挂载到处理系统所在节点，或者直接把处理引擎部署到日志所在机器。
-* 解析引擎 用Ruby脚本语言实现，方便根据业务需求灵活快速修改，其中高性能部分采用了C进行改写，内存稳定在400-500MB。 它根据上次解析时间点通过二分查找实现毫秒级定位，并即时批量解析入库，避免了统计报表因数据量大处理时间慢而只能隔天出的弊端，以及重复解析的资源浪费。
+* 解析引擎 用Ruby脚本语言实现，方便根据业务需求灵活快速修改，内存稳定在400-500MB。 它根据上次解析时间点通过 [二分查找](http://rubygems.org/gems/logpos) 实现毫秒级定位，并即时批量解析入库，避免了统计报表因数据量大处理时间慢而只能隔天出的弊端，以及重复解析的资源浪费。
 
-#### 相关技巧
+相关技巧
+------------------------------------------
 * 采用批量入库大大节约了带宽开销，入库速度，以及数据库索引优化，入库速度平均达到2万+条日志每分钟。
 * 根据项目对数据精度的不同需求，各自实现了空间时间利用率很高但不百分百精确的bloomfilter或几乎完全精确的SHA加密等不同层级的排重策略。
-* 日志格式通过递增对User-Agent等枚举字段常用标签进行压缩，字段大部分为占用空间极少的整数类型，并通过前缀树快速快速访问。
+* 日志格式通过递增对User-Agent等枚举字段常用标签进行压缩，字段大部分为占用空间极少的整数类型，并通过 [activerecord_idnamecache.gem](http://rubygems.org/gems/activerecord_idnamecache) 内存缓存快速访问。
+* [用C的sscanf和Ruby的正则表达式解析nginx日志性能对比](/2012/12/13/compare-the-performance-of-parsing-nginx-log-via-c-sscanf-and-ruby-regexp/)
 
 
 统计分析架构
@@ -32,7 +34,7 @@ categories: [Mongodb, Android, DataMining, Analysis, DSL]
 统计分析构建在具有MapReduce并发分布式处理的Mongodb数据库和流式管道处理的Shell脚本上，并用Ruby脚本语言进行业务定制。
 
 * 需求场景要求该系统具有快速，并发，容错，数据压缩等几个特性，目前日常Job在50+。
-* 为此构建了灵活的面向业务的DSL，比如简单的一行MapReduce.count EoeDownloadServerNginxLog, [app_id, :channel_id], StatDownloadLogInAppChannel即可对每天几百万下载日志在十几分钟内统计出每个渠道每个应用的下载量，另外可以在语句块里传入特定的处理逻辑以更满足业务需求。在多维统计数据入库时，只记录了有值的部分，高效利用了磁盘空间。
+* 为此构建了灵活的面向业务的DSL，比如简单的一行 `MapReduce.count EoeDownloadServerNginxLog, [app_id, :channel_id], StatDownloadLogInAppChannel` 即可对每天几百万下载日志在十几分钟内统计出每个渠道每个应用的下载量，另外可以在语句块里传入特定的处理逻辑以更满足业务需求。在多维统计数据入库时，只记录了有值的部分，高效利用了磁盘空间。
 * 数据展示 采用Rails web框架开发。用户访问统计时，应用程序先在内存声明空值的多维数组，再填入数据库里有值的部分，最后在浏览器里用图表展示出来，这样有效避免了磁盘IO过慢的问题。
 
 
