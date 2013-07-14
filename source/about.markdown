@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-David Chen (陈大伟), Borned in 1988, a full stack web developer using Ruby and Javascript since 2009.
+David Chen (陈大伟), Born in 1988, a full stack web developer using Ruby and Javascript since 2009 in Beijing.
 ------------------------------------------------
 
 Technology Focus
@@ -19,8 +19,16 @@ Technology Focus
 * Editor/IDE: MacVim, XCode
 * Operating Systems: OS X, Linux(CentOS, Ubuntu, Gentoo)
 * Experience: single page application, API, crawler, CMS, log storage and analysis, realtime chat, DSL design and implement, etc.
-* Learning: Data Mining and Analysis, Erlang, R, C, NoSQL, Algorithm, etc.
+* Learning: Data Mining and Analysis, R, C, NoSQL, Algorithm, Erlang, etc.
 
+Presentations
+------------------------------------------------
+* 2012-06-22, Ruby Saturday in Beijing, [15 gems within two years](http://ruby-china.org/topics/11806)
+* 2011-09-01, Ruby Saturday in Beijing, [Statistical Analysis and The Dark Knight](/statistics-analytics-and-dark-knight)
+
+Open Source
+------------------------------------------------
+See them in [project](/project.html).
 
 Education
 ------------------------------------------------
