@@ -23,8 +23,8 @@ Technology Focus
 
 Presentations
 ------------------------------------------------
-* 2012-06-22, Ruby Saturday in Beijing, [15 gems within two years](http://ruby-china.org/topics/11806)
-* 2011-09-01, Ruby Saturday in Beijing, [Statistical Analysis and The Dark Knight](/statistics-analytics-and-dark-knight)
+* 2013-06-22, Ruby Saturday in Beijing, [15 gems within two years](http://ruby-china.org/topics/11806)
+* 2012-09-01, Ruby Saturday in Beijing, [Statistical Analysis and The Dark Knight](/statistics-analytics-and-dark-knight)
 
 Open Source
 ------------------------------------------------
