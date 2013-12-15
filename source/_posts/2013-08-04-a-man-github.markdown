@@ -61,7 +61,7 @@ Github不是一个人做的，三个核心创始人在创业时都是写代码�
 
 在写单页面应用时，虽然像问答和聊天都独立出去用JavaScript载入了，但是还是需要同时载入几十个变量。[一般人都会反应为什么不整合到Model里去呢](http://ruby-china.org/topics/12477) ，原因是我还把十多个数据合法验证加入到Controller里去了，这里包括后台人员录入的数据不规范和用户访问权限等，出错方式是给出带参数说明的 `redirect_to` URL ，比如 `?reason=course_invalid` ，这样后台可以随时调整并在前端验证。在调整业务的时候，我经常要去调整变量位置，所以就写了类似rake步骤依赖的 [stepstepstep.gem](http://github.com/eoecn/stepstepstep) 去生成自动排序执行的14个before_filters，里面涉及一个图论算法。
 
-这个项目一个很大的特色之一对JSON的运用，比如学习状态，课程信息等。大部分是直接用 [json_record](https://github.com/bdurand/json_record/) 配置的，效果等同于Mongodb文档存储（当然副作用是不能直接用SQL做字段本身的操作了），但是运维只需面对MySQL即可。我把项目设计成基本都是单表操作，现在一个学习页面的载入包含着近50条SQL查询，而响应时间却都还在300ms左右。
+这个项目一个很大的特色之一是对JSON的运用，比如学习状态，课程信息等。大部分是直接用 [json_record](https://github.com/bdurand/json_record/) 配置的，效果等同于MongoDB文档存储（当然副作用是不能直接用SQL做字段本身的操作了），但是运维只需面对MySQL即可。我把项目设计成基本都是单表操作，现在一个学习页面的载入包含着近50条SQL查询，而响应时间却都还在300ms左右。
 
 最后为了给大家一个相对直观的项目复杂度的理解，我运行 `bundle exec rake stats` 对Ruby源码情况做了简单统计，并对比由牛人 @huacnlee 主导开发的 Ruby China专业社区论坛。
 
