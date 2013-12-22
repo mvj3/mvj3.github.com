@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rails 重构，我在阳光书屋的三个月"
+title: "Rails项目 重构，我在阳光书屋的三个月"
 date: 2013-12-16 12:26
 comments: true
 published: true
