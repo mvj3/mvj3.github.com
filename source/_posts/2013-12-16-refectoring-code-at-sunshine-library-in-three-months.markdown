@@ -181,14 +181,14 @@ CloudServer到LocalServer的数据同步是通过JSON API进行的，这个在�
 ## 一些关于重构的想法
 
 * 我个人现在反感给Model添加太多的逻辑，长长的上百行，几百行，我觉得最好只存在module引入的声明，字段的声明，和类似Paperclip等插件DSL的声明，其他处理都依照业务划分到不同的类和模块中。
-* 很多人都误会了 `Slim controllers, fat models` 的本意，它其实只是关于重构箴言一段话里的中间一句。Fat models只是鼓励你DRY(don’t repeat yourself)，实现逻辑共享而已，其次是Model相比Cotroller更有利于测试，因为业务核心的处理往往都是在Model层面。推荐看 [“Fat model, skinny controller” is a load of rubbish](http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/) 。
+* 很多人都误会了 `Fat model, skinny controller` 的本意，它其实只是关于重构箴言一段话里的中间一句。Fat models只是鼓励你DRY(don’t repeat yourself)，实现逻辑共享而已，其次是Model相比Controller更有利于测试，因为业务核心的处理往往都是在Model层面。推荐看 [“Fat model, skinny controller” is a load of rubbish](http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/) 。
 * 三层以上关系一般来说不宜用继承，它超过了[人类理解的复杂度](http://mvj3.github.io/2013/12/15/human-mind-and-software-engineering/)，记住"组合优于继承"。
 * 测试覆盖率，代码坏味道自动发现，scrum开发模式等都不能保证软件项目的质量，唯一可以保证的就是深刻地结合业务与技术，在你的业务里用你的技术再去深层次地抽象出另一个"MVC"模块化的框架结构。
 * 重构的前提是不改变软件的行为，而混乱的代码经由重构后，它的内部结构已经不是之前那个范式了。
 * 当你需要对项目进行重构时，那就说明该项目以前存在某种技术或人员等上的问题。
 * 代码没有被结构化和注释，不是项目时间因素，而是个人水平能力的体现，因为代码结构和注释体现了思考。
 * BUG如果是功能，那就不能修复了，而是要花更多的时间去分析和开发。
-* 除非是为了表达结构，否则不推荐重复代码。我对单行代码有偏爱，比如 `def teacher?; self.user_type == 'teacher'; end` 。
+* 除非是为了表达视觉结构，否则不推荐重复代码。我对单行代码有偏爱，比如 `def teacher?; self.user_type == 'teacher'; end` 。
 * 类似不要在GUI里放入逻辑等，都是模块化的体现。但是很多初级程序员不知道这一点，良好的程序员会注意这一点，而优秀的程序员已经在实践之。
 * 逻辑只是用来证明直观，正是范式的体现。
 * 类似重构原则只是事后补救时说服别人用的，它无益于提升你的编码能力，就像很多人做的和以为的设计模式只是在你有几年工作经验后才会去整理自己知识经验体系用的而已，否则会很难以理解这些设计模式。
@@ -198,7 +198,7 @@ CloudServer到LocalServer的数据同步是通过JSON API进行的，这个在�
 
 ## 为什么我能做到以上重构
 
-其实如果没有四五年的工作经验，没有上半年把 [一个单页应用在线学习应用完全模块化](http://mvj3.github.io/2013/08/04/a-man-github/) 的思考和经验，我可能还只是停留在 `Slim controllers, fat models` 和 翻起Martin Fowler的《重构》手册指导的那种层次而已。
+其实如果没有四五年的工作经验，没有上半年把 [一个单页应用在线学习应用完全模块化](http://mvj3.github.io/2013/08/04/a-man-github/) 的思考和经验，我可能还只是停留在 `Fat model, skinny controller` 和 翻起Martin Fowler的《重构》手册指导的那种层次而已。
 
 ## 其他教育项目的重构
 
