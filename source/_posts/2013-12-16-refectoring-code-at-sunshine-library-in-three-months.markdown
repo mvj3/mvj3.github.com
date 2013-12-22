@@ -7,7 +7,7 @@ published: true
 categories: [Refactoring, Rails]
 ---
 
-### 背景介绍
+## 背景介绍
 
 在 [阳光书屋的官网](http://www.sunshine-library.org) 上写着，“阳光书屋乡村信息教育化行动是一项公益教育计划，我们致力于用科技填补城乡教育鸿沟，以平板电脑为载体，让每一个农村的孩子都接触到优质的教育资源。” 学生和老师用的平板电脑学习机是基于Android移动开源系统的"晓书"，通过独立研发的阳光桌面OEM定制学习环境，并包含阳光电子书包和阳光学习提高班等App来开展混合式教学模式。
 
@@ -15,11 +15,11 @@ categories: [Refactoring, Rails]
 
 重构的事稍后再行一一细说，先简单的过一下前面两代。
 
-### 第一代Rails架构
+## 第一代Rails架构
 
 单独一个Rails程序，借用其中一个志愿开发者 @Logicalmars 的话说，就是"主要用Ruby on Rails写服务器后台。我们这开发人员不多，很多东西都得自己搞，我不光更加理解了RoR，还顺便学习了如何架设Rails的服务器，如何做MySQL Replication，如何向安卓端同步数据库Table等等"。
 
-### 第二代Rails架构
+## 第二代Rails架构
 
 随着业务的细化，需求逐渐被明朗细化为LocalServer和CloudServer两大块。
 
@@ -31,9 +31,9 @@ categories: [Refactoring, Rails]
 
 等业务需求大概确定下来后，剩下来的就是如何用技术实现之，并可以适当的随着业务需求发生变动而更好的迭代之。
 
-### 第二代Rails架构和第三代重构，如何挖坑和填坑
+## 第二代Rails架构和第三代重构，如何挖坑和填坑
 
-#### 面临的挑战
+### 面临的挑战
 
 在 [背景介绍] 的最后提到，我进入该项目时，已经处于紧张的项目上线期。简单的形容一下就是，
 
@@ -45,7 +45,7 @@ categories: [Refactoring, Rails]
 
 完全展开按照线性叙事来讲就太琐碎了，为了给第三者理解上的方便，还是就以下几个重点来分享一下吧。
 
-#### Rails 拆分和合并
+### Rails 拆分和合并
 
 问题：
 
@@ -109,7 +109,7 @@ end
 
 要提一点的是，除了测试可以帮你解决重构是否无误的问题外，请活用 `git grep` 来分析相关的代码调用。
 
-#### 阳光电子书包的同步更新 自动策略
+### 阳光电子书包的同步更新 自动策略
 
 晓书上的电子书包是按 科目(1) <- 章节(n) <- 课时(n) 的组织结构去划分的，每种富媒体资源都是以文件夹形式挂载在最下面的课时节点上。一旦某课时发生变动，就更新自己级其上的章节和科目的时间戳。这样客户端可以定时请求LocalServer，依据时间戳去更新对应结构和数据（删除操作由结构树自己来管理更新）。
 
@@ -117,7 +117,7 @@ end
 
 对此我的解决方案是写了Mongoid的一个插件mongoid_touch_parents_recursively，它依赖Mongoid Model间的关系声明来在 `after_save` 钩子里更新，并解决了多对多和一对多等关系。具体原理请见 [实现文件描述](https://github.com/mvj3/mongoid_touch_parents_recursively/blob/sunshine/lib/mongoid_touch_parents_recursively.rb) 和 [README配置文档](https://github.com/mvj3/mongoid_touch_parents_recursively) 。
 
-#### 课程压缩包的内容优雅的解压缩
+### 课程压缩包的内容优雅的解压缩
 
 在线教育相比其他社交和电子商务等行业，多类型结构的课程数据包含了各种形式的文本，逻辑关联和多媒体文件等，因此提高班的产品owner @fxp 设计了基于JSON格式和文件目录的SchemeFolder来灵活管理课程数据。在导入后台过程中出现了解压缩相关处理代码和课程数据组织逻辑混淆的场面，给二次维护带来一些难解。
 
@@ -125,7 +125,7 @@ end
 
 其中对Paperclip对象的获取是通过对 [Model自省](https://github.com/mvj3/mongoid_unpack_paperclip/blob/sunshine/lib/mongoid_unpack_paperclip.rb#L16) 获得的。
 
-#### JSON API 输出的定制
+### JSON API 输出的定制
 
 之前在面向移动客户端JSON API输出的开发时，有些API都是客户端按自己结构去定义的，而没有针对Model做RESTful输出，实现者用Helper方法对资源进行了递归描述，这样定义起来代码比较冗余和难以公用。限于客户端的设计，这部分只能按原来设计继续维护了。
 
@@ -148,13 +148,13 @@ end
 
 更多见 [active_model_as_json_filter](https://github.com/mvj3/active_model_as_json_filter) 开源项目主页描述。
 
-#### 元数据同步的数据类型兼容
+### 元数据同步的数据类型兼容
 
 CloudServer到LocalServer的数据同步是通过JSON API进行的，这个在上面的前两代Rails架构已经提到了。但是里面遇到的问题是因为MongoDB数据库是SchemeLess的，而且也没有很好的对时间类型做反序列化的支持。比如你给`checked_at`时间字段赋值`2013-11-22 15:43:04 +0800`，保存的还是String类型。
 
 因为时间类型的字段不单单是只有`created_at`和`updated_at`两个Rails默认的字段名，还可能有其他比如上面提到的`checked_at`，如果全部手工定制也就一团乱了，所以最好方法是在配置field时候指定type为DateTime等类型，这样也就可以对Model通过自省来获得在`before_save`时要解析的字段值了。 具体实现见 [mongoid_sync_with_deserialization](https://github.com/mvj3/mongoid_sync_with_deserialization/blob/sunshine/lib/mongoid_sync_with_deserialization.rb#L35) 。
 
-#### Mongoid使用uuid字段进行Model关联
+### Mongoid使用uuid字段进行Model关联
 
 在 #第二代Rails架构# 提到，书屋的资源都是用uuid来标示唯一的，这个在ActiveRecord时期即是如此。
 
@@ -164,7 +164,7 @@ CloudServer到LocalServer的数据同步是通过JSON API进行的，这个在�
 
 因此我也写了 mongoid_many_or_many_to_many_setter 去利用Model之间关联关系自省在`before_save`时 [重新赋值](https://github.com/mvj3/mongoid_many_or_many_to_many_setter/blob/sunshine/lib/mongoid_many_or_many_to_many_setter.rb#L29) 。
 
-#### 同步机制的范式转移
+### 同步机制的范式转移
 
 进入书屋后，遇到的最大问题就是服务器间数据同步不一致，黑盒子，VPN内部因传输冗余媒体文件而导致网络堵塞。
 
@@ -178,7 +178,7 @@ CloudServer到LocalServer的数据同步是通过JSON API进行的，这个在�
 
 总结一点，其实就和NoSQL挑战SQL的情况一样，企业对结构化数据的一致性和方便管理的需求远远大于SchemeLess和高性能。所以技术选型更多是从业务出发，让技术辅助业务，而不是因为技术的某些特性听上去和业务某些场景相符就选择了，应该按业务最本质的结构和最大比例的需求来。
 
-### 一些关于重构的想法
+## 一些关于重构的想法
 
 * 我个人现在反感给Model添加太多的逻辑，长长的上百行，几百行，我觉得最好只存在module引入的声明，字段的声明，和类似Paperclip等插件DSL的声明，其他处理都依照业务划分到不同的类和模块中。
 * 很多人都误会了 `Slim controllers, fat models` 的本意，它其实只是关于重构箴言一段话里的中间一句。Fat models只是鼓励你DRY(don’t repeat yourself)，实现逻辑共享而已，其次是Model相比Cotroller更有利于测试，因为业务核心的处理往往都是在Model层面。推荐看 [“Fat model, skinny controller” is a load of rubbish](http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/) 。
@@ -196,14 +196,14 @@ CloudServer到LocalServer的数据同步是通过JSON API进行的，这个在�
 * 正如《重构》第359页提到的，它的进度应该是，今天一点点，明天一点点。不是一次性全部重构(那就是重写了)，而是每次重构一点点，不断的抽取模块，按当时的业务需求和BUG来，当然其中也可能有依赖，去重构牵扯的功能模块。
 * 关于管理软件的复杂度和理解力的原则和思想方面可以参考我写的另一篇 [人类思维和软件工程学](http://mvj3.github.io/2013/12/15/human-mind-and-software-engineering/) 。
 
-### 为什么我能做到以上重构
+## 为什么我能做到以上重构
 
 其实如果没有四五年的工作经验，没有上半年把 [一个单页应用在线学习应用完全模块化](http://mvj3.github.io/2013/08/04/a-man-github/) 的思考和经验，我可能还只是停留在 `Slim controllers, fat models` 和 翻起Martin Fowler的《重构》手册指导的那种层次而已。
 
-### 其他教育项目的重构
+## 其他教育项目的重构
 
 Rails社区的一个牛人 @yedingding 在今年2013三月也分享了一篇公益项目Re-education做 [重构](http://yedingding.com/2013/03/04/steps-to-refactor-controller-and-models-in-rails-projects.html) 的案例。对于一般规模的Rails项目，[Skinny Controller, Fat Model] 差不多能解决大部分问题了，其次通过适当的Concern(Shared Mixin Module)机制抽取公用部分，再以Delegation Pattern, Service, Presenter，DCI等在MVC不同层面去抽象种种业务逻辑结构。
 
-### 关于MongoDB动态字段的吐槽
+## 关于MongoDB动态字段的吐槽
 
 MongoDB的动态字段被很多人误用为根据业务变动可以随意动态调整了，其实它的最佳场景是类似新鲜事的非结构化数据及其大数据分片，因为它是为 **单collection** 里读写 **单个记录的整体** 而优化设计的。
