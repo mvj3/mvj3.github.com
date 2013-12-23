@@ -26,7 +26,7 @@ Open Source
 * [only_one_rake](http://github.com/mvj3/only_one_rake) ensure only one rake is running at a time.
 * [cross_time_calculation](http://github.com/eoecn/cross_time_calculation) calculate the time of duplication and coverage.
 
-#### ORM(ActiveRecord/Mogoid) related
+#### ORM(ActiveRecord/Mongoid) related
 * [mongoid_uuid_generator](https://github.com/mvj3/mongoid_uuid_generator) 在Mongoid实例初始化后自动生成uuid字段
 * [mongoid_sync_with_deserialization](https://github.com/mvj3/mongoid_sync_with_deserialization) 解决JSON同步数据时，不支持Time等类型序列化的问题
 * [active_model_as_json_filter](https://github.com/mvj3/active_model_as_json_filter) 直接通过配置属性来生成as_json
