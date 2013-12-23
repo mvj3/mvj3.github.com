@@ -7,20 +7,34 @@ sharing: true
 footer: true
 ---
 
-
 Open Source
 ------------------------------------------------
-* [statlysis](http://github.com/eoecn/statlysis) statistical analysis in ruby dsl
+
+#### Featured
+* [statlysis](http://github.com/eoecn/statlysis) Statistical analysis in Ruby DSL
+
+#### Rails Engine or related
 * [faye-online](http://github.com/eoecn/faye-online) Faye online user list and time count
-* [logpos](http://github.com/mvj3/logpos) Use binary search to seek a position in logs.
+* [qa-rails](http://github.com/eoecn/qa-rails) A mini forum provided by only a simple helper, written in Backbone.
 * [videojs_user_track](http://github.com/eoecn/videojs_user_track) monitoring users playing videos.
-* [qa-rails](http://github.com/eoecn/qa-rails) Rails Engine. a mini forum provided by only a simple helper, written in Backbones.js.
+* [distribute_tree](https://github.com/mvj3/distribute_tree) 用于实现单个Cloud和多个Local服务器之间数据共享的 Rails Engine 
 * [stepstepstep](http://github.com/eoecn/stepstepstep) DSL for defining before_filters's dependencies like rake tasks.
-* [activerecord_idnamecache](http://github.com/mvj3/activerecord_idnamecache) Use Mysql AUTO_INCREMENT to support key value cache.
-* [only_one_rake](http://github.com/mvj3/only_one_rake) ensure only one rake is running at a time.
 * [rack_image_assets_cache_control](http://github.com/eoecn/rack_image_assets_cache_control) Cache Control Image Assets in rails development.
+
+#### Utils
+* [logpos](http://github.com/mvj3/logpos) Use binary search to seek a position in logs.
+* [only_one_rake](http://github.com/mvj3/only_one_rake) ensure only one rake is running at a time.
 * [cross_time_calculation](http://github.com/eoecn/cross_time_calculation) calculate the time of duplication and coverage.
+
+#### ORM(ActiveRecord/Mogoid) related
+* [mongoid_uuid_generator](https://github.com/mvj3/mongoid_uuid_generator) 在Mongoid实例初始化后自动生成uuid字段
+* [mongoid_sync_with_deserialization](https://github.com/mvj3/mongoid_sync_with_deserialization) 解决JSON同步数据时，不支持Time等类型序列化的问题
+* [active_model_as_json_filter](https://github.com/mvj3/active_model_as_json_filter) 直接通过配置属性来生成as_json
+* [mongoid_unpack_paperclip](https://github.com/mvj3/mongoid_unpack_paperclip) 给含有paperclip的Mongoid 支持解压缩包和清理的封装
+* [mongoid_touch_parents_recursively](https://github.com/mvj3/mongoid_touch_parents_recursively) touch parents recursively in Mongoid 
+* [activerecord_idnamecache](http://github.com/mvj3/activerecord_idnamecache) Use Mysql AUTO_INCREMENT to support key value cache.
 * [acts_as_time_racing](http://github.com/eoecn/acts_as_time_racing) ActiveRecord plugin which record one item's start and finish time.
+* [mongoid_many_or_many_to_many_setter](https://github.com/mvj3/mongoid_many_or_many_to_many_setter) 在Mongoid里，解决在_id主键存在情况下，通过另外一个uuid键来做多对多，一对多关系的兼容  
 
 Contributions
 ------------------------------------------------
