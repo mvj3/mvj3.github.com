@@ -7,6 +7,10 @@ published: true
 categories: [Refactoring, Rails]
 ---
 
+## 关键主题
+
+Rails 拆分和合并, 重构技术, API定制, Concern Module开发, 分布式系统数据同步, MongoDB数据库设计
+
 ## 背景介绍
 
 在 [阳光书屋的官网](http://www.sunshine-library.org) 上写着，“阳光书屋乡村信息教育化行动是一项公益教育计划，我们致力于用科技填补城乡教育鸿沟，以平板电脑为载体，让每一个农村的孩子都接触到优质的教育资源。” 学生和老师用的平板电脑学习机是基于Android移动开源系统的"晓书"，通过独立研发的阳光桌面OEM定制学习环境，并包含阳光电子书包和阳光学习提高班等App来开展混合式教学模式。
