@@ -28,7 +28,7 @@ Presentations
 
 Open Source
 ------------------------------------------------
-See them in [project](/project.html).
+See them in [projects](/projects.html).
 
 Education
 ------------------------------------------------
