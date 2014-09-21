@@ -13,7 +13,7 @@ group :development do
   gem 'rb-fsevent', '~> 0.9'
   gem 'stringex', '~> 1.4.0'
   gem 'liquid', '~> 2.3.0'
-  gem 'gsl'
+  #gem 'gsl'
 
   gem 'rails', '3.2.13'
   gem 'pry-debugger'
