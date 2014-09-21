@@ -12,15 +12,18 @@ categories: Review
 
 HTTPS://GITHUB.COM/17ZUOYE ，关于我的项目动态大部分都可以从 Github 得知，陆续做了十多个，应该算高产吧，不过没一个 star ，哈哈，应该是交流不足吧，像我这种内向型，又特别羞涩，和别人交流会消耗大量能量的人真的是个难事，会慢慢改善的。
 
-直接列举吧，详细介绍就以后单独写文章了。项目具体功能都见测试吧，基本功能点都覆盖了，README 我太偷懒了。
+直接列举吧，详细介绍就以后单独写文章了。项目具体功能都见测试吧，基本功能点都覆盖了，README 有些我偷懒了。
 
 1. [etl_utils](https://github.com/mvj3/etl_utils) ETL实用工具库。打印进度，缓存，字符处理等等。
 2. [model_cache](https://github.com/17zuoye/model_cache) 直接把 Model instance 持久化缓存到 Model 这个 Dict 里，有 sqlite, shelve, 当然也可以直接 memory 做测试。
 3. [tfidf](https://github.com/17zuoye/tfidf) 常用的数据挖掘方法之一，这个实现核心功能就是加了缓存。
 4. [phrase_recognizer](https://github.com/17zuoye/phrase_recognizer) 英文短语识别器，支持词形变化。也支持复杂点结构，比如 "tie...to...", "...weeks old", 运行效率还是不错的。
-4. [fill_broken_words](https://github.com/17zuoye/fill_broken_words) 针对小学英语里选择把某些字母从答案里填回到破损的题目内容中的数据修复，各种组合算法，算是所有项目里算法复杂度最高的。没时间优化，可能方法包括对组合做下排序或贪婪算法等。
-5. [region_unit_recognizer](https://github.com/17zuoye/region_unit_recognizer) 识别 带有省市区等地址的 企事业单位。
-6. [split_block](https://github.com/17zuoye/split_block) 把英语文本按纯英语，纯符号，纯空格等分块，包含相关模块，好支持fill_broken_words, article_segment 等工作。
+5. [fill_broken_words](https://github.com/17zuoye/fill_broken_words) 针对小学英语里选择把某些字母从答案里填回到破损的题目内容中的数据修复，各种组合算法，算是所有项目里算法复杂度最高的。没时间优化，可能方法包括对组合做下排序或贪婪算法等。
+6. [region_unit_recognizer](https://github.com/17zuoye/region_unit_recognizer) 识别 带有省市区等地址的 企事业单位。
+7. [split_block](https://github.com/17zuoye/split_block) 把英语文本按纯英语，纯符号，纯空格等分块，包含相关模块，好支持fill_broken_words, article_segment 等工作。
+8. [article_segment](https://github.com/17zuoye/article_segment) 数据修复英语文本里带空格的单词，基于别人的库做的。
+
+以上全是Python写的，虽然我之前做了近五年的Ruby项目。
 
 ## 新录题平台
 
