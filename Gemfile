@@ -1,23 +1,23 @@
 source "https://rubygems.org"
 
 group :development do
-  gem 'rake', '~> 10.0'
-  gem 'jekyll', '~> 2.0'
-  gem 'octopress-hooks', '~> 2.2'
-  gem 'octopress-date-format', '~> 2.0'
+  gem 'rake'
+  gem 'jekyll'
+  gem 'octopress-hooks'
+  gem 'octopress-date-format'
   gem 'jekyll-sitemap'
-  gem 'rdiscount', '~> 2.0'
-  gem 'RedCloth', '~> 4.2.9'
-  gem 'haml', '~> 4.0'
-  gem 'compass', '~> 1.0.1'
-  gem 'sass-globbing', '~> 1.0.0'
-  gem 'rb-fsevent', '~> 0.9'
-  gem 'stringex', '~> 1.4.0'
-  gem 'liquid', '~> 2.3.0'
+  gem 'rdiscount'
+  gem 'RedCloth'
+  gem 'haml'
+  gem 'compass'
+  gem 'sass-globbing'
+  gem 'rb-fsevent'
+  gem 'stringex'
+  gem 'liquid'
   #gem 'gsl'
 
-  gem 'rails', '3.2.13'
+  gem 'rails'
   gem 'byebug'
 end
 
-gem 'sinatra', '~> 1.4.2'
+gem 'sinatra'
