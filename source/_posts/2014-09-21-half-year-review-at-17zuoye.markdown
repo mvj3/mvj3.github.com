@@ -15,7 +15,7 @@ HTTPS://GITHUB.COM/17ZUOYE ，关于我的项目动态大部分都可以从 Gith
 直接列举吧，详细介绍就以后单独写文章了。项目具体功能都见测试吧，基本功能点都覆盖了，README 有些我偷懒了。
 
 1. [etl_utils](https://github.com/mvj3/etl_utils) ETL实用工具库。打印进度，缓存，字符处理等等。
-2. [model_cache](https://github.com/17zuoye/model_cache) 直接把 Model instance 持久化缓存到 Model 这个 Dict 里，有 sqlite, shelve, 当然也可以直接 memory 做测试。
+2. [model_cache](https://github.com/17zuoye/model_cache) 直接把 Model instance 持久化缓存到 Model 这个 Dict 里，支持 sqlite, shelve等存储格式, 当然也可以直接 memory 做测试。
 3. [tfidf](https://github.com/17zuoye/tfidf) 常用的数据挖掘方法之一，这个实现核心功能就是加了缓存。
 4. [phrase_recognizer](https://github.com/17zuoye/phrase_recognizer) 英文短语识别器，支持词形变化。也支持复杂点结构，比如 "tie...to...", "...weeks old", 运行效率还是不错的。
 5. [fill_broken_words](https://github.com/17zuoye/fill_broken_words) 针对小学英语里选择把某些字母从答案里填回到破损的题目内容中的数据修复，各种组合算法，算是所有项目里算法复杂度最高的。没时间优化，可能方法包括对组合做下排序或贪婪算法等。
@@ -32,7 +32,7 @@ HTTPS://GITHUB.COM/17ZUOYE ，关于我的项目动态大部分都可以从 Gith
 1. 数据存储在 MongoDB 里，基本是单表设计，但是业务分类很庞大，就是体力活。
 2. 语言框架是 Python 里的 Flask ，插件丰富，从 Rails 直接转过来也不费劲。前期想转 Node.js ，不过被 CTO 劝住了，他应该是对的，项目复杂度不是这种初生生态系统可以控制的。
 3. 前端采用的 Backbone.js ，复杂度堪比后端。顺手写了构造复杂表单编辑和查询的插件 [backbone.brick](https://github.com/mvj3/backbone.brick) ，以及在前端里处理嵌套参数访问的实用库 [normalize_nested_params](https://github.com/mvj3/normalize_nested_params) 。前者没时间整理，模版部分和业务耦合的紧。后者可以通过 bower 或 npm 安装。
-4. 审核模块业务需求也是很复杂的，可能还要考虑到打回等异常处理。最初设计时过于理想主义了，出于之前架构内省的思想，而且假设从前端业务划分来指导后端数据表设计。事实证明这是错的，中间绕了一个大弯，身心疲惫，最后想到老老实实记录每次详细操作解决了，并默认了整个系统可能在任何时候都可能出错。
+4. 审核模块业务需求也是很复杂的，可能还要考虑到打回等异常处理。最初设计时过于理想化了，出于之前架构内省的思想，而且假设从前端业务划分来指导后端数据表设计。事实证明这是错的，中间绕了一个大弯，身心疲惫，最后想到老老实实记录每次详细操作解决了，并默认了整个系统在任何时候都可能出错。
 
 ## 题库排重
 
@@ -44,7 +44,7 @@ HTTPS://GITHUB.COM/17ZUOYE ，关于我的项目动态大部分都可以从 Gith
 
 说起来做这块还真的是我近几年技术生涯顺利过渡来的结果，感谢连华老师对我的悉心指导。对于完全自学进入计算机行业的我，老师就是"互联网大学"，但是数据挖掘这个综合学科一直不得其门，虽然之前也写了 [statlysis](https://github.com/mvj3/statlysis) 统计分析框架，但是概率和线性代数等数学模型一直懵懵懂懂，现在只能说进步一点了吧。
 
-核心结果就是完成了 textmulclassify 多标签抽取框架。算法模型基本来自于连华老师，还有俊晨和李恒。我只贡献了文本相似度，算是一个小优化。可能会开源。
+主要结果就是完成了 textmulclassify 多标签抽取框架。算法模型基本来自于连华老师，还有俊晨和李恒。我只贡献了文本相似度，算是一个小优化。可能会开源。
 
 ## 想做的事情
 
