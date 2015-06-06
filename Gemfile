@@ -16,7 +16,7 @@ group :development do
   #gem 'gsl'
 
   gem 'rails', '3.2.13'
-  gem 'pry-debugger'
+  gem 'byebug'
 end
 
 gem 'sinatra', '~> 1.4.2'
