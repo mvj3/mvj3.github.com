@@ -25,3 +25,9 @@ git@github.com:mvj3/mvj3.github.com.git 是原始git源码库，上传到github.
 1. main blog
 2. statistics-analytics-and-dark-knight
 3. statlysis showterm
+
+
+命令工具
+------------------------------------------
+1. octopress
+2. jekyll
