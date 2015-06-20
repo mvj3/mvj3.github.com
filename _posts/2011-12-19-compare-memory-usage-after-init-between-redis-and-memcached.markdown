@@ -7,13 +7,13 @@ date: 2011-12-19 16:45:09 +08:00
 categories: [redis, memcached, IO]
 ---
 
-{% highlight txt %}
-$ redis-stat 
+{% highlight bash %}
+$ redis-stat
 ------- data ------ --------------------- load -------------------- - child -
-keys       mem      clients blocked requests            connections          
-3          1.30M    1       0       150000 (+150000)    751         
-3          1.30M    1       0       150001 (+1)         751         
-3          1.30M    1       0       150002 (+1)         751       
+keys       mem      clients blocked requests            connections
+3          1.30M    1       0       150000 (+150000)    751
+3          1.30M    1       0       150001 (+1)         751
+3          1.30M    1       0       150002 (+1)         751
 
 $ ps -ef | grep memc
   501 28585     1   0   0:00.00 ??         0:00.00 memcached -d

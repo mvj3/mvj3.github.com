@@ -11,7 +11,7 @@ categories: [Rails, Assets]
 发现一个诡异的现象，Rails在production模式下启动后找不到资源，报如下错误：
 
 
-{% highlight txt %}
+{% highlight html %}
 Started GET "/images/people.jpg" for 127.0.0.1 at Mon Jul 25 14:21:35 +0800 2011
 
 ActionController::RoutingError (No route matches [GET] "/images/people.jpg"):

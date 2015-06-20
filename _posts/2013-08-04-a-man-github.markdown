@@ -65,7 +65,7 @@ Github不是一个人做的，三个核心创始人在创业时都是写代码�
 
 最后为了给大家一个相对直观的项目复杂度的理解，我运行 `bundle exec rake stats` 对Ruby源码情况做了简单统计，并对比由牛人 @huacnlee 主导开发的 Ruby China专业社区论坛。
 
-{% highlight txt %}
+{% highlight html %}
 learn.eoe.cn
 +----------------------+-------+-------+---------+---------+-----+-------+
 | Name                 | Lines |   LOC | Classes | Methods | M/C | LOC/M |
@@ -110,7 +110,7 @@ ruby-china
 假设代码质量和风格差不多的话，从代码量来说 learn.eoe.cn 主体Ruby部分的复杂度是 ruby-china.org 的三分之一 （从Models和Controllers占比来说也是差不多的），对于一个单页应用来说这差不多了。唯一的区别是learn.eoe.cn的控制器方法行数比ruby-china.org大三倍，这和业务逻辑更加复杂有关。（Ruby China得排除基本都是外部静态js的这6908行统计数据。）
 
 另外上午我写了一段Ruby脚本来统计 [learn.eoe.cn Rails项目及其开源项目源码行数](https://gist.github.com/mvj3/6149713) ，结果为：
-{% highlight txt %}
+{% highlight html %}
 [rails_engine_eoe]  Ruby:884 | JavaScript:15 | HAML:0
 [ucenter_authcode]  Ruby:78 | JavaScript:0 | HAML:0
 [rack_image_assets_cache_control]  Ruby:28 | JavaScript:0 | HAML:0

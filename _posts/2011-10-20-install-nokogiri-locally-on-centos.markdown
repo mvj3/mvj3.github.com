@@ -11,16 +11,16 @@ categories: [Ruby, nokogiri, CentOS]
 
 系统信息：
 
-{% highlight txt %}
+{% highlight html %}
 [root@localhost ~]# uname -a
 Linux localhost.localdomain 2.6.18-194.el5 #1 SMP Fri Apr 2 14:58:14 EDT 2010 x86_64 x86_64 x86_64 GNU/Linux
-[root@localhost ~]# cat /proc/version 
+[root@localhost ~]# cat /proc/version
 Linux version 2.6.18-194.el5 (mockbuild@builder10.centos.org) (gcc version 4.1.2 20080704 (Red Hat 4.1.2-48)) #1 SMP Fri Apr 2 14:58:14 EDT 2010
 {% endhighlight %}
 
 卸载并重新安装nokogiri依赖的C库：
 
-{% endhighlight %}bash
+{% highlight bash %}
 sudo yum remove -y libxml2-devel libxslt-devel
 sudo yum install -y libxml2-devel libxslt-devel
 {% endhighlight %}
