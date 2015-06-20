@@ -1,9 +1,0 @@
----
-layout: default
----
-{% assign body = content %}
-<div class="blog_post">
-  <div class="title"><span>[{{ page.date | date:"%Y-%m-%e"}}] ({{page.categories | join:", "}}) </span>   <a href="{{ page.url }}">{{page.title}}</a></div>
-  {{ body }}
-</div>
-{% include disqus.html %}
