@@ -12,7 +12,7 @@ github_username:  mvj3
 simple_search: http://google.com/search
 
 # Build settings
-markdown: rdiscount # [rdiscount, kramdown]
+markdown: kramdown # [rdiscount, kramdown]
 
 # ----------------------- #
 #    Jekyll & Plugins     #

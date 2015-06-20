@@ -23,9 +23,9 @@ rvm不一致的问题还需要查下，推测可能是开启多个SHELL，导致
 assets没有编译
 ----------------------------------------------------
 需要显示指定路径，在config/environments/production.rb里加入
-```ruby
+{% highlight ruby %}
 config.assets.precompile += %w[*js *css]
-```
+{% endhighlight %}
 
 
 development模式下刷新后静态资源不变

@@ -7,7 +7,7 @@ date: 2013-04-17 21:42:44 +08:00
 categories: [Statlysis, Lazy-loading, Proc]
 ---
 
-```ruby
+{% highlight ruby %}
 # encoding: UTF-8
 #
 # 统计分析DSL设计
@@ -97,4 +97,4 @@ __END__
 结果 #<struct count=1>
 时长 3.0秒
 ------------------------------------------
-```
+{% endhighlight %}

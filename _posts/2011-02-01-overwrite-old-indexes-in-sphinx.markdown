@@ -14,7 +14,7 @@ categories: [Sphinx, Index]
 2. 因为sphinx要部署在另外一台独立的机子上，为了方便运维部署和维护，不用安装其他的类似rmagick之类和sphinx无关的软件，就写了一个ruby脚本，用bundler配置安装下gem包，放在cron里定时跑，部分代码如下： 
 
 
-```ruby
+{% highlight ruby %}
 #!/usr/bin/env ruby -rubygems  
 RAILS_ROOT = File.expand_path(File.dirname(__FILE__)) unless defined?(RAILS_ROOT)  
 sphinx_config_yml = RAILS_ROOT + '/config/sphinx.yml'  
@@ -89,4 +89,4 @@ sleep 2 # 马上执行以下会导致delta没有更新到main索引里
 indexes.each do |index|  
   system "/usr/local/bin/indexer --rotate --config #{RAILS_ROOT}/config/production.sphinx.conf --merge #{index.join(' ')} --merge-dst-range sphinx_deleted 0 0"  
 end  
-```
+{% endhighlight %}

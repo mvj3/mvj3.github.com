@@ -10,10 +10,10 @@ categories: [Ruby, Process]
 
 比如自动启动faye服务器, from http://stackoverflow.com/questions/6430437/autorun-the-faye-server-when-i-start-the-rails-server
 
-```ruby
+{% highlight ruby %}
 Thread.new do
   system("bundle exec rackup faye.ru -s thin -E production")
 end
-```
+{% endhighlight %}
 
 如果是Rails/Rack，加入到项目根目录的config.ru，这样在执行console, rake, migration等其他操作时就不用启动这个进程了。

@@ -11,7 +11,7 @@ categories: [Algorithm, Ruby]
 
 姓名一般是由两三个汉字组成，选其顺序且连续的拼音缩略的组合就算匹配成功。
 
-```ruby
+{% highlight ruby %}
 # encoding: UTF-8
 
 require 'chinese_pinyin'
@@ -49,6 +49,6 @@ array.size.times do |x|
 end
 
 as.flatten.join(',')
-```
+{% endhighlight %}
 
 Ruby标准库里的abbr.rb是排除两个英文单词的共同缩略，见http://ruby-doc.org/stdlib/libdoc/abbrev/rdoc/classes/Abbrev.html

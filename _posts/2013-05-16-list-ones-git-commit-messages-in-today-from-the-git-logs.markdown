@@ -7,7 +7,7 @@ date: 2013-05-28 15:28:32 +08:00
 categories: [Git]
 ---
 
-```bash
+{% endhighlight %}bash
 GIT_USERNAME=$(git config --global --get user.name);
 git log --author $GIT_USERNAME --no-merges --after={1.day.ago} |\
        cat |\
@@ -16,4 +16,4 @@ git log --author $GIT_USERNAME --no-merges --after={1.day.ago} |\
        grep -v '^Date: ' |\
        grep -v "^$" |\
        tail -r
-```
+{% endhighlight %}

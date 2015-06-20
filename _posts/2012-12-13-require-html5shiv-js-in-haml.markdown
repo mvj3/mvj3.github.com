@@ -8,7 +8,7 @@ categories: [HTML5, HAML, Javascript]
 ---
 
 
-```haml
+{% endhighlight %}haml
 /[if lt IE 9]
   %script{:src=>"html5shiv/dist/html5shiv.js"}
-```
+{% endhighlight %}

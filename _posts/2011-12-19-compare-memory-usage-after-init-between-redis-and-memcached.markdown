@@ -7,7 +7,7 @@ date: 2011-12-19 16:45:09 +08:00
 categories: [redis, memcached, IO]
 ---
 
-```text
+{% highlight txt %}
 $ redis-stat 
 ------- data ------ --------------------- load -------------------- - child -
 keys       mem      clients blocked requests            connections          
@@ -20,6 +20,6 @@ $ ps -ef | grep memc
   501 28596 15675   0   0:00.00 ttys010    0:00.00 grep memc
 $ vmmap 28585 | tail -n 2
 DefaultMallocZone_0x100065000      18.0M        179      1235K      6%
-```
+{% endhighlight %}
 
 redis默认比memcachd低多了

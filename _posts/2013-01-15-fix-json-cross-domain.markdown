@@ -13,8 +13,8 @@ XMLHttpRequest请求在不同域名下会出现"Access Control Allow Origin not 
 详情见 https://developer.mozilla.org/en/http_access_control
 
 rails控制器的方法加下以下声明即可
-```ruby
+{% highlight ruby %}
 response.header['Access-Control-Allow-Origin'] = '*'
 response.header['Content-Type'] = 'text/javascript'
-```
+{% endhighlight %}
 

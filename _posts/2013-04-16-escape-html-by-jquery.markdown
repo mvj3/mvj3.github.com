@@ -9,11 +9,11 @@ categories: [jQuery]
 
 参考 http://stackoverflow.com/questions/6020714/escape-html-using-jquery
 
-```javascript
+{% endhighlight %}javascript
 escapeHTML = function(text) {
   return $('<div/>').text(text).html();
 }
 
 escapeHTML('<div id="main">');
 // "&lt;div id="main"&gt;"
-```
+{% endhighlight %}

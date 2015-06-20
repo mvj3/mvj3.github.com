@@ -7,7 +7,7 @@ date: 2012-12-13 12:18:30 +08:00
 categories: [Nginx, C, Ruby, Regexp]
 ---
 
-```ruby
+{% highlight ruby %}
 require 'rubygems'
 require 'inline'
  
@@ -58,4 +58,4 @@ c 0.04
 r 0.1
 c 0.05
 r 1.42
-```
+{% endhighlight %}

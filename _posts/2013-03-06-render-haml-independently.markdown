@@ -9,22 +9,22 @@ categories: [HAML, RenderEngine]
 
 对于基本HAML语法可使用下列方法渲染即可
 
-```ruby
+{% highlight ruby %}
 content     = File.read(your_haml_path)
 engine      = Haml::Engine.new(haml_content)
 engine.render
-```
+{% endhighlight %}
 
 如果在content里使用了text_field_tag等view方法，那就需要在给engine指定render的作用域。默认是obj = Object.new，但是这个obj没有text_field_tag方法，所以就需要include ActionPack里对于的View模块，例如
 
-```ruby
+{% highlight ruby %}
 class HomeController < ApplicationController
    include ActionView::Helpers::AssetTagHelper
    include ActionView::Helpers::FormTagHelper
    include ActionView::Helpers::OutputSafetyHelper
 end
 engine.render(HomeController.new)
-```
+{% endhighlight %}
 
 参考文档
 ----------------------------------------------

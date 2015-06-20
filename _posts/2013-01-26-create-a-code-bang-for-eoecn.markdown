@@ -10,13 +10,13 @@ categories: [Code, iMovie, Git]
 ![imovie](/images/imovie.png)
 
 下载安装code swarm，系统环境预备见https://github.com/rictic/code_swarm
-```bash
+{% endhighlight %}bash
 git clone git://github.com/rictic/code_swarm.git && cd code_swarm # 下载源码
 ant # 编译
-```
+{% endhighlight %}
 
 合并多个git仓库
-```bash
+{% endhighlight %}bash
 mkdir eoecn_codebang && cd eoecn_codebang # 创建临时仓库目录，并切换
 git init && git commit --allow-empty-message -am '' --allow-empty # 初始化git环境
 git remote add programmingonline git@eoe.git.server:/opt/datas/git/eoe/programming.online.git # 添加多个git仓库
@@ -28,19 +28,19 @@ export PATH="/Users/mvj3/github/rictic/code_swarm/bin:$PATH" # 把code_swarm的b
 量中
 code_swarm # 不用管他出错提示，只要在运行就可以了。它会在当前目录下生成包含git历史记录信息的.code_swarm/log.xml
 ruby -e 'filename = "/Users/mvj3/eoemobile/code/eoecn_codebang/.code_swarm/log.xml"; File.write(filename, File.read(filename).gsub(/@[^"]*\"/,"\""))' # 在ruby里把无效的email后缀去除。
-```
+{% endhighlight %}
 
 生成一帧一帧的png文件
-```bash
+{% endhighlight %}bash
 pwd   #  先切换回code_swarm项目目录，修改defaults/user.config里的InputFile变量到刚才生成的.code_swarm/log.xml的绝对路径
 ./run.sh defaults/user.config # 如果没错误的话，你就可以frames目录下不断有png生成了。如果量大的话，你会听到电脑的风扇也在狂转了。
-```
+{% endhighlight %}
 
 
 用iMovie制作视频
-```bash
+{% endhighlight %}bash
 ffmpeg -f image2 -r 12 -i ./frames/code_swarm-%05d.png -sameq ./out.mov -pass 2 # 用ffmpeg生成视频，直接iMovie导入这么多png太慢
-```
+{% endhighlight %}
 
 ### iMovie使用总结
 任何视频，音频，字幕操作都是选中后操作，包括时长，大小，变速等。
@@ -54,7 +54,7 @@ ffmpeg -f image2 -r 12 -i ./frames/code_swarm-%05d.png -sameq ./out.mov -pass 2 
 
 
 附上配置文件 user.config
-```bash
+{% endhighlight %}bash
 # Your personal preferences for code_swarm, applied to every visualization
 # you run, unless overridden by the individual visualization's config
 
@@ -158,4 +158,4 @@ IsInputSorted=true
 # OpenGL is experimental. Use at your own risk.
 UseOpenGL=false
 ShowUserName=true
-```
+{% endhighlight %}

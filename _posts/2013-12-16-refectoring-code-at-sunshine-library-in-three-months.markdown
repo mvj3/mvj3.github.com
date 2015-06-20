@@ -66,7 +66,7 @@ Local和Cloud合为一个Rails项目，代码或模块用全局变量判断载�
 
 相关技术细节披露：
 
-```ruby
+{% highlight ruby %}
 # 定义Model功能依不同环境动态载入
 def (Rails::Application).load_extend_model_features
   Dir[Rails.root.join("lib/models/#{LocalCloud.short_name}/*.rb")].each do |path|
@@ -109,7 +109,7 @@ class ApplicationController < ActionController::Base
     (Rails::Application).load_extend_model_features
   end if Rails.env != 'production'
 end
-```
+{% endhighlight %}
 
 要提一点的是，除了测试可以帮你解决重构是否无误的问题外，请活用 `git grep` 来分析相关的代码调用。
 
@@ -135,20 +135,20 @@ end
 
 在LocalServer和CloudServer都做了as_json的覆写，这里交叉公用了一些字段。因此写了 active_model_as_json_filter 来做类似`as_json` options 的配置，比如：
 
-```ruby
+{% highlight ruby %}
 class App
   self.as_json_options.except.add(:classroom_ids)
 end
-```
+{% endhighlight %}
 
 或者配置全局的属性配置，
 
-```ruby
+{% highlight ruby %}
 ActiveModel::AsJsonFilter.finalizer_proc = lambda do |result|
  result['id'] = result['uuid'] if result['uuid']
  return result
 end
-```
+{% endhighlight %}
 
 更多见 [active_model_as_json_filter](https://github.com/mvj3/active_model_as_json_filter) 开源项目主页描述。
 

@@ -9,8 +9,8 @@ categories: [Ruby, HTML]
 
 使用Nokogiri一句就可以搞定！
 
-```ruby
+{% highlight ruby %}
 require 'nokogiri'
 
 Nokogiri::HTML(html).text
-```
+{% endhighlight %}

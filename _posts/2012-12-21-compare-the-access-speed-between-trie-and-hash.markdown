@@ -17,7 +17,7 @@ categories: [Ruby, Trie, Hash, Performace]
 
 用同样的字符串数组来各自构造一万以上元素的Hash和Trie
 ----------------------------
-```ruby
+{% highlight ruby %}
 # gem dependencies: algorithms, nokogiri
 %w[benchmark algorithms open-uri nokogiri].map &method(:require)
 
@@ -36,6 +36,6 @@ end
 hash:      0.010000   0.000000   0.010000 (  0.007240)
 trie:      0.490000   0.010000   0.500000 (  0.503553)
 =end
-```
+{% endhighlight %}
 
 由以上判断，Hash算法的O(1)远比Trie的O(m)快 (m为键的最大长度)，如非类搜索提示的字符串匹配等应用，一般的键值对采用Hash可以保证最快查找单个元素。

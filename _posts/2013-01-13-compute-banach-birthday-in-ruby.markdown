@@ -17,7 +17,7 @@ http://wenwen.soso.com/z/q148660327.htm
 
 Ruby版本解答
 ----------------------------------------
-```ruby
+{% highlight ruby %}
 max_age = 150
 begin_year = 1945-max_age
 possible_birthyears = (0...max_age).map do |age|
@@ -33,7 +33,7 @@ end
 # banach born in 1849, lived 96 years, and died in 1945.
 # banach born in 1892, lived 53 years, and died in 1945.
 # banach born in 1936, lived 9 years, and died in 1945.
-```
+{% endhighlight %}
 
 
 关于巴拿赫
