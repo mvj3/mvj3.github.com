@@ -2,6 +2,7 @@
 layout: post
 title: "持续集成初试随记"
 date: 2015-06-20T15:26:29+08:00
+categories: [Continuous Integration, ]
 ---
 
 ### 强烈建议对于线上的常驻后台服务都加上持续集成。

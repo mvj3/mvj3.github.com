@@ -3,9 +3,10 @@
 
 TODO
 ------------------------------------------
-*    相似性文章lsi选项为何无效
+*    相似性文章 lsi 选项为何无效
 *    主题重新定制
-*    Add Google analysis
+*    Add Google analysis, disqus
+*    tags
 
 mvj3.github.io运作原理
 ------------------------------------------
@@ -30,4 +31,6 @@ git@github.com:mvj3/mvj3.github.com.git 是原始 git 源码库，上传到 gith
 
 命令工具
 ------------------------------------------
-1. jekyll
+```bash
+jekyll
+```
