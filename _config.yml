@@ -5,8 +5,12 @@
 # Site settings
 url: http://mvj3.github.io
 title: 世界的审美！
-subtitle: 物质的奴隶，时尚的仆人，内在的国王，艺术的上帝。
+_subtitle: 物质的奴隶，时尚的仆人，内在的国王，艺术的上帝。
 author: mvj3
+email: mvjome@gmail.com
+description: >
+  An avid open-source full-stack engineer.
+  Works include <a href="http://human-lang.org">Human programming language</a>, <a href="https://github.com/17zuoye/luiti">luiti</a>, and <a href="https://github.com/mvj3/statlysis">statlysis</a>, etc.
 twitter_username: mvj3
 github_username:  mvj3
 simple_search: http://google.com/search

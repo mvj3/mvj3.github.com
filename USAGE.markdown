@@ -5,7 +5,7 @@ TODO
 ------------------------------------------
 *    相似性文章lsi选项为何无效
 *    主题重新定制
-*    http://jekyllrb.com/docs/permalinks/
+*    Add Google analysis
 
 mvj3.github.io运作原理
 ------------------------------------------

@@ -1,14 +1,8 @@
 ---
 layout: page
-title: "projects"
-date: 2013-07-07 11:47
-comments: false
-sharing: true
-footer: true
+title: Projects
+permalink: /projects/
 ---
-
-Open Source
-------------------------------------------------
 
 #### Featured
 * [statlysis](http://github.com/eoecn/statlysis) Statistical analysis in Ruby DSL
@@ -36,8 +30,7 @@ Open Source
 * [acts_as_time_racing](http://github.com/eoecn/acts_as_time_racing) ActiveRecord plugin which record one item's start and finish time.
 * [mongoid_many_or_many_to_many_setter](https://github.com/mvj3/mongoid_many_or_many_to_many_setter) 在Mongoid里，解决在_id主键存在情况下，通过另外一个uuid键来做多对多，一对多关系的兼容  
 
-Contributions
-------------------------------------------------
+#### Contributions
 * [acts_as_paranoid_boolean_column](https://github.com/mvj3/rails3_acts_as_paranoid) Active Record plugin which allows you to hide and restore records without actually deleting them.
 * [markdown-ruby-china](http://github.com/eoecn/markdown-ruby-china) Markdown render API, enhance identification the suffix.
 * [ucenter_authcode](http://github.com/eoecn/ucenter_authcode) decode ucenter user info auth.

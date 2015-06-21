@@ -4,8 +4,7 @@ title: About
 permalink: /about/
 ---
 
-David Chen (陈大伟), Born in 1988, a full stack web developer using Ruby and Javascript since 2009 in Beijing.
-------------------------------------------------
+### David Chen (陈大伟), Born in 1988, a full stack web developer using Ruby and Javascript since 2009 in Beijing.
 
 Technology Focus
 ------------------------------------------------
@@ -25,7 +24,7 @@ Presentations
 
 Open Source
 ------------------------------------------------
-See them in [projects](/projects.html).
+See them in [projects](/projects/).
 
 Education
 ------------------------------------------------
