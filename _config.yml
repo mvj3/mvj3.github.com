@@ -10,7 +10,7 @@ author: mvj3
 email: mvjome@gmail.com
 description: >
   An avid open-source full-stack engineer.
-  Works include [Human programming language](http://human-lang.org), [luiti](https://github.com/17zuoye/luiti), [statlysis](https://github.com/mvj3/statlysis) etc.
+  Works include [Human programming language](http://human-lang.org), [luiti](https://github.com/17zuoye/luiti), and [statlysis](https://github.com/mvj3/statlysis) etc.
 twitter_username: mvj3
 github_username:  mvj3
 simple_search: http://google.com/search
@@ -23,6 +23,7 @@ permalink: /:year/:month/:day/:title.html
 collections:
   static_html:
     output: true
+include: ['_pages']
 
 
 # ----------------------- #
