@@ -26,9 +26,9 @@ Github不是一个人做的，三个核心创始人在创业时都是写代码�
 当 @iceskysl 设计好产品基本原型后，确认学习过程中为单页面应用，因为里面的聊天，问答，考试等的一些操作应该是尽量避免重载页面的。我自告奋勇去设计了学习系统的数据库设计，基本思想上按模块做命名空间切分，课程大纲设计为一个课程包含多个课时，一个课时包含多个小节，小节可以为视频，资料，测评等多种类型，这是内容部分。对应的学生数据则是一个学习数据表绑定一个课程，并关联观看视频监控记录，考试记录，和计时等。这期间，项目组内关于数据结构，或者说课程具体的产品设计需求，经过多次讨论，终于达成思路上的一致。
 
 以下是现在上线后测试服务器里学习页面的多个模块的截图。
-![learn_video](/images/one-man-github/learn_video.png)
-![learn_qa](/images/one-man-github/learn_qa.png)
-![learn_exam](/images/one-man-github/learn_exam.png)
+![learn_video](/images/2013-08-04-one-man-github/learn_video.png)
+![learn_qa](/images/2013-08-04-one-man-github/learn_qa.png)
+![learn_exam](/images/2013-08-04-one-man-github/learn_exam.png)
 
 
 我对架构设计的原则是技术模块化，业务流程化，两者互相解耦。

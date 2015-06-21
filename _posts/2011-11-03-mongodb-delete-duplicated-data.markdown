@@ -13,6 +13,9 @@ categories: [Mongodb, Index, Statistical]
 
 A unique index cannot be created on a key that has pre-existing duplicate values. If you would like to create the index anyway, keeping the first document the database indexes and deleting all subsequent documents that have duplicate values, add the dropDups option
 
-http://www.mongodb.org/display/DOCS/indexes#Indexes-dropDups 
+http://www.mongodb.org/display/DOCS/indexes#Indexes-dropDups
 
-Mongoid对应的参数配置是 , :unique => true, :background => true, :dropDups => true
+Mongoid对应的参数配置是:
+{% highlight ruby %}
+:unique => true, :background => true, :dropDups => true
+{% endhighlight %}

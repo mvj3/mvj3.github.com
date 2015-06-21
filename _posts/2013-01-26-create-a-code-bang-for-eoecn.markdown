@@ -7,9 +7,10 @@ date: 2013-01-26 16:44:15 +08:00
 categories: [Code, iMovie, Git]
 ---
 
-![imovie](/images/imovie.png)
+![imovie](/images/2013-01-26-create-a-code-bang-for-eoecn/imovie.png)
 
-下载安装code swarm，系统环境预备见https://github.com/rictic/code_swarm
+下载安装code swarm，系统环境预备见 https://github.com/rictic/code_swarm
+
 {% highlight bash linenos %}
 git clone git://github.com/rictic/code_swarm.git && cd code_swarm # 下载源码
 ant # 编译

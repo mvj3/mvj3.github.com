@@ -34,7 +34,7 @@ categories: [Mongodb, Android, DataMining, Analysis, DSL]
 统计分析构建在具有MapReduce并发分布式处理的Mongodb数据库和流式管道处理的Shell脚本上，并用Ruby脚本语言进行业务定制。
 
 * 需求场景要求该系统具有快速，并发，容错，数据压缩等几个特性，目前日常Job在50+。
-* 为此构建了灵活的面向业务的DSL，比如简单的一行 `MapReduce.count EoeDownloadServerNginxLog, [app_id, :channel_id], StatDownloadLogInAppChannel` 即可对每天几百万下载日志在十几分钟内统计出每个渠道每个应用的下载量，另外可以在语句块里传入特定的处理逻辑以更满足业务需求。在多维统计数据入库时，只记录了有值的部分，高效利用了磁盘空间。
+* 为此构建了灵活的面向业务的DSL，比如简单的一行 {% highlight ruby %}MapReduce.count EoeDownloadServerNginxLog, [app_id, :channel_id], StatDownloadLogInAppChannel {% endhighlight %} 即可对每天几百万下载日志在十几分钟内统计出每个渠道每个应用的下载量，另外可以在语句块里传入特定的处理逻辑以更满足业务需求。在多维统计数据入库时，只记录了有值的部分，高效利用了磁盘空间。
 * 数据展示 采用Rails web框架开发。用户访问统计时，应用程序先在内存声明空值的多维数组，再填入数据库里有值的部分，最后在浏览器里用图表展示出来，这样有效避免了磁盘IO过慢的问题。
 
 相关演讲

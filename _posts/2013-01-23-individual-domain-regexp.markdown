@@ -7,26 +7,26 @@ date: 2013-01-23 16:35:34 +08:00
 categories: [Ruby, Regexp]
 ---
 
-老大提了个用单个正则表达式来匹配个性域名ID的需求，具体是：3-15个字符，可以用[a-z0-9_\-]字符，必须用数字或者字母开头，且不能是纯数字
+老大提了个用单个正则表达式来匹配个性域名ID的需求，具体是：3-15个字符，可以用 `[a-z0-9_\-]` 字符，必须用数字或者字母开头，且不能是纯数字
 
 让我们来分步化解
-对于，3-15个字符，可以用[a-z0-9_\-]字符，稍微了解点正则表达式的同学马上就可以写出如下正则
+对于，3-15个字符，可以用 `[a-z0-9_\-]` 字符，稍微了解点正则表达式的同学马上就可以写出如下正则
 
-{% highlight ruby linenos %}
+{% highlight ruby %}
 /^[a-z0-9_\-]{3,15}$/i
 {% endhighlight %}
 
 让我们来再加一个条件，必须用数字或者字母开头
-{% highlight ruby linenos %}
+{% highlight ruby %}
 /^[0-9a-z][a-z0-9_\-]{2,14}$/i
 {% endhighlight %}
 
 最后一个条件是，且不能是纯数字。
 
-最初我大概的想到是用 或(|) 来做，一个是数字开头，另一个是字母开头，剩余的是否纯数字在后面判断。但这剩余里还是会遇到判断在哪个位置里已经出现了字母的问题。所以这里就需要正则表达式里非匹配获取的功能了。
+最初我大概的想到是用 "或 `(|) ` " 来做，一个是数字开头，另一个是字母开头，剩余的是否纯数字在后面判断。但这剩余里还是会遇到判断在哪个位置里已经出现了字母的问题。所以这里就需要正则表达式里非匹配获取的功能了。
 
 
-维基百科里给出的是 (?=pattern) ，它表示 匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符「(|)」来组合一个模式的各个部分是很有用。例如「industr(?:y|ies)」就是一个比「industry|industries」更简略的表达式。具体见 [http://zh.wikipedia.org/wiki/正则表达式](http://zh.wikipedia.org/wiki/正则表达式)
+维基百科里给出的是 `(?=pattern)` ，它表示 匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符`「(|)」`来组合一个模式的各个部分是很有用。例如`「industr(?:y|ies)」` 就是一个比`「industry|industries」`更简略的表达式。具体见 [http://zh.wikipedia.org/wiki/正则表达式](http://zh.wikipedia.org/wiki/正则表达式)
 
 stackoverflow里有更通俗的例子 http://stackoverflow.com/questions/1559751/regex-to-make-sure-that-the-string-contains-at-least-one-lower-case-char-upper
 {% highlight javascript linenos %}
@@ -83,7 +83,7 @@ Ruby-China上的讨论 http://ruby-china.org/topics/8383
 -------------------------------------------
 我景仰的大牛 @luikore 给出了易读版
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 /\A
   (?=.*[a-z_\-])    # 不能全是数字
   [0-9a-z]          # 必须用数字或者字母开头
