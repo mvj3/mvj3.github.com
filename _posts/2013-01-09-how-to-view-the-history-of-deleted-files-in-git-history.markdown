@@ -8,6 +8,7 @@ categories: [Git]
 ---
 
 http://stackoverflow.com/questions/3197416/why-doesnt-git-log-foo-work-for-deleted-file-foo
-{% endhighlight %}bash
+
+{% highlight bash linenos %}
 git log --follow -- foo
 {% endhighlight %}

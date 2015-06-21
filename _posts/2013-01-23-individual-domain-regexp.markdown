@@ -12,12 +12,12 @@ categories: [Ruby, Regexp]
 让我们来分步化解
 对于，3-15个字符，可以用[a-z0-9_\-]字符，稍微了解点正则表达式的同学马上就可以写出如下正则
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 /^[a-z0-9_\-]{3,15}$/i
 {% endhighlight %}
 
 让我们来再加一个条件，必须用数字或者字母开头
-{% highlight ruby %}
+{% highlight ruby linenos %}
 /^[0-9a-z][a-z0-9_\-]{2,14}$/i
 {% endhighlight %}
 
@@ -29,7 +29,7 @@ categories: [Ruby, Regexp]
 维基百科里给出的是 (?=pattern) ，它表示 匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符「(|)」来组合一个模式的各个部分是很有用。例如「industr(?:y|ies)」就是一个比「industry|industries」更简略的表达式。具体见 [http://zh.wikipedia.org/wiki/正则表达式](http://zh.wikipedia.org/wiki/正则表达式)
 
 stackoverflow里有更通俗的例子 http://stackoverflow.com/questions/1559751/regex-to-make-sure-that-the-string-contains-at-least-one-lower-case-char-upper
-{% highlight html %}
+{% highlight javascript linenos %}
 ^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$
 A short explanation:
 ^                  // the start of the string

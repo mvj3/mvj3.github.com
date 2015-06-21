@@ -10,13 +10,13 @@ categories: [Code, iMovie, Git]
 ![imovie](/images/imovie.png)
 
 下载安装code swarm，系统环境预备见https://github.com/rictic/code_swarm
-{% endhighlight %}bash
+{% highlight bash linenos %}
 git clone git://github.com/rictic/code_swarm.git && cd code_swarm # 下载源码
 ant # 编译
 {% endhighlight %}
 
 合并多个git仓库
-{% endhighlight %}bash
+{% highlight bash linenos %}
 mkdir eoecn_codebang && cd eoecn_codebang # 创建临时仓库目录，并切换
 git init && git commit --allow-empty-message -am '' --allow-empty # 初始化git环境
 git remote add programmingonline git@eoe.git.server:/opt/datas/git/eoe/programming.online.git # 添加多个git仓库
@@ -31,14 +31,14 @@ ruby -e 'filename = "/Users/mvj3/eoemobile/code/eoecn_codebang/.code_swarm/log.x
 {% endhighlight %}
 
 生成一帧一帧的png文件
-{% endhighlight %}bash
+{% highlight bash linenos %}
 pwd   #  先切换回code_swarm项目目录，修改defaults/user.config里的InputFile变量到刚才生成的.code_swarm/log.xml的绝对路径
 ./run.sh defaults/user.config # 如果没错误的话，你就可以frames目录下不断有png生成了。如果量大的话，你会听到电脑的风扇也在狂转了。
 {% endhighlight %}
 
 
 用iMovie制作视频
-{% endhighlight %}bash
+{% highlight bash linenos %}
 ffmpeg -f image2 -r 12 -i ./frames/code_swarm-%05d.png -sameq ./out.mov -pass 2 # 用ffmpeg生成视频，直接iMovie导入这么多png太慢
 {% endhighlight %}
 
@@ -54,7 +54,7 @@ ffmpeg -f image2 -r 12 -i ./frames/code_swarm-%05d.png -sameq ./out.mov -pass 2 
 
 
 附上配置文件 user.config
-{% endhighlight %}bash
+{% highlight bash linenos %}
 # Your personal preferences for code_swarm, applied to every visualization
 # you run, unless overridden by the individual visualization's config
 

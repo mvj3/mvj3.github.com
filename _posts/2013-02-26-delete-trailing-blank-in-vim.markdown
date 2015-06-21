@@ -9,7 +9,7 @@ categories: [Vim, Tips]
 
 在查看(View)模式下输入
 
-{% endhighlight %}vim
+{% highlight vim %}
 :%s/\s\+$/g
 {% endhighlight %}
 

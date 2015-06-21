@@ -8,11 +8,13 @@ categories: [Ruby, Rails]
 ---
 
 对网站作统计分析时，经常需要对各种文本日志定时进行解析抽取数据，因此有必要确定上次结束解析的位置。[logpos](http://github.com/mvj3/logpos)使用[二分法](http://en.wikipedia.org/wiki/Binary_search_algorithm)进行查找，具体用法如：
-{% highlight ruby %}
+{% highlight ruby linenos %}
 pos = Logpos.seek_pos_before log_path, (RptVerbPathParams.desc(:time).first.try(:time) || Time.at(0))
 {% endhighlight %}
+
 logpos是以Rails默认的日志格式来解析的，但是也可以自己定义一个时间解析器：
-{% highlight ruby %}
+
+{% highlight ruby linenos %}
 lg = Logpos.new
 lg.time_parser = proc do |line|
   line.match(/^Started/) && TIME_PARSER_CLASS.parse(line.split(/for [0-9\.]* at /)[-1])

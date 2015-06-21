@@ -16,6 +16,7 @@ categories: [Memcached]
 ---------------------------------------
 在添加 [用jsbeautifier.org解压缩jing.fm的Web版的js代码
 配置memcached的-I选项以调整每个cache item的最大值。
-{% endhighlight %}sh
+
+{% highlight bash %}
 memcached -I 3m -p 11211 -v -m 512 -d
 {% endhighlight %}

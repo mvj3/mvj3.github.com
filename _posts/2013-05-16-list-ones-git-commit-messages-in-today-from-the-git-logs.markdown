@@ -7,7 +7,7 @@ date: 2013-05-28 15:28:32 +08:00
 categories: [Git]
 ---
 
-{% endhighlight %}bash
+{% highlight bash linenos %}
 GIT_USERNAME=$(git config --global --get user.name);
 git log --author $GIT_USERNAME --no-merges --after={1.day.ago} |\
        cat |\

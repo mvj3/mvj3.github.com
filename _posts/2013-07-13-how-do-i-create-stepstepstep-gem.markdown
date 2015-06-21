@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How do i create stepstepstep gem"
+title: "How do I create stepstepstep gem"
 date: 2013-07-13 16:41
 comments: true
 categories: [Rails, Rake, Algorithm]

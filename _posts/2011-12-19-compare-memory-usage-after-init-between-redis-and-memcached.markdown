@@ -7,7 +7,7 @@ date: 2011-12-19 16:45:09 +08:00
 categories: [redis, memcached, IO]
 ---
 
-{% highlight bash %}
+{% highlight bash linenos %}
 $ redis-stat
 ------- data ------ --------------------- load -------------------- - child -
 keys       mem      clients blocked requests            connections

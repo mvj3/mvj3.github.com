@@ -7,10 +7,10 @@ date: 2012-12-13 12:18:30 +08:00
 categories: [Nginx, C, Ruby, Regexp]
 ---
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 require 'rubygems'
 require 'inline'
- 
+
 class ParseLogInC
   inline do |builder|
     builder.c <<-CODE
@@ -18,20 +18,20 @@ class ParseLogInC
       #include 'stdio.h'f
       static VALUE nginx(VALUE line) {
         VALUE ary = rb_ary_new();
- 
+
         int lt = strlen(STR2CSTR(line));
         char ip_str[24], time_str[26], path[lt > 200 ? lt : 200], i1[4], i2[lt/4];
         sscanf(STR2CSTR(line), "%s - - [%s +0800] %s %s %s", ip_str, time_str, i1, path, i2);
         rb_ary_push(ary, rb_str_new2(ip_str));
         rb_ary_push(ary, rb_str_new2(time_str));
         rb_ary_push(ary, rb_str_new2(path));
- 
+
         return ary;
       }
     CODE
   end
 end
- 
+
 NginxLogRegexp = Regexp.new [
   '((?:\d+\.){3}\d+)', # ip
   '[\ -]*',
@@ -40,7 +40,7 @@ NginxLogRegexp = Regexp.new [
   '([A-Z]*) ', # HTTP verb
   '(.*)', # url
 ].join
- 
+
 @plc = ParseLogInC.new
 [%q(123.159.55.238 - - [28/Aug/2012:00:02:11 +0800] "GET //app?id=26964&client_id=142&channel_id=350 HTTP/1.1" 302 0 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)" "-" ---- download.eoemarket.com),
     %q(113.108.11.51 - - [26/Sep/2012:11:12:46 +0800] "GET //app?id=96061&client_id=140&channel_id=319 HTTP/1.1" 302 0 "http://s.myapp.com/dw_stats.jsp?dt=0&sid=AevJEO5AXd56AEqHdh0oAIlG&sn=4&idx=0&siteId=4&apkid=154699&st=0&url=sHdmymPs30ZhvM4YgPxtls6Sl2gYu8dlvbX4xbgOYKjIcB7FqAKXQLATVWAKd0FGCdLEmN%2FB%2FD%2BF%0AtH7nT7X9TWHPqokJ5nFE2YCDnMBkFNM%3D&key=%E6%89%8B%E6%9C%BA%E6%89%93%E7%A2%9F%E6%9C%BA" "MQQBrowser/3.5/Adr (Linux; U; 2.3.6; zh-cn; HUAWEI U8661 Build/U8661V100R001C17B827;320*480)" "211.138.243.113" ---- download.eoemarket.com),
@@ -50,7 +50,7 @@ NginxLogRegexp = Regexp.new [
   t1 = Time.now; @plc.nginx(l1); puts "c #{(Time.now - t1).to_f*100*100}"
   t2 = Time.now; oa = l1.match(NginxLogRegexp).captures; ary = [oa[0], oa[1], oa[2]]; puts "r #{(Time.now - t2).to_f*100*100}"
 end
- 
+
 __END__
 c 0.14
 r 0.37

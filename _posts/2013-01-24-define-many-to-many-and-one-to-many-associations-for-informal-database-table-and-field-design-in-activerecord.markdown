@@ -17,7 +17,7 @@ Rails里的多对多关系声明极其简单，一句 `has_and_belongs_to_many :
 
 
  先来看下表结构。用户，收藏，代码三个表结构主要部分如下：
-{% endhighlight %}sql
+{% highlight sql linenos %}
 CREATE TABLE `common_member` (
   `uid` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`uid`),
@@ -45,7 +45,7 @@ CREATE TABLE `code_gists` (
 我们接下来的代码逻辑就是查找出目标用户，通过收藏表，来找出该用户的所有代码。
 
 先声明三个model如下：
-{% highlight ruby %}
+{% highlight ruby linenos %}
 class CommonMember < ActiveRecord::Base
   self.table_name = :common_member
 end
@@ -57,7 +57,7 @@ end
 {% endhighlight %}
 
 接着声明三个model之间的关系
-{% highlight ruby %}
+{% highlight ruby linenos %}
 CommonUserFavoriteConditions = "`common_user_favorite`.`is_delete` = 0 AND `common_user_favorite`.`model` = 'code'"
 class CommonMember < ActiveRecord::Base
   has_many :fav_gists, :through => :favs, :order => "`common_user_favorite`.`create_time` DESC", :source => :gist
@@ -75,7 +75,8 @@ end
 
 先声明收藏表(CommonUserFavorite) `belongs_to` 代码表(CodeGist)，指定 收藏表(CommonUserFavorite)  的外键是:itemid，关联的代码表(CodeGist)的主键是:id。示例如：
 `CommonUserFavorite.where(:model => 'code').first.gist`
-{% endhighlight %}sql
+
+{% highlight sql linenos %}
 SELECT `common_user_favorite`.*
         FROM `common_user_favorite`
         WHERE `common_user_favorite`.`model` = 'code'
@@ -88,7 +89,7 @@ SELECT `code_gists`.*
 {% endhighlight %}
 
 再声明代码表(CodeGist) `has_many` 收藏表(CommonUserFavorite) ，指定 收藏表(CommonUserFavorite)  的外键是 :itemid，且查询条件是 `:conditions => ["common_user_favorite.model = 'code'"]` 。示例如： `CodeGist.last.favs`
-{% endhighlight %}sql
+{% highlight sql linenos %}
 SELECT `code_gists`.*
         FROM `code_gists`
         WHERE (`code_gists`.`deleted_at` IS NULL)
@@ -105,7 +106,7 @@ SELECT `common_user_favorite`.*
 最后声明是用户表(CommonMember)对代码表(CodeGist)的has_many 是通过 用户表(CommonMember)对收藏表(CommonUserFavorite)的has_many 和 收藏表(CommonUserFavorite)对代码表(CodeGist)的belongs_to 共同实现的，这两个声明关系分别表述为  `:through => :favs` 和  `:source => :gist`。各自的示例如： 
 
 `cm = CommonMember.where(:uid => 470700).first`
-{% endhighlight %}sql
+{% highlight sql linenos %}
 SELECT `common_member`.*
         FROM `common_member`
         WHERE `common_member`.`uid` = 470700
@@ -113,7 +114,7 @@ SELECT `common_member`.*
 {% endhighlight %}
 
 `cm.fav_gists`
-{% endhighlight %}sql
+{% highlight sql linenos %}
 SELECT `code_gists`.*
         FROM `code_gists`
         INNER JOIN `common_user_favorite`

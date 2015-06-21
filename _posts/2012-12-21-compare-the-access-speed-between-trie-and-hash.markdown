@@ -17,7 +17,7 @@ categories: [Ruby, Trie, Hash, Performace]
 
 用同样的字符串数组来各自构造一万以上元素的Hash和Trie
 ----------------------------
-{% highlight ruby %}
+{% highlight ruby linenos %}
 # gem dependencies: algorithms, nokogiri
 %w[benchmark algorithms open-uri nokogiri].map &method(:require)
 

@@ -13,6 +13,7 @@ simple_search: http://google.com/search
 
 # Build settings
 markdown: kramdown # [rdiscount, kramdown]
+excerpt_separator: ""
 
 # ----------------------- #
 #    Jekyll & Plugins     #

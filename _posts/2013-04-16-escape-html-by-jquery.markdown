@@ -9,7 +9,7 @@ categories: [jQuery]
 
 参考 http://stackoverflow.com/questions/6020714/escape-html-using-jquery
 
-{% endhighlight %}javascript
+{% highlight javascript linenos %}
 escapeHTML = function(text) {
   return $('<div/>').text(text).html();
 }

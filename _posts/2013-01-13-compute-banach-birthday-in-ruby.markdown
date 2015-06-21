@@ -17,7 +17,7 @@ http://wenwen.soso.com/z/q148660327.htm
 
 Ruby版本解答
 ----------------------------------------
-{% highlight ruby %}
+{% highlight ruby linenos %}
 max_age = 150
 begin_year = 1945-max_age
 possible_birthyears = (0...max_age).map do |age|

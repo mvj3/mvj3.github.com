@@ -11,7 +11,7 @@ categories: [Ruby, nokogiri, CentOS]
 
 系统信息：
 
-{% highlight html %}
+{% highlight bash linenos %}
 [root@localhost ~]# uname -a
 Linux localhost.localdomain 2.6.18-194.el5 #1 SMP Fri Apr 2 14:58:14 EDT 2010 x86_64 x86_64 x86_64 GNU/Linux
 [root@localhost ~]# cat /proc/version
@@ -20,7 +20,7 @@ Linux version 2.6.18-194.el5 (mockbuild@builder10.centos.org) (gcc version 4.1.2
 
 卸载并重新安装nokogiri依赖的C库：
 
-{% highlight bash %}
+{% highlight bash linenos %}
 sudo yum remove -y libxml2-devel libxslt-devel
 sudo yum install -y libxml2-devel libxslt-devel
 {% endhighlight %}
@@ -31,7 +31,7 @@ scp /usr/local/rvm/gems/ree-1.8.7-2011.03/cache/*gem root@host:~/gems/
 
 测试代码如下，nokogiri已能正常解析HTML了
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 require 'rubygems'
 %w[nokogiri open-uri].map &method(:require)
 resp = open("http://www.douban.com").read

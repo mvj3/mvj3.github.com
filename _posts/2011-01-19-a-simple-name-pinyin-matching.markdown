@@ -11,7 +11,7 @@ categories: [Algorithm, Ruby]
 
 姓名一般是由两三个汉字组成，选其顺序且连续的拼音缩略的组合就算匹配成功。
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 # encoding: UTF-8
 
 require 'chinese_pinyin'

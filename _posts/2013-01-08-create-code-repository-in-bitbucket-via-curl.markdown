@@ -7,9 +7,8 @@ date: 2013-01-08 17:12:06 +08:00
 categories: [Git, curl, bitbucket]
 ---
 
-{% endhighlight %}bash
+{% highlight bash linenos %}
 curl -k -X POST -d 'name=hello1'\
      --user your@email.com:password
      https://api.bitbucket.org/1.0/repositories -v
 {% endhighlight %}
-

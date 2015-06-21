@@ -9,7 +9,7 @@ categories: [Ruby, HTML]
 
 使用Nokogiri一句就可以搞定！
 
-{% highlight ruby %}
+{% highlight ruby linenos %}
 require 'nokogiri'
 
 Nokogiri::HTML(html).text

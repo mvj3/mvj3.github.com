@@ -12,7 +12,7 @@ categories: [Backbone]
 -------------------------------------
 Backbone的模版和事件绑定原理是输出HTML，供dom操作。然后利用Javascript代理机制进行对应的事件绑定。
 
-{% endhighlight %}javascript
+{% highlight javascript linenos %}
 var QAListTopicView = Backbone.View.extend({
   events: {
     "click li": 'topic_show'
