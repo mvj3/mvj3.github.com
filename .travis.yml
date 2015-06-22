@@ -1,13 +1,15 @@
 language: ruby
 rvm:
-- 2.2
+  - 2.2
 
 # Assume bundler is being used, install step will run `bundle install`.
-script: ./script/cibuild
+script:
+  - ./scripts/cibuild
 
 # branch whitelist
 branches:
   only:
+  - master
   - gh-pages     # test the gh-pages branch
   - /pages-(.*)/ # test every branch which starts with "pages-"
 

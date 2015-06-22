@@ -1,4 +1,4 @@
-http://mvj3.github.io
+http://mvj3.github.io [![Build Status](https://travis-ci.org/mvj3/mvj3.github.com.png)](https://travis-ci.org/mvj3/mvj3.github.com)
 ==========================================
 Thoughts from David Chen @mvj3 .
 
