@@ -9,8 +9,7 @@ permalink: /categories/
   <li><a name="{{ category | first }}">{{ category | first }}</a>
     <ol>
     {% for posts in category %}
-      {% assign sorted_posts = sorted_posts | sort %}
-      {% for post in sorted_posts %}
+      {% for post in posts %}
         {% if post.title %}<li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
       {% endfor %}
     {% endfor %}
