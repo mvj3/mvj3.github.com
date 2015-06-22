@@ -4,9 +4,9 @@
 TODO
 ------------------------------------------
 *    相似性文章 lsi 选项为何无效
-*    主题重新定制
-*    Add Google analysis, disqus
+*    Add disqus
 *    tags
+*    Opensource timeline
 
 mvj3.github.io运作原理
 ------------------------------------------
