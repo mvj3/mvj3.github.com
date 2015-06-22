@@ -20,6 +20,9 @@ markdown: kramdown # [rdiscount, kramdown]
 excerpt_separator: ""  # Fixed via http://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed/
 permalink: /:year/:month/:day/:title.html
 
+paginate: 5
+paginate_path: "blog/page:num"
+
 collections:
   static_html:
     output: true

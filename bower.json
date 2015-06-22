@@ -1,0 +1,29 @@
+{
+  "name": "mvj3.github.io",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mvj3/mvj3.github.com",
+  "authors": [
+    "David Chen <mvjome@gmail.com>"
+  ],
+  "description": "mvj3's website",
+  "main": "main.js",
+  "dependencies": {
+    "bootstrap": "~= 3.3"
+  },
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "mvj3",
+    "tech",
+    "github"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

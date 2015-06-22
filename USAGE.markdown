@@ -4,7 +4,6 @@
 TODO
 ------------------------------------------
 *    相似性文章 lsi 选项为何无效
-*    Add disqus
 *    tags
 *    Opensource timeline
 
