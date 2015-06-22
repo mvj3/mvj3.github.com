@@ -1,0 +1,554 @@
+<!-- 运行方法 haml index.haml > index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=1024' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='统计分析与黑暗骑士' name='description'>
+    <meta content='陈大伟' name='author'>
+    <title>统计分析与黑暗骑士</title>
+    <link href="/favicon.png" rel="icon">
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script src="javascripts/modernizr-2.0.js"></script>
+    <script src="javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src="javascripts/octopress.js" type="text/javascript"></script>
+  </head>
+  <body class='impress-not-supported' style='display:none;'>
+    <div class='fallback-message'>
+      <p>你的浏览器不支持，请使用chrome或safari浏览本网页。此幻灯片在苹果的chrome里呈现效果最好。</p>
+    </div>
+    <div id='impress'>
+      <div class='step' data-rotate='180' data-scale='1' data-x='-2000' data-y='-2000' id='start'>
+        <div style='font-size:150px;font-weight:bold;'>
+          <span class='c_statistics'>统计</span>
+          <span class='c_analytics'>分析</span>
+        </div>
+        <div style='color:#032E3F;margin-left:600px;margin-top:200px;'>陈大伟</div>
+        <div style='color:#032E3F;margin-left:220px;margin-top:20px;'>优亿数据统计分析负责人</div>
+        <div style='color:#032E3F;margin-left:400px;margin-top:20px;'>
+          <a href='http://weibo.com/mvj3'>weibo.com/mvj3</a>
+        </div>
+        <div style='color:#032E3F;margin-left:500px;margin-top:20px;'>2012-07-29</div>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='-4000' data-y='0'>
+        <div class='batman_s' style='background-image:url(images/big_data.jpg)'></div>
+        <h2 class='c_statistics' style='margin-left:60px;'>如何呈现大数据</h2>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='-4000' data-y='-2000'>
+        <div class='batman_s' style='background-image:url(images/three_demissions.jpg)'></div>
+        <h2 class='c_statistics' style='margin-left:60px;'>实时 + 多维</h2>
+      </div>
+      <div class='step' data-rotate='180' data-scale='2' data-x='-4000' data-y='-5000'>
+        <ul class='c_statistics'>
+          <li>统计表结构为 {:time => Time, :app_id => Integer, :channel_id => Integer, :count => Integer}</li>
+          <li>SQL查询 => ORM实例化 => 二维矩阵 => 图表展示</li>
+          <li>相同数据量下磁盘的访问速度比内存延迟三个以上数量级</li>
+        </ul>
+      </div>
+      <div class='step' data-rotate='180' data-scale='2' data-x='-6000' data-y='-4000' id='matrx' style='width:900px;height:640px;'>
+        <div class='c_statistics'>填充图表数据的两种方式</div>
+        <input class='btn' id='full' type='button' value='完整保存各个维度'>
+        <input class='btn' id='sparse' type='button' value='只存非零的，即有下载的'>
+        <table class='table table-striped' id='table_full' style='table-layout:fixed;display:none;font-size:15px;'>
+          <tbody>
+            <thead>
+              <th>某应用</th>
+              <th>1号</th>
+              <th>2号</th>
+              <th>3号</th>
+              <th>4号</th>
+              <th>5号</th>
+              <th>6号</th>
+              <th>7号</th>
+              <th>8号</th>
+              <th>9号</th>
+              <th>10号</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>渠道1</td>
+                <td id='tf_0'></td>
+                <td id='tf_1'></td>
+                <td id='tf_2'></td>
+                <td id='tf_3'></td>
+                <td id='tf_4'></td>
+                <td id='tf_5'></td>
+                <td id='tf_6'></td>
+                <td id='tf_7'></td>
+                <td id='tf_8'></td>
+                <td id='tf_9'></td>
+              </tr>
+              <tr>
+                <td>渠道2</td>
+                <td id='tf_10'></td>
+                <td id='tf_11'></td>
+                <td id='tf_12'></td>
+                <td id='tf_13'></td>
+                <td id='tf_14'></td>
+                <td id='tf_15'></td>
+                <td id='tf_16'></td>
+                <td id='tf_17'></td>
+                <td id='tf_18'></td>
+                <td id='tf_19'></td>
+              </tr>
+              <tr>
+                <td>渠道3</td>
+                <td id='tf_20'></td>
+                <td id='tf_21'></td>
+                <td id='tf_22'></td>
+                <td id='tf_23'></td>
+                <td id='tf_24'></td>
+                <td id='tf_25'></td>
+                <td id='tf_26'></td>
+                <td id='tf_27'></td>
+                <td id='tf_28'></td>
+                <td id='tf_29'></td>
+              </tr>
+              <tr>
+                <td>渠道4</td>
+                <td id='tf_30'></td>
+                <td id='tf_31'></td>
+                <td id='tf_32'></td>
+                <td id='tf_33'></td>
+                <td id='tf_34'></td>
+                <td id='tf_35'></td>
+                <td id='tf_36'></td>
+                <td id='tf_37'></td>
+                <td id='tf_38'></td>
+                <td id='tf_39'></td>
+              </tr>
+              <tr>
+                <td>渠道5</td>
+                <td id='tf_40'></td>
+                <td id='tf_41'></td>
+                <td id='tf_42'></td>
+                <td id='tf_43'></td>
+                <td id='tf_44'></td>
+                <td id='tf_45'></td>
+                <td id='tf_46'></td>
+                <td id='tf_47'></td>
+                <td id='tf_48'></td>
+                <td id='tf_49'></td>
+              </tr>
+              <tr>
+                <td>渠道6</td>
+                <td id='tf_50'></td>
+                <td id='tf_51'></td>
+                <td id='tf_52'></td>
+                <td id='tf_53'></td>
+                <td id='tf_54'></td>
+                <td id='tf_55'></td>
+                <td id='tf_56'></td>
+                <td id='tf_57'></td>
+                <td id='tf_58'></td>
+                <td id='tf_59'></td>
+              </tr>
+              <tr>
+                <td>渠道7</td>
+                <td id='tf_60'></td>
+                <td id='tf_61'></td>
+                <td id='tf_62'></td>
+                <td id='tf_63'></td>
+                <td id='tf_64'></td>
+                <td id='tf_65'></td>
+                <td id='tf_66'></td>
+                <td id='tf_67'></td>
+                <td id='tf_68'></td>
+                <td id='tf_69'></td>
+              </tr>
+              <tr>
+                <td>渠道8</td>
+                <td id='tf_70'></td>
+                <td id='tf_71'></td>
+                <td id='tf_72'></td>
+                <td id='tf_73'></td>
+                <td id='tf_74'></td>
+                <td id='tf_75'></td>
+                <td id='tf_76'></td>
+                <td id='tf_77'></td>
+                <td id='tf_78'></td>
+                <td id='tf_79'></td>
+              </tr>
+              <tr>
+                <td>渠道9</td>
+                <td id='tf_80'></td>
+                <td id='tf_81'></td>
+                <td id='tf_82'></td>
+                <td id='tf_83'></td>
+                <td id='tf_84'></td>
+                <td id='tf_85'></td>
+                <td id='tf_86'></td>
+                <td id='tf_87'></td>
+                <td id='tf_88'></td>
+                <td id='tf_89'></td>
+              </tr>
+              <tr>
+                <td>渠道10</td>
+                <td id='tf_90'></td>
+                <td id='tf_91'></td>
+                <td id='tf_92'></td>
+                <td id='tf_93'></td>
+                <td id='tf_94'></td>
+                <td id='tf_95'></td>
+                <td id='tf_96'></td>
+                <td id='tf_97'></td>
+                <td id='tf_98'></td>
+                <td id='tf_99'></td>
+              </tr>
+            </tbody>
+          </tbody>
+        </table>
+        <table class='table table-striped' id='table_sparse' style='table-layout:fixed;display:none;font-size:15px;'>
+          <tbody>
+            <thead>
+              <th>某应用</th>
+              <th>1号</th>
+              <th>2号</th>
+              <th>3号</th>
+              <th>4号</th>
+              <th>5号</th>
+              <th>6号</th>
+              <th>7号</th>
+              <th>8号</th>
+              <th>9号</th>
+              <th>10号</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>渠道1</td>
+                <td id='ts_0'>0</td>
+                <td id='ts_1'>0</td>
+                <td id='ts_2'>0</td>
+                <td id='ts_3'>0</td>
+                <td id='ts_4'>0</td>
+                <td id='ts_5'>0</td>
+                <td id='ts_6'>0</td>
+                <td id='ts_7'>0</td>
+                <td id='ts_8'>0</td>
+                <td id='ts_9'>0</td>
+              </tr>
+              <tr>
+                <td>渠道2</td>
+                <td id='ts_10'>0</td>
+                <td id='ts_11'>0</td>
+                <td id='ts_12'>0</td>
+                <td id='ts_13'>0</td>
+                <td id='ts_14'>0</td>
+                <td id='ts_15'>0</td>
+                <td id='ts_16'>0</td>
+                <td id='ts_17'>0</td>
+                <td id='ts_18'>0</td>
+                <td id='ts_19'>0</td>
+              </tr>
+              <tr>
+                <td>渠道3</td>
+                <td id='ts_20'>0</td>
+                <td id='ts_21'>0</td>
+                <td id='ts_22'>0</td>
+                <td id='ts_23'>0</td>
+                <td id='ts_24'>0</td>
+                <td id='ts_25'>0</td>
+                <td id='ts_26'>0</td>
+                <td id='ts_27'>0</td>
+                <td id='ts_28'>0</td>
+                <td id='ts_29'>0</td>
+              </tr>
+              <tr>
+                <td>渠道4</td>
+                <td id='ts_30'>0</td>
+                <td id='ts_31'>0</td>
+                <td id='ts_32'>0</td>
+                <td id='ts_33'>0</td>
+                <td id='ts_34'>0</td>
+                <td id='ts_35'>0</td>
+                <td id='ts_36'>0</td>
+                <td id='ts_37'>0</td>
+                <td id='ts_38'>0</td>
+                <td id='ts_39'>0</td>
+              </tr>
+              <tr>
+                <td>渠道5</td>
+                <td id='ts_40'>0</td>
+                <td id='ts_41'>0</td>
+                <td id='ts_42'>0</td>
+                <td id='ts_43'>0</td>
+                <td id='ts_44'>0</td>
+                <td id='ts_45'>0</td>
+                <td id='ts_46'>0</td>
+                <td id='ts_47'>0</td>
+                <td id='ts_48'>0</td>
+                <td id='ts_49'>0</td>
+              </tr>
+              <tr>
+                <td>渠道6</td>
+                <td id='ts_50'>0</td>
+                <td id='ts_51'>0</td>
+                <td id='ts_52'>0</td>
+                <td id='ts_53'>0</td>
+                <td id='ts_54'>0</td>
+                <td id='ts_55'>0</td>
+                <td id='ts_56'>0</td>
+                <td id='ts_57'>0</td>
+                <td id='ts_58'>0</td>
+                <td id='ts_59'>0</td>
+              </tr>
+              <tr>
+                <td>渠道7</td>
+                <td id='ts_60'>0</td>
+                <td id='ts_61'>0</td>
+                <td id='ts_62'>0</td>
+                <td id='ts_63'>0</td>
+                <td id='ts_64'>0</td>
+                <td id='ts_65'>0</td>
+                <td id='ts_66'>0</td>
+                <td id='ts_67'>0</td>
+                <td id='ts_68'>0</td>
+                <td id='ts_69'>0</td>
+              </tr>
+              <tr>
+                <td>渠道8</td>
+                <td id='ts_70'>0</td>
+                <td id='ts_71'>0</td>
+                <td id='ts_72'>0</td>
+                <td id='ts_73'>0</td>
+                <td id='ts_74'>0</td>
+                <td id='ts_75'>0</td>
+                <td id='ts_76'>0</td>
+                <td id='ts_77'>0</td>
+                <td id='ts_78'>0</td>
+                <td id='ts_79'>0</td>
+              </tr>
+              <tr>
+                <td>渠道9</td>
+                <td id='ts_80'>0</td>
+                <td id='ts_81'>0</td>
+                <td id='ts_82'>0</td>
+                <td id='ts_83'>0</td>
+                <td id='ts_84'>0</td>
+                <td id='ts_85'>0</td>
+                <td id='ts_86'>0</td>
+                <td id='ts_87'>0</td>
+                <td id='ts_88'>0</td>
+                <td id='ts_89'>0</td>
+              </tr>
+              <tr>
+                <td>渠道10</td>
+                <td id='ts_90'>0</td>
+                <td id='ts_91'>0</td>
+                <td id='ts_92'>0</td>
+                <td id='ts_93'>0</td>
+                <td id='ts_94'>0</td>
+                <td id='ts_95'>0</td>
+                <td id='ts_96'>0</td>
+                <td id='ts_97'>0</td>
+                <td id='ts_98'>0</td>
+                <td id='ts_99'>0</td>
+              </tr>
+            </tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='2000' data-y='4000'>
+        <div class='batman_a' style='background-image:url(images/clown.jpg);width:800px;'></div>
+        <div class='c_analytics'>
+          <span style='margin-left:-70px;'>又有人开始刷量了！！！</span>
+        </div>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='2000' data-y='6000'>
+        <div class='batman_a' style='background-image:url(images/1.jpg)'></div>
+        <div class='c_analytics'>
+          <h2>1. 收集原始数据</h2>
+          <ul>
+            <li>最大限度保全信息，包括下载时间，IP，User-Agent和Referer等HTTP头信息，应用ID，客户端，渠道，唯一码等设备信息</li>
+            <li>在日志写入后尽快入库，否则可能会被系统删除等</li>
+            <li>数据量占用空间足够小</li>
+          </ul>
+        </div>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='2000' data-y='8000'>
+        <div class='batman_a' style='background-image:url(images/2.jpg)'></div>
+        <div class='c_analytics'>
+          <h2>2. 数据分类</h2>
+          <ul>
+            <li>使用Mongodb的MapReduce功能进行多维数据统计。简单的说就是把计算分散到多机器多进程, 原理介绍参见http://zh.wikipedia.org/wiki/MapReduce</li>
+          </ul>
+        </div>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='2000' data-y='10000'>
+        <div class='batman_a' style='background-image:url(images/3.jpg)'></div>
+        <div class='c_analytics'>
+          <h2>3. 数据对比</h2>
+          <ul>
+            <li>比较各个MapReduce结果，察看哪个更符合特定的刷量模式</li>
+          </ul>
+        </div>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='2000' data-y='12000'>
+        <div class='batman_a' style='background-image:url(images/4.jpg)'></div>
+        <div class='c_analytics'>
+          <h2>4. 数据建模</h2>
+          <ul>
+            <li>保存各个维度的分析数据到不同的统计表</li>
+          </ul>
+        </div>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='2000' data-y='14000'>
+        <div class='batman_a' style='background-image:url(images/5.jpg)'></div>
+        <div class='c_analytics'>
+          <h2>5. 特征值组合</h2>
+          <ul>
+            <li>比如 User-Agent相比其他正常应用分布均匀; 没有客户端, 渠道, 唯一码等信息</li>
+          </ul>
+        </div>
+      </div>
+      <div class='step statistics' data-rotate='180' data-scale='2' data-x='2000' data-y='16000'>
+        <div class='batman_a' style='background-image:url(images/6.jpg)'></div>
+        <div class='c_analytics'>
+          <h2>6. 确定结果</h2>
+          <ul>
+            <li>把怀疑为刷量应用的列表展示在后台，方便运营人员对该应用做警告或下架等处理</li>
+          </ul>
+        </div>
+      </div>
+      <div class='step' data-rotate='180' data-scale='1' data-x='-2000' data-y='2000' id='end' style='color:#032E3F;'>
+        <h2>感谢</h2>
+        <ul>
+          <li>
+            <a href='https://github.com/bartaz/impress.js/'>impress.js</a>
+          </li>
+          <li>
+            <a href='http://movie.douban.com/subject/1851857/'>蝙蝠侠前传2：黑暗骑士 The Dark Knight (2008)</a>
+          </li>
+          <li>
+            <a href='http://www.evanmiller.org/nginx-modules-guide.html'>Emiller's Guide To Nginx Module Development</a>
+          </li>
+          <li>巴赫《马太受难曲》</li>
+          <li>
+            <a href='http://www.colourlovers.com/'>Color Trends + Palettes :: COLOURlovers</a>
+          </li>
+        </ul>
+      </div>
+      <div class='hint'>使用空格键或方向键进行浏览</div>
+    </div>
+    <script src="javascripts/impress.js" type="text/javascript"></script>
+    <link href="stylesheets/impress-demo.css" rel="stylesheet" type="text/css">
+    <style>
+       #impress .step ul li {
+         font-size: 30px;
+       }
+       .btn {
+         font-size: 40px;
+       }
+       #start {
+         text-align: center;
+         line-height: 1;
+       }
+       .statistics {
+         height: 700px;
+         width: 900px;
+         background: #032E3F;
+       }
+       .batman_s {
+         padding: 250px 200px;
+         background-size: 700px 450px;;
+         background-position: center;
+         background-repeat: no-repeat;
+       }
+       .batman_a {
+         width: 600px;
+         height: 400px;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 700px 450px;;
+       }
+       .c_statistics {
+         color: #FF6D06;
+       }
+       ul.c_statistics li {
+         font-size: 30px;
+       }
+       .c_analytics {
+         color: #097C86;
+         padding-left: 120px;
+       }
+       .step {
+         font-family: Helvetica;
+       }
+       .rightFace,
+       .leftFace,
+       .topFace,
+       .backRightFace,
+       .backLeftFace,
+       .bottomFace {
+         width: 700px;
+         height: 700px;
+         background: #032E3F;
+       }
+       .cube .step .c_analytics {
+         margin-left: -120px;
+       }
+       ul {
+         list-style: circle;
+       }
+       .cube .step .c_analytics ul {
+         margin-left: 30px;
+       }
+       .cube .step .c_analytics ul li {
+         font-size: 20px;
+       }
+      
+       table th, table td {
+         width: 130px;
+         font-size: 25px;
+       }
+    </style>
+    <script>
+      $(document).ready(function() {
+        $("body").show();
+        impress().init();
+      
+        var data = [[2, 0, 0, 2, 2, 2, 0, 1, 3, 3], [10, 6, 4, 7, 4, 3, 5, 3, 7, 1], [1, 4, 6, 7, 5, 3, 2, 3, 1, 0], [105, 100, 92, 99, 99, 89, 120, 91, 105, 103], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [8, 3, 3, 10, 5, 6, 10, 7, 5, 4], [9, 5, 4, 3, 6, 7, 8, 4, 9, 8], [1, 0, 0, 0, 0, 0, 3, 2, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [186, 177, 170, 184, 185, 176, 189, 161, 183, 158]];
+        data = $.map(data, function(n) { return n });
+        $("#full").click(function() {
+          $("#table_sparse").hide();
+          $('#table_full td[id^="tf_"]').text('');
+          $("#table_full").show().delay(1000).css("class", "test"); // delay 1s please.
+          var delay_count = 0;
+          $.each(data, function(idx, n) {
+            if (idx % 10 == 0) { delay_count += 1 };
+            setTimeout(function() {
+              $('#table_full td#tf_' + idx).text(n); // .effect('highlight');
+            }, 500*delay_count);
+          });
+        });
+        $("#sparse").click(function() {
+          $("#table_full").hide();
+          $('#table_sparse td[id^="ts_"]').text('0');
+          $("#table_sparse").show().delay(1000).css("class", "test");
+          var delay_count = 0;
+          $.each(data, function(idx, n) {
+            if (n != 0) {
+              delay_count += 1;
+              setTimeout(function() {
+                $('#table_sparse td#ts_' + idx).text(n); // .effect('highlight');
+              }, 300*delay_count);
+            }
+          });
+        });
+      
+      
+        // GA
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33744316-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      
+      });
+    </script>
+  </body>
+</html>

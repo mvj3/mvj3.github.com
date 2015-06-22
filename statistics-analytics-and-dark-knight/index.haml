@@ -1,3 +1,4 @@
+<!-- 运行方法 haml index.haml > index.html -->
 !!!
 %html
   %head
@@ -8,10 +9,10 @@
     %meta{:name => "author", :content => "陈大伟"}
     %title 统计分析与黑暗骑士
     <link href="/favicon.png" rel="icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-    <script src="/javascripts/modernizr-2.0.js"></script>
-    <script src="/javascripts/libs/jquery.min.js" type="text/javascript"></script>
-    <script src="/javascripts/octopress.js" type="text/javascript"></script>
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script src="javascripts/modernizr-2.0.js"></script>
+    <script src="javascripts/jquery.min.js" type="text/javascript"></script>
+    <script src="javascripts/octopress.js" type="text/javascript"></script>
 
 
   %body{:class => "impress-not-supported", :style => "display:none;"}
@@ -29,10 +30,10 @@
         %div{:style => "color:#032E3F;margin-left:500px;margin-top:20px;"} 2012-07-29
 
       .step.statistics{:"data-x" => "-4000", :"data-y" => "0", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_s{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/big_data.jpg)"}
+        .batman_s{:style => "background-image:url(images/big_data.jpg)"}
         %h2.c_statistics{:style => "margin-left:60px;"} 如何呈现大数据
       .step.statistics{:"data-x" => "-4000", :"data-y" => "-2000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_s{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/three_demissions.jpg)"}
+        .batman_s{:style => "background-image:url(images/three_demissions.jpg)"}
         %h2.c_statistics{:style => "margin-left:60px;"} 实时 + 多维
       .step{:"data-x" => "-4000", :"data-y" => "-5000", :"data-rotate" => "180", :"data-scale" => "2"}
         %ul.c_statistics
@@ -74,12 +75,12 @@
 
 
       .step.statistics{:"data-x" => "2000", :"data-y" => "4000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_a{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/clown.jpg);width:800px;"}
+        .batman_a{:style => "background-image:url(images/clown.jpg);width:800px;"}
         .c_analytics
           %span{:style => "margin-left:-70px;"} 又有人开始刷量了！！！
 
       .step.statistics{:"data-x" => "2000", :"data-y" => "6000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_a{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/1.jpg)"}
+        .batman_a{:style => "background-image:url(images/1.jpg)"}
         .c_analytics
           %h2 1. 收集原始数据
           %ul
@@ -87,31 +88,31 @@
             %li 在日志写入后尽快入库，否则可能会被系统删除等
             %li 数据量占用空间足够小
       .step.statistics{:"data-x" => "2000", :"data-y" => "8000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_a{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/2.jpg)"}
+        .batman_a{:style => "background-image:url(images/2.jpg)"}
         .c_analytics
           %h2 2. 数据分类
           %ul
             %li 使用Mongodb的MapReduce功能进行多维数据统计。简单的说就是把计算分散到多机器多进程, 原理介绍参见http://zh.wikipedia.org/wiki/MapReduce
       .step.statistics{:"data-x" => "2000", :"data-y" => "10000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_a{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/3.jpg)"}
+        .batman_a{:style => "background-image:url(images/3.jpg)"}
         .c_analytics
           %h2 3. 数据对比
           %ul
             %li 比较各个MapReduce结果，察看哪个更符合特定的刷量模式
       .step.statistics{:"data-x" => "2000", :"data-y" => "12000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_a{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/4.jpg)"}
+        .batman_a{:style => "background-image:url(images/4.jpg)"}
         .c_analytics
           %h2 4. 数据建模
           %ul
             %li 保存各个维度的分析数据到不同的统计表
       .step.statistics{:"data-x" => "2000", :"data-y" => "14000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_a{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/5.jpg)"}
+        .batman_a{:style => "background-image:url(images/5.jpg)"}
         .c_analytics
           %h2 5. 特征值组合
           %ul
             %li 比如 User-Agent相比其他正常应用分布均匀; 没有客户端, 渠道, 唯一码等信息
       .step.statistics{:"data-x" => "2000", :"data-y" => "16000", :"data-rotate" => "180", :"data-scale" => "2"}
-        .batman_a{:style => "background-image:url(/images/statistics-analytics-and-dark-knight/6.jpg)"}
+        .batman_a{:style => "background-image:url(images/6.jpg)"}
         .c_analytics
           %h2 6. 确定结果
           %ul
@@ -134,8 +135,8 @@
       .hint 使用空格键或方向键进行浏览
 
 
-    <script src="/javascripts/impress.js" type="text/javascript"></script>
-    <link href="/stylesheets/impress-demo.css" rel="stylesheet" type="text/css">
+    <script src="javascripts/impress.js" type="text/javascript"></script>
+    <link href="stylesheets/impress-demo.css" rel="stylesheet" type="text/css">
     :css
        #impress .step ul li {
          font-size: 30px;
