@@ -8,6 +8,8 @@
   "description": "mvj3's website",
   "main": "main.js",
   "dependencies": {
+    "underscore": "",
+    "timesheet.js": "",
     "bootstrap": "~= 3.3"
   },
   "moduleType": [

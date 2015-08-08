@@ -13,6 +13,7 @@ ProjectConfig = {
       "acts_as_time_racing",
       "cross_time_calculation",
       "detdup",
+      "deviantart-douban",
       "distribute_tree",
       "faye-online",
       "fill_broken_words",

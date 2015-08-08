@@ -31,7 +31,7 @@ puts "[read] ... end."
 # select keys
 all_repos_summary = all_repos.map do |repo_orig|
   repo_orig.attrs.slice(*GithubRepoKeys)
-end.uniq.sort_by {|x| x[:name].downcase }
+end.uniq.sort_by {|x| x[:pushed_at] }.reverse
 
 # filter by :selected_repo_names
 all_repos_summary = all_repos_summary.select {|i| ProjectConfig[:selected_repo_names].include? i[:name] }
@@ -40,17 +40,22 @@ all_repos_summary = all_repos_summary.select {|i| ProjectConfig[:selected_repo_n
 prefer_mvj3_repos = all_repos_summary.select {|i| i[:html_url].include? "/mvj3/" }.map {|i| i[:name] }.uniq
 all_repos_summary = all_repos_summary.select {|i| prefer_mvj3_repos.include?(i[:name]) ? i[:html_url].include?("/mvj3/") : true }
 
+# TODO translate some Chinese to English
+
 # 4. transform data
 def timesheet_format(item)
   # example timesheet required data format ['2002', '09/2002', 'A freaking awesome time', 'lorem'],
   return [
-    item[:created_at].to_date.to_s,
-    item[:pushed_at].to_date.to_s,
-    item[:description],
+    item[:created_at].strftime("%m/%Y"),
+    item[:pushed_at].strftime("%m/%Y"),
     item[:name],
+    'ipsum',
+    item[:description],
+    item[:html_url],
   ]
 end
 all_repo_data_in_view = all_repos_summary.map {|i| timesheet_format(i) }
+puts all_repo_data_in_view.inspect
 
 
 
