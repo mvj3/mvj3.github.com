@@ -31,7 +31,7 @@ puts "[read] ... end."
 # select keys
 all_repos_summary = all_repos.map do |repo_orig|
   repo_orig.attrs.slice(*GithubRepoKeys)
-end.uniq.sort_by {|x| x[:pushed_at] }.reverse
+end.uniq.sort_by {|x| x[:created_at] }.reverse
 
 # filter by :selected_repo_names
 all_repos_summary = all_repos_summary.select {|i| ProjectConfig[:selected_repo_names].include? i[:name] }
@@ -41,6 +41,9 @@ prefer_mvj3_repos = all_repos_summary.select {|i| i[:html_url].include? "/mvj3/"
 all_repos_summary = all_repos_summary.select {|i| prefer_mvj3_repos.include?(i[:name]) ? i[:html_url].include?("/mvj3/") : true }
 
 # TODO translate some Chinese to English
+# 1. statlysis
+# 2. logpos date range
+# 3. merge max date range from orig fork
 
 # 4. transform data
 def timesheet_format(item)
