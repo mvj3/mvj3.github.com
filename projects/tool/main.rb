@@ -72,6 +72,17 @@ class Mvj3Project
 
     @selected_repos_data_in_view = @selected_repos_summary_dict.values.sort_by {|x| x[:created_at] }.reverse
     @selected_repos_data_in_view = @selected_repos_data_in_view.map {|i| timesheet_format(i) }
+
+    # used for programming language color, just as Github.com used.
+    @repo_to_language_dict = @all_repos_summary.inject(Hash.new) {|h, i| h[i[:name]] = i[:language]; h }
+    # fix data
+    ["active_model_as_json_filter", "mongoid_many_or_many_to_many_setter", "mongoid_sync_with_deserialization", "mongoid_unpack_paperclip", "mongoid_uuid_generator"].each do |repo|
+      @repo_to_language_dict[repo] = "Ruby"
+    end
+
+    ["draft"].each do |repo|
+      @repo_to_language_dict[repo] = "HTML"
+    end
   end
 
   def merge_from_default_data
@@ -80,6 +91,7 @@ class Mvj3Project
   def print_result
     # 5. jsonify data
     puts @selected_repos_data_in_view.inspect
+    puts @repo_to_language_dict.to_json
 
     require 'byebug'
     byebug

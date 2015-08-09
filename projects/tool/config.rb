@@ -84,5 +84,5 @@ ProjectConfig = {
   ],
   :fork_repos => [
     "videojs_rails",
-  ],
+  ]
 }

@@ -21,7 +21,28 @@ TODO add some introduction
 
 <script>
   $(document).ready(function() {
-    new Timesheet('timesheet', 2013, 2015, repos);
+
+    $.getJSON("/bower_components/github-language-colors/colors.json", function(color_json) {
+      // 1. init Timesheet
+      new Timesheet('timesheet', 2013, 2015, repos);
+
+      // 2. modify programming language color
+      var dom = $("#timesheet");
+
+      // modify timesheet background
+      // dom.css("background-color", "white");
+      // dom.find("div.scale section").css("color", "black");
+
+      _.each(dom.find("li"), function(li) {
+        var repo = $(li).find("span.label").text();
+        var color_render = $(li).find("span.bubble");
+
+        var real_color = color_json[repo_to_language_dict[repo]];
+        color_render.css("background-color", real_color);
+      });
+    });
+
+
   });
 </script>
 
@@ -43,6 +64,8 @@ TODO add some introduction
 
       return array;
     });
+
+    window.repo_to_language_dict = {"activerecord_idnamecache":"Ruby","active_model_as_json_filter":"Ruby","acts_as_time_racing":"Ruby","cross_time_calculation":"Ruby","detdup":"Python","deviantart-douban":"CSS","distribute_tree":"Ruby","faye-online":"Ruby","fill_broken_words":"Python","hangman":"Ruby","ihaveu":"Ruby","install":"Shell","LetPaymentFly":"Ruby","logpos":"Ruby","markdown-ruby-china":"Ruby","markdownizer":"Ruby","mongoid-mapreduce":"Ruby","mongoid-sphinx":"Ruby","mongoid_many_or_many_to_many_setter":"Ruby","draft":"HTML","only_one_rake":"Ruby","pygments.rb":"C","qa-rails":"JavaScript","rack_image_assets_cache_control":"Ruby","rails3_acts_as_paranoid":"Ruby","rake_notifier":"Ruby","simple_bitbucket":"Ruby","statlysis":"Ruby","stepstepstep":"Ruby","ucenter_authcode":"Ruby","videojs_rails":"Ruby","line-tree":"Ruby","mongoid_sync_with_deserialization":"Ruby","mongoid_touch_parents_recursively":"Ruby","mongoid_unpack_paperclip":"Ruby","mongoid_uuid_generator":"Ruby","article_segment":"Python","compare_word":"Python","etl_utils":"Python","lui":"Python","luigi":"Python","luiti":"Python","model_cache":"Python","nested-keys":"JavaScript","normalize_nested_params":"JavaScript","phrase_recognizer":"Python","pyirt":"Python","redmine.chosen.js":"JavaScript","region_unit_recognizer":"Python","rsyncrun":"Python","sample-diff":"CoffeeScript","split_block":"Python","textmulclassify":"Python","tfidf":"Python","validata":"Python","xdeploy":"Python"};
 </script>
 
 

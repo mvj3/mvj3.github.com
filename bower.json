@@ -8,8 +8,9 @@
   "description": "mvj3's website",
   "main": "main.js",
   "dependencies": {
-    "underscore": "",
-    "timesheet.js": "",
+    "github-language-colors": "doda/github-language-colors#92e43d1f2486412b40e6c8d681c0f97568c14922",
+    "underscore": "~= 1.8",
+    "timesheet.js": "sbstjn/timesheet.js#33861ed32c80d677778d77bc2e50f2412028cba2",
     "bootstrap": "~= 3.3"
   },
   "moduleType": [
