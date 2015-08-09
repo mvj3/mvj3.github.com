@@ -39,7 +39,7 @@ $(document).ready(function() {
     // timesheet_dom.find("div.scale section").css("color", "black");
     // timesheet_dom.find("div.scale section").slice(-3).css("width", "200px");
 
-    // modify bubble by projects's programming language color.
+    // 3. modify bubble by projects's programming language color.
     _.each(timesheet_dom.find("li"), function(li) {
       var repo = $(li).find("span.label").text();
       var color_render = $(li).find("span.bubble");
@@ -48,6 +48,7 @@ $(document).ready(function() {
       color_render.css("background-color", real_color);
     });
 
+    // 4. draw programming language trends
     function draw_language_color_picker(timesheet_dom, repo_to_language_dict) {
       var language_to_repos = _.groupBy(_.keys(repo_to_language_dict), function(repo) {
         return repo_to_language_dict[repo];
@@ -78,9 +79,9 @@ $(document).ready(function() {
         "margin-left": "30px",
         "list-style-type": "none",
       });
-      window.labels_dom = labels_dom;
       labels_dom.find("li span.text").css({
         "color": "white",
+        "font-size": "12px",
       });
       /* copy CSS attribute from timesheet .bubble */
       labels_dom.find("li span.label").css({
