@@ -8,25 +8,6 @@ ProjectConfig = {
   :organization_names   => ["mvj3", "human-lang", "eoecn", "SunshineLibrary", "17zuoye"],
 
   :selected_repo_names  => [
-      "activerecord_idnamecache",
-      "active_model_as_json_filter",
-      "acts_as_time_racing",
-      "cross_time_calculation",
-      "detdup",
-      "deviantart-douban",
-      "distribute_tree",
-      "faye-online",
-      "fill_broken_words",
-      "hangman",
-      "ihaveu",
-      "install",
-      "LetPaymentFly",
-      "logpos",
-      "markdown-ruby-china",
-      "mongoid-mapreduce",  # fork
-      "mongoid-sphinx",  # fork
-      "mongoid_many_or_many_to_many_setter",
-
       "active_model_as_json_filter",
       "activerecord_idnamecache",
       "acts_as_time_racing",
@@ -41,7 +22,6 @@ ProjectConfig = {
       "fill_broken_words",
       "hangman",
       "ihaveu",
-      "install",
       "LetPaymentFly",
       "line-tree",  # fork
       "logpos",
@@ -79,10 +59,19 @@ ProjectConfig = {
       "tfidf",
       "ucenter_authcode",  # fork
       "validata",
-      "videojs_rails",
+      "videojs_rails",  # fork
       "xdeploy"
   ],
   :fork_repos => [
-    "videojs_rails",
+    "line-tree",  # fork
+    "luigi",  # fork
+    "markdown-ruby-china",  # fork
+    "mongoid-mapreduce",  # fork
+    "pygments.rb",  # fork
+    "pyirt",  # contribute
+    "rails3_acts_as_paranoid",  # fork
+    "rake_notifier",   # fork
+    "ucenter_authcode",  # fork
+    "videojs_rails",  # fork
   ]
 }

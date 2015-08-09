@@ -32,20 +32,73 @@ $(document).ready(function() {
     new Timesheet('timesheet', 2013, 2015, repos);
 
     // 2. modify programming language color
-    var dom = $("#timesheet");
+    var timesheet_dom = $("#timesheet");
 
-    // modify timesheet background
-    // dom.css("background-color", "white");
-    // dom.find("div.scale section").css("color", "black");
+    // modify timesheet CSS background
+    // timesheet_dom.css("background-color", "white");
+    // timesheet_dom.find("div.scale section").css("color", "black");
+    // timesheet_dom.find("div.scale section").slice(-3).css("width", "200px");
 
-    _.each(dom.find("li"), function(li) {
+    // modify bubble by projects's programming language color.
+    _.each(timesheet_dom.find("li"), function(li) {
       var repo = $(li).find("span.label").text();
       var color_render = $(li).find("span.bubble");
 
       var real_color = color_json[repo_to_language_dict[repo]];
       color_render.css("background-color", real_color);
     });
-  });
 
+    function draw_language_color_picker(timesheet_dom, repo_to_language_dict) {
+      var language_to_repos = _.groupBy(_.keys(repo_to_language_dict), function(repo) {
+        return repo_to_language_dict[repo];
+      });
+      var languages_sorted = _.sortBy(_.keys(language_to_repos), function(language) {
+        return 0 - (language_to_repos[language].length);
+      });
+
+      var label_template = _.template(""
+        + "<li>"
+        + "<span class='label' style='background-color:<%= color %>;'></span>"
+        + "<span class='text'><%= language %>: <%= count %></span>"
+        + "</li>");
+      var labels = _.map(languages_sorted, function(language) {
+        return label_template({
+          "color": color_json[language],
+          "language": language,
+          "count": language_to_repos[language].length
+        });
+      });
+
+      var labels_dom = $("<ul id='language_labels'>" + labels.join("") + "</ul>");
+      /* put this labels div at the top left of this timesheet. */
+      labels_dom.css({
+        "z-index": "100",
+        "position": "absolute",
+        "margin-top": "30px",
+        "margin-left": "30px",
+        "list-style-type": "none",
+      });
+      window.labels_dom = labels_dom;
+      labels_dom.find("li span.text").css({
+        "color": "white",
+      });
+      /* copy CSS attribute from timesheet .bubble */
+      labels_dom.find("li span.label").css({
+        "width": "42px",
+        "height": "7px",
+        "display": "block",
+        "float": "left",
+        "position": "relative",
+        "top": "7px",
+        "border-radius": "4px",
+        "margin": "0 10px 0 0",
+        "opacity": "0.7",
+      });
+
+      timesheet_dom.prepend(labels_dom);
+    };
+    draw_language_color_picker(timesheet_dom, repo_to_language_dict);
+
+  });
 
 });
