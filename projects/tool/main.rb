@@ -92,6 +92,7 @@ class Mvj3Project
     # 5. jsonify data
     puts @selected_repos_data_in_view.inspect
     puts @repo_to_language_dict.to_json
+    print ProjectConfig[:fork_repos].inspect
 
     require 'byebug'
     byebug
