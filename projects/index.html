@@ -21,7 +21,6 @@ TODO add some introduction
 
 <script>
   $(document).ready(function() {
-
     $.getJSON("/bower_components/github-language-colors/colors.json", function(color_json) {
       // 1. init Timesheet
       new Timesheet('timesheet', 2013, 2015, repos);
@@ -66,10 +65,14 @@ TODO add some introduction
     });
 
     window.repo_to_language_dict = {"activerecord_idnamecache":"Ruby","active_model_as_json_filter":"Ruby","acts_as_time_racing":"Ruby","cross_time_calculation":"Ruby","detdup":"Python","deviantart-douban":"CSS","distribute_tree":"Ruby","faye-online":"Ruby","fill_broken_words":"Python","hangman":"Ruby","ihaveu":"Ruby","install":"Shell","LetPaymentFly":"Ruby","logpos":"Ruby","markdown-ruby-china":"Ruby","markdownizer":"Ruby","mongoid-mapreduce":"Ruby","mongoid-sphinx":"Ruby","mongoid_many_or_many_to_many_setter":"Ruby","draft":"HTML","only_one_rake":"Ruby","pygments.rb":"C","qa-rails":"JavaScript","rack_image_assets_cache_control":"Ruby","rails3_acts_as_paranoid":"Ruby","rake_notifier":"Ruby","simple_bitbucket":"Ruby","statlysis":"Ruby","stepstepstep":"Ruby","ucenter_authcode":"Ruby","videojs_rails":"Ruby","line-tree":"Ruby","mongoid_sync_with_deserialization":"Ruby","mongoid_touch_parents_recursively":"Ruby","mongoid_unpack_paperclip":"Ruby","mongoid_uuid_generator":"Ruby","article_segment":"Python","compare_word":"Python","etl_utils":"Python","lui":"Python","luigi":"Python","luiti":"Python","model_cache":"Python","nested-keys":"JavaScript","normalize_nested_params":"JavaScript","phrase_recognizer":"Python","pyirt":"Python","redmine.chosen.js":"JavaScript","region_unit_recognizer":"Python","rsyncrun":"Python","sample-diff":"CoffeeScript","split_block":"Python","textmulclassify":"Python","tfidf":"Python","validata":"Python","xdeploy":"Python"};
+
+  var title = $(".post").find(".post-header .post-title");
+  title.html("David Chen @mvj3 has created " + repos.length + " open source projects since 2009 ...");
+  title.css("font-size", "18px");
 </script>
 
 
-<div style="display:none;">
+<pre>
 #### Featured
 * [statlysis](http://github.com/eoecn/statlysis) Statistical analysis in Ruby DSL
 
@@ -101,4 +104,4 @@ TODO add some introduction
 * [markdown-ruby-china](http://github.com/eoecn/markdown-ruby-china) Markdown render API, enhance identification the suffix.
 * [ucenter_authcode](http://github.com/eoecn/ucenter_authcode) decode ucenter user info auth.
 * [rake_notifier](http://github.com/eoecn/rake_notifier) Notify of Rake exceptions via email.
-</div>
+</pre>
