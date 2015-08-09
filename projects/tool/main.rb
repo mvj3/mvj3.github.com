@@ -19,12 +19,12 @@ all_organizations = all_organization_names.map {|name| Octokit.user name }
 
 
 # 2. get data from github
-puts "[info] read from remote begin ..."
+puts "[info] read data from github, begin ..."
 all_repos = all_organizations.map do |organization|
   repos = organization.rels[:repos].get.data
   repos
 end.flatten
-puts "[read] ... end."
+puts "[read] ... end"
 
 
 # 3. clean data
@@ -36,14 +36,26 @@ end.uniq.sort_by {|x| x[:created_at] }.reverse
 # filter by :selected_repo_names
 all_repos_summary = all_repos_summary.select {|i| ProjectConfig[:selected_repo_names].include? i[:name] }
 
-# remote duplicated data
+# remove duplicated data
 prefer_mvj3_repos = all_repos_summary.select {|i| i[:html_url].include? "/mvj3/" }.map {|i| i[:name] }.uniq
-all_repos_summary = all_repos_summary.select {|i| prefer_mvj3_repos.include?(i[:name]) ? i[:html_url].include?("/mvj3/") : true }
+selected_repos_summary = all_repos_summary.select {|i| prefer_mvj3_repos.include?(i[:name]) ? i[:html_url].include?("/mvj3/") : true }
+
+# merge max date range from orig fork
+selected_repos_summary_dict = selected_repos_summary.inject(Hash.new) {|hash, item| hash[item[:name]] = item; hash }
+all_repos_summary.each do |orig_item|
+  if orig_item[:created_at] < selected_repos_summary_dict[orig_item[:name]][:created_at]
+      selected_repos_summary_dict[orig_item[:name]][:created_at] = orig_item[:created_at]
+  end
+
+  if orig_item[:pushed_at] > selected_repos_summary_dict[orig_item[:name]][:pushed_at]
+      selected_repos_summary_dict[orig_item[:name]][:pushed_at] = orig_item[:pushed_at]
+  end
+end
+
 
 # TODO translate some Chinese to English
 # 1. statlysis
 # 2. logpos date range
-# 3. merge max date range from orig fork
 
 # 4. transform data
 def timesheet_format(item)
@@ -57,8 +69,8 @@ def timesheet_format(item)
     item[:html_url],
   ]
 end
-all_repo_data_in_view = all_repos_summary.map {|i| timesheet_format(i) }
-puts all_repo_data_in_view.inspect
+selected_repos_data_in_view = selected_repos_summary.map {|i| timesheet_format(i) }
+puts selected_repos_data_in_view.inspect
 
 
 
