@@ -4,6 +4,9 @@ require 'octokit'
 require_relative "config"
 require 'active_support/core_ext/hash/slice'
 
+# TODO translate some Chinese to English
+# TODO adjust 2014 2015 with more width
+
 
 class Mvj3Project
 
@@ -67,12 +70,6 @@ class Mvj3Project
     # fix data
     @selected_repos_summary_dict["deviantart-douban"][:created_at] = Time.parse("Dec 10, 2009")
 
-    # TODO translate some Chinese to English
-    # TODO adjust 2014 2015 with more width
-
-    require 'byebug'
-    byebug
-
     @selected_repos_data_in_view = @selected_repos_summary_dict.values.sort_by {|x| x[:created_at] }.reverse
     @selected_repos_data_in_view = @selected_repos_data_in_view.map {|i| timesheet_format(i) }
   end
@@ -83,6 +80,9 @@ class Mvj3Project
   def print_result
     # 5. jsonify data
     puts @selected_repos_data_in_view.inspect
+
+    require 'byebug'
+    byebug
   end
 
   private
@@ -102,4 +102,3 @@ end
 
 mp = Mvj3Project.new
 mp.run
-

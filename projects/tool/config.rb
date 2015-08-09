@@ -82,4 +82,7 @@ ProjectConfig = {
       "videojs_rails",
       "xdeploy"
   ],
+  :fork_repos => [
+    "videojs_rails",
+  ],
 }
