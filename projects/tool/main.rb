@@ -60,8 +60,9 @@ class Mvj3Project
     @all_repos_summary = @all_repos_summary.select {|i| ProjectConfig[:selected_repo_names].include? i[:name] }
 
     # remove duplicated data
-    prefer_mvj3_repos = @all_repos_summary.select {|i| i[:html_url].include? "/mvj3/" }.map {|i| i[:name] }.uniq
-    selected_repos_summary = @all_repos_summary.select {|i| prefer_mvj3_repos.include?(i[:name]) ? i[:html_url].include?("/mvj3/") : true }
+    prefer_regexp = /\/mvj3\/|\/luiti\//i  # compact with uppercase
+    prefered_repos = @all_repos_summary.select {|i| prefer_regexp.match(i[:html_url]) }.map {|i| i[:name] }.uniq
+    selected_repos_summary = @all_repos_summary.select {|i| prefered_repos.include?(i[:name]) ? prefer_regexp.match(i[:html_url]) : true }
 
     # merge max date range from orig fork
     @selected_repos_summary_dict = selected_repos_summary.inject(Hash.new) {|hash, item| hash[item[:name]] = item; hash }

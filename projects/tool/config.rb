@@ -5,7 +5,7 @@ ProjectConfig = {
   :github_login         => "mvj3",
   :github_password      => ENV["GITHUB_PASSWORD"],
 
-  :organization_names   => ["mvj3", "human-lang", "eoecn", "SunshineLibrary", "17zuoye"],
+  :organization_names   => ["mvj3", "luiti", "human-lang", "17zuoye", "SunshineLibrary", "eoecn"],
 
   :selected_repo_names  => [
       "active_model_as_json_filter",
