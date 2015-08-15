@@ -4,6 +4,60 @@ window.fork_repos = ["line-tree", "luigi", "markdownizer", "markdown-ruby-china"
 
 
 
+window.repo_to_homepage = _.reduce(orig_data, function(dict, item) {
+  dict[item[2]] = item[5];
+  return dict;
+}, {});
+
+// Define project weight
+orig_repo_weights = {
+  "42": [
+    "luiti",
+  ],
+  "30": [
+    "detdup",
+    "textmulclassify",
+    "statlysis",
+  ],
+  "20": [
+    "rsyncrun",
+    "tfidf",
+    "phrase_recognizer",
+    "fill_broken_words",
+    "region_unit_recognizer",
+    "model_cache",
+    "etl_utils",
+
+    "sample-diff",
+
+    "active_model_as_json_filter",
+    "hangman",
+    "qa-rails",
+    "faye-online",
+    "activerecord_idnamecache",
+  ],
+  "17": [
+    "validata",
+
+    "distribute_tree",
+    "mongoid_touch_parents_recursively",
+    "mongoid_unpack_paperclip",
+    "mongoid_sync_with_deserialization",
+    "mongoid_uuid_generator",
+    "mongoid_touch_parents_recursively",
+    "logpos",
+
+    "deviantart-douban",
+  ]
+};
+window.repo_weights = {};  // export API
+_.each(_.keys(orig_repo_weights), function(font_size) {
+  _.each(orig_repo_weights["" + font_size], function(repo_name) {
+    repo_weights[repo_name] = "" + font_size + "px";
+  });
+});
+
+
 window.repos = _.map(orig_data, function(array) { return array.slice(0, 4); });
 window.repos = _.map(repos, function(array) {
   var date_begin = array[0];
@@ -31,6 +85,7 @@ title.html(title_template({
   "open_source_by_self": repos.length - fork_repos.length,
   "open_source_by_fork": fork_repos.length,
 }));
+var repo_url = _.template("<a href='<%= repo_url %>' target='_blank' style='font-size:<%= font_size %>;'><%= repo_name %></a>");
 title.css("font-size", "18px");
 
 
@@ -47,13 +102,18 @@ $(document).ready(function() {
     // timesheet_dom.find("div.scale section").css("color", "black");
     // timesheet_dom.find("div.scale section").slice(-3).css("width", "200px");
 
-    // 3. modify bubble by projects's programming language color.
+    // 3. modify bubble
     _.each(timesheet_dom.find("li"), function(li) {
-      var repo = $(li).find("span.label").text();
+      var repo = $(li).find("span.label");
+      var repo_name = repo.text();
       var color_render = $(li).find("span.bubble");
 
-      var real_color = color_json[repo_to_language_dict[repo]];
+      // 3.1. by projects's programming language color
+      var real_color = color_json[repo_to_language_dict[repo_name]];
       color_render.css("background-color", real_color);
+
+      // 3.2. add url
+      repo.html(repo_url({"repo_name": repo_name, "repo_url": repo_to_homepage[repo_name], "font_size": repo_weights[repo_name]}));
     });
 
     // 4. draw programming language trends
