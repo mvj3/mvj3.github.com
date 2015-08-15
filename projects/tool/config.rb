@@ -17,13 +17,12 @@ ProjectConfig = {
       "detdup",
       "deviantart-douban",
       "distribute_tree",
-      "draft",
+      # "draft",  # actually it's not yet open sourced, it's owned by @mvj3.
       "etl_utils",
       "examples",
       "faye-online",
       "fill_broken_words",
       "hangman",
-      "ihaveu",
       "LetPaymentFly",
       "line-tree",  # fork
       "logpos",
@@ -31,7 +30,7 @@ ProjectConfig = {
       "luigi",  # fork
       "luiti",
       "markdown-ruby-china",  # fork
-      "markdownizer",
+      "markdownizer",  # fork
       "model_cache",
       "mongoid-mapreduce",  # fork
       "mongoid_many_or_many_to_many_setter",
@@ -39,10 +38,14 @@ ProjectConfig = {
       "mongoid_touch_parents_recursively",
       "mongoid_unpack_paperclip",
       "mongoid_uuid_generator",
-      "mvj3shell",
+      # "mvj3shell",
       "nested-keys",
       "normalize_nested_params",
       "only_one_rake",
+
+      "oracle_interview_calculation",
+      # NOTE oracle_interview_calculation dont appear, even with Octokit.auto_paginate enabled
+
       "phrase_recognizer",
       "pygments.rb",  # fork
       "pyirt",  # contribute
@@ -63,11 +66,12 @@ ProjectConfig = {
       "ucenter_authcode",  # fork
       "validata",
       "videojs_rails",  # fork
-      "xdeploy"
+      # "xdeploy"
   ],
   :fork_repos => [
     "line-tree",  # fork
     "luigi",  # fork
+    "markdownizer",  # fork
     "markdown-ruby-china",  # fork
     "mongoid-mapreduce",  # fork
     "pygments.rb",  # fork

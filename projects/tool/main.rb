@@ -16,6 +16,11 @@ class Mvj3Project
   attr :selected_repos_data_in_view, :all_repos
 
   def run
+    puts "### open sources projects"
+    puts "self: #{ProjectConfig[:selected_repo_names].size - ProjectConfig[:fork_repos].size}"
+    puts "fork: #{ProjectConfig[:fork_repos].size}"
+    puts
+
     Steps.each_with_index do |step, idx|
       puts "\n[step##{idx + 1}] #{step.to_s.gsub('_', ' ')}"
       self.send(step)
@@ -27,6 +32,9 @@ class Mvj3Project
       c.login    = ProjectConfig[:github_login]
       c.password = ProjectConfig[:github_password]
     end
+
+    # https://github.com/octokit/octokit.rb#auto-pagination
+    Octokit.auto_paginate = true
 
     puts "[info] login github ..."
     all_organization_names = ProjectConfig[:organization_names]
@@ -69,6 +77,14 @@ class Mvj3Project
 
     # fix data
     @selected_repos_summary_dict["deviantart-douban"][:created_at] = Time.parse("Dec 10, 2009")
+    @selected_repos_summary_dict["oracle_interview_calculation"] = Hash.new
+    @selected_repos_summary_dict["oracle_interview_calculation"][:name] = "oracle_interview_calculation"
+    @selected_repos_summary_dict["oracle_interview_calculation"][:description] = "简单来说，我想通过这个作品来向社区呼吁，雇主应该少让弱势应聘者浪费时间去做这些无聊的面试题，因为每个人的时间都很宝贵。"
+    @selected_repos_summary_dict["oracle_interview_calculation"][:html_url] = "https://github.com/mvj3/oracle_interview_calculation"
+    @selected_repos_summary_dict["oracle_interview_calculation"][:created_at] = Time.parse("Apr 18, 2015")
+    @selected_repos_summary_dict["oracle_interview_calculation"][:updated_at] = Time.parse("Apr 18, 2015")
+    @selected_repos_summary_dict["oracle_interview_calculation"][:pushed_at] = Time.parse("Apr 18, 2015")
+    @selected_repos_summary_dict["oracle_interview_calculation"][:language] = "Ruby"
 
     @selected_repos_data_in_view = @selected_repos_summary_dict.values.sort_by {|x| x[:created_at] }.reverse
     @selected_repos_data_in_view = @selected_repos_data_in_view.map {|i| timesheet_format(i) }
@@ -90,9 +106,9 @@ class Mvj3Project
 
   def print_result
     # 5. jsonify data
-    puts @selected_repos_data_in_view.inspect
-    puts @repo_to_language_dict.to_json
-    print ProjectConfig[:fork_repos].inspect
+    puts "window.orig_data = #{@selected_repos_data_in_view.inspect};"
+    puts "window.repo_to_language_dict = #{@repo_to_language_dict.to_json};"
+    puts "window.fork_repos = #{ProjectConfig[:fork_repos].inspect};"
 
     require 'byebug'
     byebug
