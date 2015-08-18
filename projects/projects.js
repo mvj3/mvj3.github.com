@@ -180,11 +180,17 @@ $(document).ready(function() {
     draw_language_color_picker(timesheet_dom, repo_to_language_dict);
 
 
+    // Setup `marked` function
+    marked.setOptions({
+      renderer: new marked.Renderer(),
+      breaks: true,
+    });
+
     // render project details that written in Markdown document format.
     var detail_dom = $("pre#project_groups");
     var detail_orig_text = detail_dom.text();
     var detail_markdown_rendered = marked(detail_orig_text);
-    detail_dom.html(detail_markdown_rendered);
+    detail_dom.html(detail_markdown_rendered).show();  // fix markdown rending delayed.
 
     // let two divs are the same width.
     var timesheet_width = $("#timesheet").css("width");
