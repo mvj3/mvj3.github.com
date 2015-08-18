@@ -7,6 +7,7 @@ permalink: /projects/
 <script src="{{ "/bower_components/underscore/underscore-min.js" | prepend: site.baseurl }}" type="text/javascript"></script>
 <link rel="stylesheet" href="{{ "/bower_components/timesheet.js/dist/timesheet.min.css" | prepend: site.baseurl }}">
 <script src="{{ "/bower_components/timesheet.js/dist/timesheet.min.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+<script src="{{ "/bower_components/marked/marked.min.js" | prepend: site.baseurl }}" type="text/javascript"></script>
 <script src="{{ "projects.js" | prepend: site.baseurl }}" type="text/javascript"></script>
 
 <div id="timesheet">
@@ -19,9 +20,13 @@ permalink: /projects/
 #timesheet ul li span.label a {
   color: white;
 }
+
+pre#project_groups {
+  margin-top: 20px;
+}
 </style>
 
-<pre>
+<pre id="project_groups">
 #### Featured
 * [statlysis](http://github.com/eoecn/statlysis) Statistical analysis in Ruby DSL
 
