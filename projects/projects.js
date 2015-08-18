@@ -4,8 +4,6 @@ window.fork_repos = ["line-tree", "luigi", "markdownizer", "markdown-ruby-china"
 
 
 
-
-
 window.repo_to_homepage = _.reduce(orig_data, function(dict, item) {
   dict[item[2]] = item[5];
   return dict;
@@ -81,17 +79,27 @@ window.repos = _.map(repos, function(array) {
 });
 
 
-var title = $(".post").find(".post-header .post-title");
-var title_template = _.template("David Chen <a href='https://github.com/mvj3' target='_blank'>@mvj3</a> has created <%= open_source_by_self %> open source projects and forked <%= open_source_by_fork %> projects since 2009 ...");
-title.html(title_template({
-  "open_source_by_self": repos.length - fork_repos.length,
-  "open_source_by_fork": fork_repos.length,
-}));
-var repo_url = _.template("<a href='<%= repo_url %>' target='_blank' style='font-size:<%= font_size %>;'><%= repo_name %></a>");
-title.css("font-size", "18px");
-
-
 $(document).ready(function() {
+
+  var title = $(".post").find(".post-header");  // .post-title
+  var title_template = _.template("<div>"
+    + "I'm David Chen, <a href='https://github.com/mvj3' target='_blank'>@mvj3</a>, has created <b><%= open_source_by_self %></b> open source projects and forked <b><%= open_source_by_fork %></b> projects since 2009, these projects were created in my daily jobs. I really enjoy it, after 2013, I used to write private business code and open source code concurrently and modularly."
+    + "</br>"
+    + "</br>"
+    + "Mostly, I use Ruby and JavaScript to do <b>web development</b>, and use Python to do <b>data processing</b>."
+    + "Take a look at the below timesheet of my open source projects development."
+    + "</div>"
+  );
+  title.html(title_template({
+    "open_source_by_self": repos.length - fork_repos.length,
+    "open_source_by_fork": fork_repos.length,
+  }));
+  title.css("font-size", "18px");
+
+
+  var repo_url = _.template("<a href='<%= repo_url %>' target='_blank' style='font-size:<%= font_size %>;'><%= repo_name %></a>");
+
+
   $.getJSON("/bower_components/github-language-colors/colors.json", function(color_json) {
     // 1. init Timesheet
     new Timesheet('timesheet', 2013, 2015, repos);
@@ -153,6 +161,7 @@ $(document).ready(function() {
         "color": "white",
         "font-size": "12px",
       });
+
       /* copy CSS attribute from timesheet .bubble */
       labels_dom.find("li span.label").css({
         "width": "42px",

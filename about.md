@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-### David Chen (陈大伟), Born in 1988, a full stack web developer using Ruby and Javascript since 2009 in Beijing.
+### David Chen (陈大伟), a full stack engineer, using Ruby and Javascript since 2009 in Beijing.
 
-Technology Focus
+Technology Focus ( Add links TODO, more in details )
 ------------------------------------------------
 * Programming Language: **Ruby**, **JavaScript**, SQL, CSS, Objective-c, etc.
 * Web Framework: Rails, HAML, jQuery, Backbones, Bootstrap, RailsAdmin|ActiveAdmin, Sinatra
@@ -14,7 +14,7 @@ Technology Focus
 * Databases: Mongodb, MySQL, Redis
 * Editor/IDE: MacVim, XCode
 * Operating Systems: OS X, Linux(CentOS, Ubuntu, Gentoo)
-* Experience: single page application, API, crawler, CMS, log storage and analysis, realtime chat, DSL design and implement, etc.
+* Experience: modular single page application, API, CMS, log storage and analysis, realtime chat, DSL or framework design and implement, etc.
 * Learning: Data Mining and Analysis, R, C, NoSQL, Algorithm, Erlang, etc.
 
 Presentations
@@ -28,7 +28,7 @@ See them in [projects](/projects/).
 
 Education
 ------------------------------------------------
-Ningbo Institute of Technology, Zhejiang University (2005-2006)
+Communication Engineering major, Ningbo Institute of Technology, Zhejiang University (2005-2006)
 
 Philosophy
 ------------------------------------------------
