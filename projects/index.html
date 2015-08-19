@@ -36,13 +36,31 @@ pre#project_groups {
 </style>
 
 <pre id="project_groups" style="display:none;">
-#### Building the data warehouse in Python | http://github.com/luiti
-* [luiti][1] An offline task management framework, built on top of luigi.
+### Use [Luiti][19] to build the data warehouse in Python
+
+In recent two years, I force offline data processing, the big part is building a data warehouse.
+
+| http://github.com/luiti
+#### [luiti][1] An offline task management framework, built on top of luigi.
 
 
-#### Offline job in Ruby
+https://github.com/Luiti/model_cache
 
-1. [statlysis][8] is a thin Ruby DSL abount statistics, support Mongoid and ActiveRecord.
+
+### Text mining in Python
+
+1. [detdup][20] Detect duplicated items framework.
+2. [textmulclassify][21] Extract one or multiple tags by giving a text.
+3. [tfidf][22] Compute tf idf with idf and tfidf cache independently.
+4. [phrase_recognizer][23] Phrase recognizer.
+5. [fill_broken_words][24] Fill broken words.
+6. [region_unit_recognizer][25] Region unit recognizer.
+7. [article_segment][26] Article segment
+
+
+### Offline job in Ruby
+
+[statlysis][8] is a thin Ruby DSL about statistics, support Mongoid and ActiveRecord.
 
 Statlysis's main idea is that report table should be simple, so people can understand quickly,
 and it means no SQL join is great. So we need to prepare the data source that driven by user
@@ -50,12 +68,11 @@ events, using asynchronous tasks to insert new record into a pre-designed single
 project is no longer maintained, cause I would like to use Python in recent years, but I still
 think the idea is very great, and it's suitable for thousands to millions of orders of magnitude.
 
+1. [logpos][9] Use binary search to seek a position in logs that include timestamp in every line.
+2. [only_one_rake][10] ensure only one rake is running at a time.
 
-2. [logpos][9] Use binary search to seek a position in logs that include timestamp in every line.
-3. [only_one_rake][10] ensure only one rake is running at a time.
 
-
-#### Rails Engine or related
+### Rails Engine or related
 1. [faye-online][2] Faye online user list and time count
 2. [qa-rails][3] A mini forum provided by only a simple helper, written
    in Backbone.
@@ -66,7 +83,7 @@ think the idea is very great, and it's suitable for thousands to millions of ord
 6. [rack_image_assets_cache_control][7] Cache Control Image Assets in rails development.
 
 
-#### ORM(ActiveRecord/Mongoid) related
+### ORM(ActiveRecord/Mongoid) related
 1. [activerecord_idnamecache][11] Use Mysql AUTO_INCREMENT to support key value cache.
 2. [mongoid_uuid_generator][12] Generate an uuid column automately in Mongoid
 3. [mongoid_sync_with_deserialization][13] Support advanced data-type serialize when sync data in
@@ -98,4 +115,13 @@ think the idea is very great, and it's suitable for thousands to millions of ord
 [16]: https://github.com/mvj3/mongoid_touch_parents_recursively
 [17]: http://github.com/eoecn/acts_as_time_racing
 [18]: https://github.com/mvj3/mongoid_many_or_many_to_many_setter
+[19]: https://github.com/luiti
+[20]: https://github.com/mvj3/detdup
+[21]: https://github.com/17zuoye/textmulclassify
+[22]: https://github.com/17zuoye/tfidf
+[23]: https://github.com/mvj3/phrase_recognizer
+[24]: https://github.com/mvj3/fill_broken_words
+[25]: https://github.com/mvj3/region_unit_recognizer
+[26]: https://github.com/17zuoye/article_segment
+
 </pre>
