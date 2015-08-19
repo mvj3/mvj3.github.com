@@ -29,22 +29,40 @@ pre#project_groups {
   border: none;
   width: 930px;  /* allow long ul/li project description */
 }
+pre#project_groups p {
+  margin-top: -20px;
+}
+pre#project_groups ol {
+  margin-top: -30px;
+}
 </style>
 
+<!-- TODO need to immprove my English writing.-->
 <pre id="project_groups" style="display:none;">
 ### Use [Luiti][19] to build the data warehouse in Python
 
-In recent two years, I force offline data processing, the big part of it is building a data
-warehouse.
+In recent two years, I'm forced on offline data processing, the big part is to build a
+data warehouse, and aims to provide reports for millions of users. At the same time, I
+built serveral useful tools, and put them all in https://github.com/luiti organization.
 
-| http://github.com/luiti
-#### [luiti][1] An offline task management framework, built on top of luigi.
+Hadoop is our fundamental infrastructure, includes HDFS, YARN, and Hive. On the top of
+Hadoop, we use [luigi][28], [hue][39], and luiti to manage the business codes.
 
-
-https://github.com/Luiti/model_cache
+1. [luiti][1] an offline task management framework, built on top of [luigi][28]. And it's the biggest
+   project I had ever created, and was used and developed more than half of a year.
+2. [etl_utils][32] includes lots of useful utils, e.g. print processing speed on whatever
+   enumrable object, etc.
+3. [rsyncrun][33] Rsync your code to server and run.
+4. [validata][34] A data validator library used to detect invalid data with error informations,
+   based on MongoEngine.
+5. [model_cache][35] Cache data in `{ item_id => item_content }` format, supported storage are
+   memory, sqlite and redis.
 
 
 ### Text mining in Python
+
+All of below projects were built at [17zuoye][27], which collected millions of examination questions,
+and the data team that I belonged to, needed to do some text mining.
 
 1. [detdup][20] Detect duplicated items framework.
 2. [textmulclassify][21] Extract one or multiple tags by giving a text.
@@ -53,6 +71,15 @@ https://github.com/Luiti/model_cache
 5. [fill_broken_words][24] Fill broken words.
 6. [region_unit_recognizer][25] Region unit recognizer.
 7. [article_segment][26] Article segment
+
+
+### Some JavaScript stuffs
+
+1. [sample-diff][29] "Sample diff" diffs two big files with a few of them, and require only one IO
+   per file. The sample algorithm is called [Reservoir sampling][30].
+2. [nested-keys][36] CRUD nested keys on JavaScript object.
+3. [normalize_nested_params][37] Normalize nested params.
+4. [redmine.chosen.js][38] Enable chosen.js on Redmine's select boxes
 
 
 ### Offline job in Ruby
@@ -94,23 +121,23 @@ think the idea is very great, and it's suitable for thousands to millions of ord
    field to setup the many-to-many or one-to many ORM relations.
 
 
-[1]:  http://github.com/luiti/luiti
-[2]:  http://github.com/mvj3/faye-online
-[3]:  http://github.com/eoecn/qa-rails
-[4]:  http://github.com/eoecn/videojs_user_track
+[1]:  https://github.com/luiti/luiti
+[2]:  https://github.com/mvj3/faye-online
+[3]:  https://github.com/eoecn/qa-rails
+[4]:  https://github.com/eoecn/videojs_user_track
 [5]:  https://github.com/mvj3/distribute_tree
-[6]:  http://github.com/eoecn/stepstepstep
-[7]:  http://github.com/eoecn/rack_image_assets_cache_control
-[8]:  http://github.com/mvj3/statlysis
-[9]:  http://github.com/mvj3/logpos
-[10]: http://github.com/mvj3/only_one_rake
-[11]: http://github.com/mvj3/activerecord_idnamecache
+[6]:  https://github.com/eoecn/stepstepstep
+[7]:  https://github.com/eoecn/rack_image_assets_cache_control
+[8]:  https://github.com/mvj3/statlysis
+[9]:  https://github.com/mvj3/logpos
+[10]: https://github.com/mvj3/only_one_rake
+[11]: https://github.com/mvj3/activerecord_idnamecache
 [12]: https://github.com/mvj3/mongoid_uuid_generator
 [13]: https://github.com/mvj3/mongoid_sync_with_deserialization
 [14]: https://github.com/mvj3/active_model_as_json_filter
 [15]: https://github.com/mvj3/mongoid_unpack_paperclip
 [16]: https://github.com/mvj3/mongoid_touch_parents_recursively
-[17]: http://github.com/eoecn/acts_as_time_racing
+[17]: https://github.com/eoecn/acts_as_time_racing
 [18]: https://github.com/mvj3/mongoid_many_or_many_to_many_setter
 [19]: https://github.com/luiti
 [20]: https://github.com/mvj3/detdup
@@ -120,5 +147,18 @@ think the idea is very great, and it's suitable for thousands to millions of ord
 [24]: https://github.com/mvj3/fill_broken_words
 [25]: https://github.com/mvj3/region_unit_recognizer
 [26]: https://github.com/17zuoye/article_segment
+[27]: http://17zuoye.com/
+[28]: https://github.com/spotify/luigi
+[29]: https://github.com/17zuoye/sample-diff
+[30]: http://en.wikipedia.org/wiki/Reservoir_sampling
+[31]: http://en.wikipedia.org/wiki/Reservoir_sampling
+[32]: https://github.com/Luiti/etl_utils
+[33]: https://github.com/Luiti/rsyncrun
+[34]: https://github.com/Luiti/validata
+[35]: https://github.com/Luiti/model_cache
+[36]: https://github.com/17zuoye/nested-keys
+[37]: https://github.com/17zuoye/normalize_nested_params
+[38]: https://github.com/17zuoye/redmine.chosen.js
+[39]: https://github.com/cloudera/hue
 
 </pre>
