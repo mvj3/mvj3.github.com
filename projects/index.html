@@ -36,7 +36,7 @@ pre#project_groups ul li {
 </style>
 
 <pre id="project_groups" style="display:none;">
-#### Luiti
+#### Building the data warehouse in Python | http://github.com/luiti
 * [luiti](http://github.com/luiti/luiti) An offline task management framework, built on top of luigi.
 
 
@@ -49,8 +49,13 @@ pre#project_groups ul li {
 * [rack_image_assets_cache_control](http://github.com/eoecn/rack_image_assets_cache_control) Cache Control Image Assets in rails development.
 
 #### Offline job in Ruby
-* [statlysis](http://github.com/mvj3/statlysis) Statistical analysis in Ruby DSL
-* [logpos](http://github.com/mvj3/logpos) Use binary search to seek a position in logs.
+
+[statlysis](http://github.com/mvj3/statlysis) Statistical analysis in Ruby DSL, just as simple as SQL operations in ActiveRecord.
+
+Statlysis's main idea is that report table should be simple, so people can understand quickly, and it means no SQL join is great. So we need to prepare the data source that driven by user events, using asynchronous tasks to insert new record into a pre-designed single table. This project is no longer maintained, cause I would like to use Python right now, but I still think the idea is very great, and it's suitable for thousands to millions of orders of magnitude.
+
+
+* [logpos](http://github.com/mvj3/logpos) Use binary search to seek a position in logs that include timestamp in every line.
 * [only_one_rake](http://github.com/mvj3/only_one_rake) ensure only one rake is running at a time.
 
 #### ORM(ActiveRecord/Mongoid) related
