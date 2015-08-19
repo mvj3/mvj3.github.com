@@ -26,46 +26,76 @@ pre#project_groups {
   word-wrap: normal;
   background-color: #fdfdfd;
   border: none;
-  width: 1400px;  /* allow long ul/li project description */
+  width: 880px;  /* allow long ul/li project description */
 }
-pre#project_groups ul li {
-  width: 800px;
-}
+/*pre#project_groups ul li {
+  width: 600px;
+}*/
 
 
 </style>
 
 <pre id="project_groups" style="display:none;">
 #### Building the data warehouse in Python | http://github.com/luiti
-* [luiti](http://github.com/luiti/luiti) An offline task management framework, built on top of luigi.
+* [luiti][1] An offline task management framework, built on top of luigi.
 
-
-#### Rails Engine or related
-* [faye-online](http://github.com/mvj3/faye-online) Faye online user list and time count
-* [qa-rails](http://github.com/eoecn/qa-rails) A mini forum provided by only a simple helper, written in Backbone.
-* [videojs_user_track](http://github.com/eoecn/videojs_user_track) monitoring users playing videos.
-* [distribute_tree](https://github.com/mvj3/distribute_tree) a Rails engine used to sharing data between one cloud server and multiple local servers.
-* [stepstepstep](http://github.com/eoecn/stepstepstep) DSL for defining before_filters's dependencies like rake tasks.
-* [rack_image_assets_cache_control](http://github.com/eoecn/rack_image_assets_cache_control) Cache Control Image Assets in rails development.
 
 #### Offline job in Ruby
 
-[statlysis](http://github.com/mvj3/statlysis) Statistical analysis in Ruby DSL, just as simple as SQL operations in ActiveRecord.
+1. [statlysis][8] is a thin Ruby DSL abount statistics, support Mongoid and ActiveRecord.
 
-Statlysis's main idea is that report table should be simple, so people can understand quickly, and it means no SQL join is great. So we need to prepare the data source that driven by user events, using asynchronous tasks to insert new record into a pre-designed single table. This project is no longer maintained, cause I would like to use Python right now, but I still think the idea is very great, and it's suitable for thousands to millions of orders of magnitude.
+Statlysis's main idea is that report table should be simple, so people can understand quickly,
+and it means no SQL join is great. So we need to prepare the data source that driven by user
+events, using asynchronous tasks to insert new record into a pre-designed single table. This
+project is no longer maintained, cause I would like to use Python right now, but I still think
+the idea is very great, and it's suitable for thousands to millions of orders of magnitude.
 
 
-* [logpos](http://github.com/mvj3/logpos) Use binary search to seek a position in logs that include timestamp in every line.
-* [only_one_rake](http://github.com/mvj3/only_one_rake) ensure only one rake is running at a time.
+2. [logpos][9] Use binary search to seek a position in logs that include timestamp in every line.
+3. [only_one_rake][10] ensure only one rake is running at a time.
+
+
+#### Rails Engine or related
+1. [faye-online][2] Faye online user list and time count
+2. [qa-rails][3] A mini forum provided by only a simple helper, written
+   in Backbone.
+3. [videojs_user_track][4] monitoring users playing videos.
+4. [distribute_tree][5] a Rails engine used to sharing data between one cloud server and multiple
+   local servers.
+5. [stepstepstep][6] DSL for defining before_filters's dependencies like rake tasks.
+6. [rack_image_assets_cache_control][7] Cache Control Image Assets in rails development.
+
 
 #### ORM(ActiveRecord/Mongoid) related
-* [activerecord_idnamecache](http://github.com/mvj3/activerecord_idnamecache) Use Mysql AUTO_INCREMENT to support key value cache.
-* [mongoid_uuid_generator](https://github.com/mvj3/mongoid_uuid_generator) Generate an uuid column automately in Mongoid
-* [mongoid_sync_with_deserialization](https://github.com/mvj3/mongoid_sync_with_deserialization) Support advanced data-type serialize when sync data in JSON data format, such as Time.
-* [active_model_as_json_filter](https://github.com/mvj3/active_model_as_json_filter) generate `as_json` by config properties directly.
-* [mongoid_unpack_paperclip](https://github.com/mvj3/mongoid_unpack_paperclip) In Mongoid with paperclip support, encapsulates uncompressing and cleaning zip package operations.
-* [mongoid_touch_parents_recursively](https://github.com/mvj3/mongoid_touch_parents_recursively) touch parents recursively in Mongoid
-* [acts_as_time_racing](http://github.com/eoecn/acts_as_time_racing) ActiveRecord plugin which record one item's start and finish time.
-* [mongoid_many_or_many_to_many_setter](https://github.com/mvj3/mongoid_many_or_many_to_many_setter) Instead of the default `_id` primary key, use another field to setup the many-to-many or one-to many ORM relations.
+1. [activerecord_idnamecache][11] Use Mysql AUTO_INCREMENT to support key value cache.
+2. [mongoid_uuid_generator][12] Generate an uuid column automately in Mongoid
+3. [mongoid_sync_with_deserialization][13] Support advanced data-type serialize when sync data in
+   JSON data format, such as Time.
+4. [active_model_as_json_filter][14] generate `as_json` by config properties directly.
+5. [mongoid_unpack_paperclip][15] In Mongoid with paperclip support, encapsulates uncompressing
+   and cleaning zip package operations.
+6. [mongoid_touch_parents_recursively][16] touch parents recursively in Mongoid
+7. [acts_as_time_racing][17] ActiveRecord plugin which record one item's start and finish time.
+8. [mongoid_many_or_many_to_many_setter][18] Instead of the default `_id` primary key, use another
+   field to setup the many-to-many or one-to many ORM relations.
 
+
+[1]:  http://github.com/luiti/luiti
+[2]:  http://github.com/mvj3/faye-online
+[3]:  http://github.com/eoecn/qa-rails
+[4]:  http://github.com/eoecn/videojs_user_track
+[5]:  https://github.com/mvj3/distribute_tree
+[6]:  http://github.com/eoecn/stepstepstep
+[7]:  http://github.com/eoecn/rack_image_assets_cache_control
+[8]:  http://github.com/mvj3/statlysis
+[9]:  http://github.com/mvj3/logpos
+[10]: http://github.com/mvj3/only_one_rake
+[11]: http://github.com/mvj3/activerecord_idnamecache
+[12]: https://github.com/mvj3/mongoid_uuid_generator
+[13]: https://github.com/mvj3/mongoid_sync_with_deserialization
+[14]: https://github.com/mvj3/active_model_as_json_filter
+[15]: https://github.com/mvj3/mongoid_unpack_paperclip
+[16]: https://github.com/mvj3/mongoid_touch_parents_recursively
+[17]: http://github.com/eoecn/acts_as_time_racing
+[18]: https://github.com/mvj3/mongoid_many_or_many_to_many_setter
 </pre>
