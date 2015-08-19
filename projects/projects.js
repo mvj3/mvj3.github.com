@@ -84,11 +84,11 @@ $(document).ready(function() {
 
   var title = $(".post").find(".post-header");  // .post-title
   var title_template = _.template("<div>"
-    + "I'm David Chen, <a href='https://github.com/mvj3' target='_blank'>@mvj3</a>, has created <b><%= open_source_by_self %> open source projects</b> and forked <b><%= open_source_by_fork %></b> projects since 2009, these projects were created in my daily jobs. I really enjoy it, after 2013, I used to write private business code and open source code concurrently and modularly."
+    + "I'm David Chen, <a href='https://github.com/mvj3' target='_blank'>@mvj3</a>, has created <b><%= open_source_by_self %> open source projects</b> and forked <b><%= open_source_by_fork %></b> projects in my daily jobs since 2009. I really enjoy it, after 2013, I used to write private business code and open source code concurrently and modularly."
     + "</br>"
     + "</br>"
     + "Mostly, I use Ruby and JavaScript to do <b>web development</b>, and use Python to do <b>data processing</b>."
-    + "Take a look at the below timesheet of my open source projects development."
+    + "Take a look at the below <b>timesheet</b> of my open source projects development."
     + "</div>"
   );
   title.html(title_template({
@@ -195,7 +195,13 @@ $(document).ready(function() {
 
     // let two divs are the same width.
     var timesheet_width = $("#timesheet").css("width");
-    detail_dom.css("width", timesheet_width);
+    /*
+    detail_dom.css({
+      "width": timesheet_width,
+      "margin-top": "20px",
+      //"word-wrap": "break-word",
+    });
+    */
 
   });
 
