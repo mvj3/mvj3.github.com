@@ -2,8 +2,6 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
@@ -44,11 +42,17 @@
         </ul>
       </div>
 
-      <div class="footer-col  footer-col-3">
-        <p class="text">{{ site.description | markdownify }}</p>
+      <div class="footer-col  footer-col-3 footer_intro">
+        <p class="text">{{ site.self_introduction | markdownify }}</p>
       </div>
     </div>
 
   </div>
 
 </footer>
+
+<style>
+div.footer_intro {
+  margin-top: -20px;
+}
+</style>
