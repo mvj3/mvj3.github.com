@@ -84,8 +84,8 @@ $(document).ready(function() {
 
   var title = $(".post").find(".post-header");  // .post-title
   var title_template = _.template("<div>"
-    + "I'm David Chen, <b><a href='https://github.com/mvj3' target='_blank'>@mvj3</a></b>, has created <b><%= open_source_by_self %> open source projects</b> and forked <b><%= open_source_by_fork %></b> projects in my daily jobs since 2009."
-    + "I really enjoy it, after 2013, I used to write private business code and open source code <b>concurrently</b> and <b>modularly</b>."
+    + "I'm David Chen, also known as <a href='https://github.com/mvj3' target='_blank'>@mvj3</a>, have created <b><%= open_source_by_self %> open source projects</b> and forked <b><%= open_source_by_fork %></b> projects in my daily jobs since 2009."
+    + " I really enjoy it, after 2013, I used to write private business code and open source code <b>concurrently</b> and <b>modularly</b>."
     + "</br>"
     + "</br>"
     + "Mostly, I use Python to do <b>data processing</b>, and use Ruby and JavaScript to do <b>web development</b>."
