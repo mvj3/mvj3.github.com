@@ -204,7 +204,10 @@ $(document).ready(function() {
     });
     */
 
-    window.location = window.location.hash;  // fix anchor dont appear before markdown rendered.
+    // fix anchor dont appear before markdown rendered.
+    if (window.location.hash) {  // fix dead loop.
+      window.location = window.location.hash;
+    }
 
   });
 
