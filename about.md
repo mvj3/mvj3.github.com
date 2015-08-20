@@ -19,6 +19,11 @@ Technology Focus ( Add links TODO, more in details )
 
 Presentations
 ------------------------------------------------
+* TODO add more
+https://github.com/mvj3/mvj3.github.io/raw/master/pdfs/Luiti%20-%20An%20Offline%20Task%20Management%20Framework.pdf
+
+https://github.com/mvj3/mvj3.github.io/raw/master/pdfs/detdup%20-%20Detect%20duplicated%20items%20engine.pdf
+
 * 2013-06-22, Ruby Saturday in Beijing, [15 gems within two years](http://ruby-china.org/topics/11806)
 * 2012-09-01, Ruby Saturday in Beijing, [Statistical Analysis and The Dark Knight](/statistics-analytics-and-dark-knight)
 
