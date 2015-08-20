@@ -4,7 +4,13 @@ title: About
 permalink: /about/
 ---
 
-### David Chen (陈大伟), a full stack engineer, using Ruby and Javascript since 2009 in Beijing.
+### I'm **David Chen** (陈大伟), a full stack engineer, using Ruby and Javascript since 2009 in Beijing.
+
+<p align="center">
+  <!-- ![mvj3_wear_sunglasses](/images/mvj3/mvj3_wear_sungclasses.jpg){: height='360px' width='480px'}" -->
+  <img src="/images/mvj3/mvj3_wear_sungclasses_20150526.jpg" alt="mvj3_wear_sunglasses_20150526" height="360px" width="480px">
+</p>
+
 
 Technology Focus ( Add links TODO, more in details )
 ------------------------------------------------
@@ -38,6 +44,8 @@ The slave of material, the servant of fashion, the king of the inner, and the Go
 
 Chinese version: 物质的奴隶，时尚的仆人，内在的国王，艺术的上帝。
 
+
+Chinese English 普通话
 
 
 [1]: https://github.com/mvj3/mvj3.github.io/raw/master/pdfs/detdup%20-%20Detect%20duplicated%20items%20engine.pdf
