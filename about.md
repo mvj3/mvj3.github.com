@@ -44,16 +44,16 @@ Open Source
 ------------------------------------------------
 See the timesheet and details at [projects](/projects/).
 
-Technology Focus ( Add links TODO, more in details )
+Technology Focus
 ------------------------------------------------
-* Programming Language: **Ruby**, **JavaScript**, SQL, CSS, Objective-c, etc.
-* Web Framework: Rails, HAML, jQuery, Backbones, Bootstrap, RailsAdmin|ActiveAdmin, Sinatra
-* Software: general shell commands, Git, Nginx, Unicorn, Memcached, Sphinx, Faye, Subversion, Thin
-* Databases: Mongodb, MySQL, Redis
-* Editor/IDE: MacVim, XCode
+* Experience: **[log storage and analysis][15]**, **[modular single page application][13]**, **[DSL or framework design and implement][17]**, API, CMS, [realtime chat][16], etc.
+* Big Data: HDFS, YARN, **[luigi, luiti][8]**
+* Programming Language: **[Python][6]**, **[Ruby][7]**, **[JavaScript][14]**, Java, CSS, Objective-C, etc.
+* Web Framework: **[Rails][7]**, HAML, jQuery, [Backbone][19], [React.js][18], Bootstrap
+* Software: shell command, Git, Nginx, Unicorn, Memcached, Sphinx
+* Databases: [**Mongodb**, MySQL][17], [Redis][16]
+* Editor: MacVim
 * Operating Systems: OS X, Linux(CentOS, Ubuntu, Gentoo)
-* Experience: modular single page application, API, CMS, log storage and analysis, realtime chat, DSL or framework design and implement, etc.
-* Learning: Data Mining and Analysis, R, C, NoSQL, Algorithm, Erlang, etc.
 
 Education
 ------------------------------------------------
@@ -88,3 +88,9 @@ Chinese, English.
 [11]: /2013/12/16/refectoring-code-at-sunshine-library-in-three-months
 [12]: /2013/12/15/human-mind-and-software-engineering
 [13]: /2013/08/04/a-man-github
+[14]: /projects/#some-javascript-stuffs-03-2014-05-2015-
+[15]: /projects/#offline-job-in-ruby-08-2011-12-2013-
+[16]: https://github.com/mvj3/faye-online
+[17]: https://github.com/mvj3/statlysis
+[18]: https://github.com/Luiti/luiti/tree/master/luiti/webui
+[19]: https://github.com/eoecn/qa-rails/blob/eoecn/app/assets/javascripts/qa-rails.js#L30
