@@ -14,7 +14,7 @@ h2 { /* sub section */
 }
 </style>
 
-### **David Chen** (陈大伟), also known as **@mvj3** .
+### **David Chen** (陈大伟), aka **@mvj3** .
 
 I'm an avid open-source full-stack engineer, force on [data][6] and [web][7],
 and have created an offline task management framework called [luiti][8].
