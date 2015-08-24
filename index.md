@@ -10,6 +10,10 @@ p { /* introduction */
 h2 { /* sub section */
   margin-top: 40px;
 }
+
+p ol li a {
+  font-size: 16px;
+}
 </style>
 
 ### **David Chen** (陈大伟), aka **@mvj3** .
@@ -30,6 +34,11 @@ Recommended posts
 3. [Rails项目 重构，我在阳光书屋的三个月][11]
 4. [人类思维和软件工程学][12]
 5. [一个人的"github"][13]
+
+
+Recent posts
+------------------------------------------------
+...
 
 
 Presentations
@@ -93,3 +102,46 @@ Chinese, English.
 [17]: https://github.com/mvj3/statlysis
 [18]: https://github.com/Luiti/luiti/tree/master/luiti/webui
 [19]: https://github.com/eoecn/qa-rails/blob/eoecn/app/assets/javascripts/qa-rails.js#L30
+
+
+
+<script src="{{ "/bower_components/underscore/underscore-min.js" | prepend: site.baseurl }}" type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+  // render recent posts.
+  var li_template = _.template(""
+    + "<li>"
+    + "  <a href='<%= link %>'><%= title %></a>"
+    + "</li>"
+  );
+  var posts_template = function(posts) {
+    var lis = _.map(posts, function(post) {
+      return li_template(post);
+    });
+    return "<ol>"
+      + lis.join("")
+      + "</ol>";
+  };
+
+  $.ajax({
+      type: "GET",
+      url: "/feed.xml",
+      dataType: "xml",
+      success: function (xml) {
+          console.log("[load posts xml]", xml);
+
+          var posts = _.map($(xml).find("item"), function(item) {
+            var item = $(item);
+            return {
+              "title": item.find("title").text(),
+              "link":  item.find("link").text(),
+            };
+          });
+
+          var recent_posts_str = posts_template(posts.slice(0, 5));
+          $("#recent-posts").next("p").html(recent_posts_str);
+      }
+  });
+});
+</script>
