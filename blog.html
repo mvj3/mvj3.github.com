@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Archive
-permalink: /archive/
+title: Blog
+permalink: /blog/
 ---
 
 <div class="home">
 
-  <h1 class="page-heading">Archive</h1>
+  <h1 class="page-heading">Blog posts</h1>
 
   {% for post in site.posts %}
       {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
@@ -21,5 +21,7 @@ permalink: /archive/
         <a class="btn-sm" href="/categories/#{{ category }}">{{ category }}</a>
       {% endfor %}
   {% endfor %}
+
+  <p class="rss-subscribe pull-right">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

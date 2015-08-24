@@ -1,7 +1,5 @@
 ---
-layout: page
-title: About
-permalink: /about/
+layout: default
 ---
 
 
@@ -32,6 +30,7 @@ Recommended posts
 3. [Rails项目 重构，我在阳光书屋的三个月][11]
 4. [人类思维和软件工程学][12]
 5. [一个人的"github"][13]
+
 
 Presentations
 ------------------------------------------------
