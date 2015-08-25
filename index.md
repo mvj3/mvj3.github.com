@@ -54,9 +54,9 @@ See the timesheet and details at [projects](/projects/).
 
 Technology Focus
 ------------------------------------------------
-* Experience: **[log storage and analysis][15]**, **[modular single page application][13]**, **[DSL or framework design and implement][17]**, API, CMS, [realtime chat][16], etc.
-* Big Data: HDFS, YARN, **[luigi, luiti][8]**
 * Programming Language: **[Python][6]**, **[Ruby][7]**, **[JavaScript][14]**, Java, CSS, Objective-C, etc.
+* Big Data: HDFS, YARN, **[luigi, luiti][8]**
+* Experience: **[log storage and analysis][15]**, **[modular single page application][13]**, **[DSL or framework design and implement][17]**, API, CMS, [realtime chat][16], etc.
 * Web Framework: **[Rails][7]**, HAML, jQuery, [Backbone][19], [React.js][18], Bootstrap
 * Software: shell command, Git, Nginx, Unicorn, Memcached, Sphinx
 * Databases: [**Mongodb**, MySQL][17], [Redis][16]
