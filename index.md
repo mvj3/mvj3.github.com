@@ -110,6 +110,9 @@ Chinese, English.
 <script>
 $(document).ready(function() {
   // render recent posts.
+  var recent_posts_header = $("#recent-posts");
+  var recent_posts_dom = recent_posts_header.next("p");
+
   var li_template = _.template(""
     + "<li>"
     + "  <a href='<%= link %>'><%= title %></a>"
@@ -140,8 +143,10 @@ $(document).ready(function() {
           });
 
           var recent_posts_str = posts_template(posts.slice(0, 5));
-          $("#recent-posts").next("p").html(recent_posts_str);
+          recent_posts_dom.html(recent_posts_str);
       }
   });
+
+  recent_posts_header.html(recent_posts_header.text() + "   <a href='/blog' style='font-size:14px;'>(See more ...)</a>");
 });
 </script>
