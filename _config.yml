@@ -43,8 +43,6 @@ gems:
 
 # Exclude these files from your production _site
 exclude:
+  - _config.yml
   - Gemfile
   - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
