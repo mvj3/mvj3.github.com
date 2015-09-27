@@ -51,7 +51,12 @@ Presentations
 
 Open Source
 ------------------------------------------------
-See the timesheet and details at [projects](/projects/).
+See the timesheet and details at [projects](/projects/), related topics are:
+
+1. Building the data warehouse in Python
+2. Text mining in Python
+3. Offline job in Ruby
+4. Rails engines and ORM plugins
 
 Technology Focus
 ------------------------------------------------
