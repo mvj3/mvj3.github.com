@@ -43,6 +43,7 @@ Recent posts
 
 Presentations
 ------------------------------------------------
+* 2015-09-12, [Python Conf China 2015 Shanghai][21], [view][22], [download][23]
 * 2015-07-18, [Python沙龙深度交流会-第二十期CDA俱乐部活动][3], Luiti - An Offline Task Management Framework, [view][4], [download][2], [video][20]
 * 2014-08-24, Internal sharing at 17zuoye, Detdup - Detect duplicated items engine, [view][5], [download][1]
 * 2013-06-22, Ruby Saturday in Beijing, [15 gems within two years](http://ruby-china.org/topics/11806)
@@ -103,6 +104,9 @@ Chinese, English.
 [18]: https://github.com/Luiti/luiti/tree/master/luiti/webui
 [19]: https://github.com/eoecn/qa-rails/blob/eoecn/app/assets/javascripts/qa-rails.js#L30
 [20]: http://v.youku.com/v_show/id_XMTI5MjE1MTA4NA==.html?f=25942084
+[21]: http://cn.pycon.org/2015/shanghai.html
+[22]: http://luiti.github.io/talks/Python-Conf-2015-Shanghai.html
+[23]: https://github.com/Luiti/luiti.github.io/raw/master/talks/Luiti-Python-China-2015.pdf
 
 
 
