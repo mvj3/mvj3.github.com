@@ -43,7 +43,7 @@ Recent posts
 
 Presentations
 ------------------------------------------------
-* 2015-09-12, [Python Conf China 2015 Shanghai][21], [view][22], [download][23]
+* 2015-09-12, [Python Conf China 2015 Shanghai][21], Use Luiti to build a data warehouse, [view][22], [download][23]
 * 2015-07-18, [Python沙龙深度交流会-第二十期CDA俱乐部活动][3], Luiti - An Offline Task Management Framework, [view][4], [download][2], [video][20]
 * 2014-08-24, Internal sharing at 17zuoye, Detdup - Detect duplicated items engine, [view][5], [download][1]
 * 2013-06-22, Ruby Saturday in Beijing, [15 gems within two years](http://ruby-china.org/topics/11806)
@@ -64,9 +64,21 @@ Technology Focus
 * Editor: MacVim
 * Operating Systems: OS X, Linux(CentOS, Ubuntu, Gentoo)
 
+Human Programming Language
+------------------------------------------------
+Programming language's final aim is to reduce the complexity, and should be understood quickly in people's mind,
+so it should be a combinenable, well-structured, introspective language.
+`3.weeks.ago.` is a typical statement in Human programming language, and
+it's equal to `((3 weeks) ago)` weird format in Lisp.
+
+I wrote lots of Chinese notes (a unified philosophy about the nature of the program and human-mind) at [http://human-lang.org][24] , see more code examples at [https://github.com/human-lang/examples][25] .
+The language specifications and interpreter are need to be done in future.
+
+
 Education
 ------------------------------------------------
 Communication Engineering major, Ningbo Institute of Technology, Zhejiang University (2005-2006)
+
 
 Philosophy
 ------------------------------------------------
@@ -107,6 +119,8 @@ Chinese, English.
 [21]: http://cn.pycon.org/2015/shanghai.html
 [22]: http://luiti.github.io/talks/Python-Conf-2015-Shanghai.html
 [23]: https://github.com/Luiti/luiti.github.io/raw/master/talks/Luiti-Python-China-2015.pdf
+[24]: http://human-lang.org
+[25]: https://github.com/human-lang/examples
 
 
 
