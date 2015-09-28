@@ -62,12 +62,12 @@ Technology Focus
 ------------------------------------------------
 * Programming Language: **[Python][6]**, **[Ruby][7]**, **[JavaScript][14]**, Java, CSS, Objective-C, etc.
 * Big Data: HDFS, YARN, **[luigi, luiti][8]**
-* Experience: **[log storage and analysis][15]**, **[modular single page application][13]**, **[DSL or framework design and implement][17]**, API, CMS, [realtime chat][16], etc.
+* Experience: **[modular][8]  [data warehouse][15]**, **[modular single page application][13]**, **[DSL or framework design and implement][17]**, [Text Mining][26], RESTful API, CMS, [realtime chat][16], etc.
 * Web Framework: **[Rails][7]**, HAML, jQuery, [Backbone][19], [React.js][18], Bootstrap
 * Software: shell command, Git, Nginx, Unicorn, Memcached, Sphinx
 * Databases: [**Mongodb**, MySQL][17], [Redis][16]
 * Editor: MacVim
-* Operating Systems: OS X, Linux(CentOS, Ubuntu, Gentoo)
+* Operating Systems: OS X, Linux(CentOS, Ubuntu)
 
 Human Programming Language
 ------------------------------------------------
@@ -126,6 +126,7 @@ Chinese, English.
 [23]: https://github.com/Luiti/luiti.github.io/raw/master/talks/Luiti-Python-China-2015.pdf
 [24]: http://human-lang.org
 [25]: https://github.com/human-lang/examples
+[26]: /projects/#text-mining-in-python-06-2014-05-2015-
 
 
 
