@@ -108,7 +108,7 @@ Chinese, English.
 [5]: https://speakerdeck.com/mvj3/detdup-detect-duplicated-items-engine
 [6]: /projects/#building-the-data-warehouse-in-python-07-2014-present-
 [7]: /projects/#rails-engine-or-related-05-2013-12-2013-
-[8]:  https://github.com/luiti/luiti
+[8]:  https://luiti.github.io
 [9]: /2015/06/22/why-most-of-people-cant-understand-Max-Howell-cant-pass-whiteboard-coding-test
 [10]: /2014/09/21/half-year-review-at-17zuoye
 [11]: /2013/12/16/refectoring-code-at-sunshine-library-in-three-months
