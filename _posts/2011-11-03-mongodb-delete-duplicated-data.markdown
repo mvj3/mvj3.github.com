@@ -4,7 +4,7 @@ title: Mongodb删除重复数据
 published: true
 comments: true
 date: 2011-11-03 16:49:38 +08:00
-categories: [Mongodb, Index, Statistical]
+categories: [Mongodb, Index, Statistic]
 ---
 
 统计分析需要跑各个时间粒度的任务，如果异常中断后重新选择某个时间删除后再跑的时候，有时候还是会有重复的统计数据。

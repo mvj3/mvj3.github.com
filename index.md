@@ -47,7 +47,7 @@ Presentations
 * 2015-07-18, [Python沙龙深度交流会-第二十期CDA俱乐部活动][3], Luiti - An Offline Task Management Framework, [view][4], [download][2], [video][20]
 * 2014-08-24, Internal sharing at 17zuoye, Detdup - Detect duplicated items engine, [view][5], [download][1]
 * 2013-06-22, Ruby Saturday in Beijing, [15 gems within two years](http://ruby-china.org/topics/11806)
-* 2012-09-01, Ruby Saturday in Beijing, [Statistical Analysis and The Dark Knight](/statistics-analytics-and-dark-knight)
+* 2012-09-01, Ruby Saturday in Beijing, [Statistic Analysis and The Dark Knight](/statistics-analytics-and-dark-knight)
 
 Open Source
 ------------------------------------------------
