@@ -16,15 +16,15 @@ p ol li a {
 }
 </style>
 
-### **David Chen** (陈大伟), aka **@mvj3** .
-
-I'm an avid open-source full-stack engineer, focusing on [data][6] and [web][7],
-and have created an offline task management framework called [luiti][8].
-
-<p align="center">
-  <!-- ![mvj3_wear_sunglasses](/images/mvj3/mvj3_wear_sungclasses.jpg){: height='360px' width='480px'}" -->
-  <img src="/images/mvj3/mvj3_wear_sungclasses_20150526.jpg" alt="mvj3_wear_sunglasses_20150526" height="360px" width="480px">
-</p>
+<div>
+  <div align="center" style="float:left; margin-right:30px;">
+    <!-- ![mvj3_wear_sunglasses](/images/mvj3/mvj3_wear_sungclasses.jpg){: height='360px' width='480px'}" -->
+    <!-- <img src="/images/mvj3/mvj3_wear_sungclasses_20150526.jpg" alt="mvj3_wear_sunglasses_20150526" height="360px" width="480px"> -->
+    <img src="/images/mvj3/thumb_linkedin_avatar_with_python_1024.jpg" alt="thumb_linkedin_avatar_with_python_1024" height="256px" width="256px">
+  </div>
+  <p id="self_introduction_beside_avatar" style="padding-top:20px;"><h3 id="david-chen--aka-mvj3-"><strong>David Chen</strong> (陈大伟), aka <strong>@mvj3</strong> .</h3><p class="text"></p><p>I’m an avid open-source full-stack engineer, focusing on <a href="/projects/#building-the-data-warehouse-in-python-07-2014-present-">data</a> and <a href="/projects/#rails-engine-or-related-05-2013-12-2013-">web</a>, and have created an offline task management framework called <a href="https://github.com/luiti/luiti">luiti</a>.</p><p></p></p>
+  <div class="clearfix"></div>
+</div>
 
 
 Recommended posts
@@ -134,6 +134,8 @@ Chinese, English.
 
 <script>
 $(document).ready(function() {
+  // $("#self_introduction_beside_avatar").html([$("#david-chen--aka-mvj3-"), $(".footer_intro").find("p")]);
+
   // render recent posts.
   var recent_posts_header = $("#recent-posts");
   var recent_posts_dom = recent_posts_header.next("p");
