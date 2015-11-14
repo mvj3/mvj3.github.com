@@ -65,7 +65,7 @@ Technology Focus
 * Experience: **[modular][8]  [data warehouse][15]**, **[modular single page application][13]**, **[DSL or framework design and implement][17]**, [Text Mining][26], RESTful API, CMS, [realtime chat][16], etc.
 * Web Framework: **[Rails][7]**, HAML, jQuery, [Backbone][19], [React.js][18], Bootstrap
 * Software: Git, Nginx, Unicorn, Memcached, Sphinx
-* Databases: [**Mongodb**, MySQL][17], [Redis][16]
+* Databases: [**MongoDB**, MySQL][17], [Redis][16]
 * Editor: MacVim
 * Operating Systems: OS X, Linux(CentOS, Ubuntu)
 
