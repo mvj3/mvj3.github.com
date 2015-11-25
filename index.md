@@ -22,7 +22,7 @@ p ol li a {
     <!-- <img src="/images/mvj3/mvj3_wear_sungclasses_20150526.jpg" alt="mvj3_wear_sunglasses_20150526" height="360px" width="480px"> -->
     <img src="/images/mvj3/thumb_linkedin_avatar_with_python_1024.jpg" alt="thumb_linkedin_avatar_with_python_1024" height="256px" width="256px">
   </div>
-  <p id="self_introduction_beside_avatar" style="padding-top:20px;"><h3 id="david-chen--aka-mvj3-"><strong>David Chen</strong> (陈大伟), aka <strong>@mvj3</strong> .</h3><p class="text"></p><p>I’m an avid open-source full-stack engineer, focusing on <a href="/projects/#building-the-data-warehouse-in-python-07-2014-present-">data</a> and <a href="/projects/#rails-engine-or-related-05-2013-12-2013-">web</a>, and have created an offline task management framework called <a href="https://github.com/luiti/luiti">luiti</a>.</p><p></p></p>
+  <p id="self_introduction_beside_avatar" style="padding-top:20px;"><h3 id="david-chen--aka-mvj3-"><strong>David Chen</strong> (陈大伟), aka <strong>@mvj3</strong> .</h3><p class="text"></p><p>I’m an avid open-source, full-stack engineer, focusing on <a href="/projects/#building-the-data-warehouse-in-python-07-2014-present-">data</a> and <a href="/projects/#rails-engine-or-related-05-2013-12-2013-">web</a>. I have created an offline task management framework called <a href="https://github.com/luiti/luiti">"Luiti"</a>.</p><p></p></p>
   <div class="clearfix"></div>
 </div>
 
@@ -71,12 +71,12 @@ Technology Focus
 
 Human Programming Language
 ------------------------------------------------
-Programming language's final aim is to reduce the complexity, and should be understood quickly in people's mind,
-so it should be a combinenable, well-structured, introspective language.
+A Programming language's final aim should be to reduce the complexity, and to be understood quickly in people's minds,
+Because of this, it should be a combinenable, well-structured, introspective language.
 `3.weeks.ago.` is a typical statement in Human programming language, and
-it's equal to `((3 weeks) ago)` weird format in Lisp.
+it's equal to `((3 weeks) ago)` strange format in Lisp.
 
-I wrote lots of Chinese notes (a unified philosophy about the nature of the program and human-mind) at [http://human-lang.org][24] , see more code examples at [https://github.com/human-lang/examples][25] .
+I wrote lots of Chinese notes (a unified philosophy about the nature of the program and human-mind) at [http://human-lang.org][24] , you can see more code examples at [https://github.com/human-lang/examples][25] .
 The language specifications and interpreter are need to be done in future.
 
 
