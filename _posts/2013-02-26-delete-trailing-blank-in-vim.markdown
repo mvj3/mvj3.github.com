@@ -10,7 +10,7 @@ categories: [Vim, Tips]
 在查看(View)模式下输入
 
 {% highlight vim %}
-:%s/\s\+$/g
+:%s/\s\+$//g
 {% endhighlight %}
 
 其实也即是删除了整行都是空格字符的。
