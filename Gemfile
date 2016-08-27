@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem 'jekyll'
+gem 'jekyll', "2.4.0"
 
 gem "html-proofer"
 
