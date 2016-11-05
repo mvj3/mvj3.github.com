@@ -27,7 +27,13 @@ HTML，不同内容之间的网页涉及到的静态资源 **完全隔离** 。
 ------------------------------------------
 在根目录下运行
 
-`bundle exec jekyll server -V`
+```bash
+# Fix pygments Python version dependency.
+PYENV_VERSION=2.7.12
+pyenv rehash
+
+bundle exec jekyll server -V
+```
 
 即可生成全站的 HTML 到 _site 目录(被 .gitignore 所忽略的)下。而 _site
 也是一个 Git 仓库，即是 mvj3.github.io ，所以按正常的 Git 操作，直接

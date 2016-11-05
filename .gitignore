@@ -4,6 +4,7 @@ Gemfile.lock
 .sass-cache
 .gist-cache
 .pygments-cache
+.python-version
 _deploy
 public
 sass.old
@@ -19,3 +20,5 @@ Gemfile.lock
 .themes/slash
 _deploy.yml
 _site
+
+
