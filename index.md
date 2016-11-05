@@ -57,16 +57,26 @@ See the timesheet and details at [projects](/projects/), related topics are:
 3. Offline job in Ruby
 4. Rails engines and ORM plugins
 
+
 Technology Focus
 ------------------------------------------------
-* Programming Language: **[Python][6]**, **[Ruby][7]**, **[JavaScript][14]**, Java, CSS, Objective-C, etc.
-* Big Data: HDFS, YARN, **[luigi, luiti][8]**, hue
-* Experience: **[modular][8]  [data warehouse][15]**, **[modular single page application][13]**, **[DSL or framework design and implement][17]**, [Text Mining][26], RESTful API, CMS, [realtime chat][16], etc.
-* Web Framework: **[Rails][7]**, HAML, jQuery, [Backbone][19], [React.js][18], Bootstrap
-* Software: Git, Nginx, Unicorn, Memcached, Sphinx
-* Databases: [**MongoDB**, MySQL][17], [Redis][16]
-* Editor: MacVim
-* Operating Systems: OS X, Linux(CentOS, Ubuntu)
+* Experiences: **Software Design and Implementation, Software Platform Architecture, [Data Warehousing][15]**, Data Reports, [Single Page Application][13], Text Mining, RESTful API, CMS, etc.
+* Programming Languages: **[Python][6], Java, [Ruby][7]**, [JavaScript][14], Bash, CSS, SQL, etc.
+* Big Data / Cloud Computing: Hadoop (CDH), [luigi][8], hue, Kafka (Confluent.io products), Docker, Mesos (Marathon), ZooKeeper
+* Databases / KV store: [MongoDB, MySQL][17], [Redis][16], AWS Redshift, Memcache
+* Web Framework: Rails, HAML, jQuery, [Backbone][19], [React.js][18], Bootstrap
+* Web Server: Nginx, Unicorn, Thin
+* Search Engine: Sphinx
+
+* Continuous Integration: Travis, Buildbot
+* Team tools: Github Pull Request + Issues, Slack, Redmine, Teambition, Trello, Jira, JBoss, Gitter.im
+* Version Control System: Git, SVN
+
+* Editor / IDE: MacVim, IntelliJ IDEA
+* OS / Platform: OS X, Linux (CentOS, Ubuntu), AWS EC2, Vagrant
+
+
+
 
 Human Programming Language
 ------------------------------------------------
