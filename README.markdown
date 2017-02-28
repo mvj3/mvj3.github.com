@@ -28,10 +28,6 @@ HTML，不同内容之间的网页涉及到的静态资源 **完全隔离** 。
 在根目录下运行
 
 ```bash
-# Fix pygments Python version dependency.
-PYENV_VERSION=2.7.12
-pyenv rehash
-
 bundle exec jekyll server -V
 ```
 
