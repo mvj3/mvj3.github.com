@@ -79,15 +79,6 @@ class Mvj3Project
     # fix data
     @selected_repos_summary_dict["deviantart-douban"][:created_at] = Time.parse("Dec 10, 2009")
 
-    @selected_repos_summary_dict["oracle_interview_calculation"] = Hash.new
-    @selected_repos_summary_dict["oracle_interview_calculation"][:name] = "oracle_interview_calculation"
-    @selected_repos_summary_dict["oracle_interview_calculation"][:description] = "简单来说，我想通过这个作品来向社区呼吁，雇主应该少让弱势应聘者浪费时间去做这些无聊的面试题，因为每个人的时间都很宝贵。"
-    @selected_repos_summary_dict["oracle_interview_calculation"][:html_url] = "https://github.com/mvj3/oracle_interview_calculation"
-    @selected_repos_summary_dict["oracle_interview_calculation"][:created_at] = Time.parse("Apr 18, 2015")
-    @selected_repos_summary_dict["oracle_interview_calculation"][:updated_at] = Time.parse("Apr 18, 2015")
-    @selected_repos_summary_dict["oracle_interview_calculation"][:pushed_at] = Time.parse("Apr 18, 2015")
-    @selected_repos_summary_dict["oracle_interview_calculation"][:language] = "Ruby"
-
     @selected_repos_summary_dict["statlysis"][:html_url] = "https://github.com/mvj3/statlysis"
 
 

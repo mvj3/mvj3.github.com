@@ -28,11 +28,12 @@ p ol li a {
 
 Recommended posts
 ------------------------------------------------
-1. [为什么很多人理解不了 Max Howell 通不过白板编程面试][9]
-2. [我在一起作业的半年回顾][10]
-3. [Rails项目 重构，我在阳光书屋的三个月][11]
-4. [人类思维和软件工程学][12]
-5. [一个人的"github"][13]
+1. [离线数据任务中的惰性求值语法设计][27]
+2. [为什么很多人理解不了 Max Howell 通不过白板编程面试][9]
+3. [我在一起作业的半年回顾][10]
+4. [Rails项目 重构，我在阳光书屋的三个月][11]
+5. [人类思维和软件工程学][12]
+6. [一个人的"github"][13]
 
 
 Recent posts
@@ -136,6 +137,7 @@ Chinese, English.
 [24]: http://human-lang.org
 [25]: https://github.com/human-lang/examples
 [26]: /projects/#text-mining-in-python-06-2014-05-2015-
+[27]: /2017/02/28/lazy-evaluation-and-its-syntax-design-in-offline-data-job
 
 
 

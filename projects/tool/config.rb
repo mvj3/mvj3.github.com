@@ -43,9 +43,6 @@ ProjectConfig = {
       "normalize_nested_params",
       "only_one_rake",
 
-      "oracle_interview_calculation",
-      # NOTE oracle_interview_calculation dont appear, even with Octokit.auto_paginate enabled
-
       "phrase_recognizer",
       "pygments.rb",  # fork
       "pyirt",  # contribute
